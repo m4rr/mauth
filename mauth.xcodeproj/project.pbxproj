@@ -170,6 +170,7 @@
 				03581C7F1BAED21900D5D95F /* Resources */,
 				E25A63EC8D5A2CD14BE7B6E2 /* Copy Pods Resources */,
 				97823E595C735A9C15225916 /* Embed Pods Frameworks */,
+				035EC9881BBBFB1700EA5CAD /* Run Script Autoincrement */,
 			);
 			buildRules = (
 			);
@@ -286,6 +287,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		035EC9881BBBFB1700EA5CAD /* Run Script Autoincrement */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script Autoincrement";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "bN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$(($bN + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"\n";
+		};
 		97823E595C735A9C15225916 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
