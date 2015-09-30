@@ -55,8 +55,11 @@ class ViewController: UIViewController {
   }
 
   @IBAction func simulateJS(sender: UIButton?) {
-    webView.evaluateJavaScript("var myLink = document.getElementById('myLink'); myLink.click();") { result, error in
-      //
+    webView.evaluateJavaScript("var myLink = document.getElementsByClassName('branding__button')[0]; myLink.click();") { result, error in
+      print(result, error)
+      if error == nil {
+        self.userTappedOnce = true
+      }
     }
   }
 
