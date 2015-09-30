@@ -112,9 +112,8 @@
 			children = (
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C861BAED21900D5D95F /* ViewController.swift */,
+				035EC9891BBBFCE200EA5CAD /* Logger */,
 				03581C881BAED21900D5D95F /* Main.storyboard */,
-				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
-				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
 				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
 				03581C901BAED21900D5D95F /* Info.plist */,
@@ -138,6 +137,15 @@
 				03581CA61BAED21900D5D95F /* Info.plist */,
 			);
 			path = mauthUITests;
+			sourceTree = "<group>";
+		};
+		035EC9891BBBFCE200EA5CAD /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
+				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
+			);
+			name = Logger;
 			sourceTree = "<group>";
 		};
 		BA08C717C88E26D79B51FEAC /* Pods */ = {

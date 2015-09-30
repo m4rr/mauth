@@ -10,60 +10,39 @@ import UIKit
 import WebKit
 import PureLayout
 
-class TappingWebView: WKWebView {
-//  var tapped = false
-
-//  override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//    super.touchesEnded(touches, withEvent: event)
-//
-//
-//    tapped = true
-//  }
-}
-
 class ViewController: UIViewController {
 
-  @IBOutlet weak var infoView: UIView!
-  @IBOutlet weak var addressLabel: UILabel!
-
-  private var webView: TappingWebView!
+  private var webView: WKWebView!
+  @IBOutlet private weak var infoView: UIView!
+  @IBOutlet private weak var addressLabel: UILabel!
 
   private let baseUrl = NSURL(string: "http://ya.ru/")!
   private let url1111 = NSURL(string: "http://1.1.1.1/")!
-  private var userTappedOnce: Bool = false
 
-  private lazy var request: NSURLRequest = {
-    return NSURLRequest(URL: self.baseUrl, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 60)
-    }()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    setupWebView()
-    tryAuth()
+  private lazy var request: NSURLRequest = NSURLRequest(URL: self.baseUrl, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
+  private var networkActivity = 0 {
+    didSet {
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = networkActivity != 0
+    }
   }
 
-  lazy var gr: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+  private lazy var userTappedOnce: Bool = false
+  private lazy var tapGestureRecognizer: UITapGestureRecognizer = {
+    let tgr = UITapGestureRecognizer(target: self, action: "handleTap:")
+    tgr.delegate = self
+    return tgr
+  }()
 
-  func setupWebView() {
-    let config = WKWebViewConfiguration()
-    config.allowsAirPlayForMediaPlayback = false
-    config.allowsInlineMediaPlayback = false
-    config.allowsPictureInPictureMediaPlayback = false
-    config.requiresUserActionForMediaPlayback = true
-
-    webView = TappingWebView(frame: view.bounds, configuration: config)
-    webView.navigationDelegate = self
-    webView.UIDelegate = self
-
-    view.addSubview(webView)
-    view.sendSubviewToBack(webView)
-
-    webView.scrollView.addGestureRecognizer(gr)
-    gr.delegate = self
-
-    updateViewConstraints()
+  private var log: [String: AnyObject] {
+    get {
+      return NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
+    }
+    set {
+      NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
+    }
   }
+
+  // MARK: - UI
 
   @IBAction func tryAuth() {
     userTappedOnce = false
@@ -75,38 +54,26 @@ class ViewController: UIViewController {
     webView.loadRequest(NSURLRequest(URL: url1111))
   }
 
-  var log: [String: AnyObject] {
-    get {
-      return NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
-    }
-    set {
-      NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
-    }
-  }
-
-  func addToLog(url: String, html: String) {
-    log[url] = html
-  }
-
   @IBAction func simulateJS(sender: UIButton?) {
-    webView.evaluateJavaScript("var myLink = document.getElementById('myLink'); myLink.click();") { (rs: AnyObject?, er: NSError?) -> Void in
+    webView.evaluateJavaScript("var myLink = document.getElementById('myLink'); myLink.click();") { result, error in
       //
     }
   }
 
+  // MARK: - Helpers
 
   func logCurrent(completion: () -> Void) {
-    webView.evaluateJavaScript("document.getElementsByTagName('html')[0].outerHTML") { (rs, er) -> Void in
-
-      if let html = rs as? String {
-        self.addToLog(self.webView.URL?.absoluteString ?? "", html: html)
+    webView.evaluateJavaScript("document.getElementsByTagName('html')[0].outerHTML") { result, error in
+      if let html = result as? String {
+        let url = self.webView.URL?.absoluteString ?? ""
+        self.log[url] = html
       }
 
       completion()
     }
-
   }
 
+  // MARK: - Setup
 
   override func updateViewConstraints() {
     webView.autoPinEdge(.Top, toEdge: .Top, ofView: view, withOffset: 20)
@@ -117,11 +84,35 @@ class ViewController: UIViewController {
     super.updateViewConstraints()
   }
 
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //
+  func setupWebView() {
+    let config = WKWebViewConfiguration()
+    config.allowsAirPlayForMediaPlayback = false
+    config.allowsInlineMediaPlayback = false
+    config.allowsPictureInPictureMediaPlayback = false
+    config.requiresUserActionForMediaPlayback = true
+
+    webView = WKWebView(frame: view.bounds, configuration: config)
+    webView.scrollView.addGestureRecognizer(tapGestureRecognizer)
+    webView.navigationDelegate = self
+    webView.UIDelegate = self
+
+    view.insertSubview(webView, belowSubview: infoView)
+
+    updateViewConstraints()
+  }
+
+  // MARK: - Life
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    setupWebView()
+    tryAuth()
   }
 
 }
+
+// MARK: - UIGestureRecognizerDelegate
 
 extension ViewController: UIGestureRecognizerDelegate {
 
@@ -135,13 +126,17 @@ extension ViewController: UIGestureRecognizerDelegate {
 
 }
 
+// MARK: - WKNavigationDelegate
+
 extension ViewController: WKNavigationDelegate {
 
   func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    ++networkActivity
     addressLabel.text = webView.URL?.absoluteString ?? ""
   }
 
   func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+    --networkActivity
     logCurrent { () -> Void in
       let isBase = webView.URL?.host == self.baseUrl.host
       if !isBase && self.userTappedOnce {
@@ -152,10 +147,12 @@ extension ViewController: WKNavigationDelegate {
   }
 
   func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {
-    //
+    --networkActivity
   }
 
 }
+
+// MARK: - WKUIDelegate
 
 extension ViewController: WKUIDelegate {
 
