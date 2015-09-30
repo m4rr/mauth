@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; settings = {ASSET_TAGS = (); }; };
+		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
+		03581C871BAED21900D5D95F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C861BAED21900D5D95F /* ViewController.swift */; };
+		03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C881BAED21900D5D95F /* Main.storyboard */; };
+		03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8B1BAED21900D5D95F /* Assets.xcassets */; };
+		03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */; };
+		03581C9A1BAED21900D5D95F /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C991BAED21900D5D95F /* mauthTests.swift */; };
+		03581CA51BAED21900D5D95F /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581CA41BAED21900D5D95F /* mauthUITests.swift */; };
+		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03581C961BAED21900D5D95F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03581C791BAED21800D5D95F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03581C801BAED21900D5D95F;
+			remoteInfo = mauth;
+		};
+		03581CA11BAED21900D5D95F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03581C791BAED21800D5D95F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03581C801BAED21900D5D95F;
+			remoteInfo = mauth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTableViewController.swift; sourceTree = "<group>"; };
+		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
+		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		03581C861BAED21900D5D95F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03581C891BAED21900D5D95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03581C8B1BAED21900D5D95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03581C8E1BAED21900D5D95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03581C901BAED21900D5D95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03581C951BAED21900D5D95F /* mauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03581C991BAED21900D5D95F /* mauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthTests.swift; sourceTree = "<group>"; };
+		03581C9B1BAED21900D5D95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03581CA01BAED21900D5D95F /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03581CA41BAED21900D5D95F /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
+		03581CA61BAED21900D5D95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.release.xcconfig"; sourceTree = "<group>"; };
+		D15C100F23E060F4D8BC33FE /* Pods-mauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03581C7E1BAED21900D5D95F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03581C921BAED21900D5D95F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03581C9D1BAED21900D5D95F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03581C781BAED21800D5D95F = {
+			isa = PBXGroup;
+			children = (
+				03581C831BAED21900D5D95F /* mauth */,
+				03581C981BAED21900D5D95F /* mauthTests */,
+				03581CA31BAED21900D5D95F /* mauthUITests */,
+				03581C821BAED21900D5D95F /* Products */,
+				BA08C717C88E26D79B51FEAC /* Pods */,
+				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		03581C821BAED21900D5D95F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03581C811BAED21900D5D95F /* mauth.app */,
+				03581C951BAED21900D5D95F /* mauthTests.xctest */,
+				03581CA01BAED21900D5D95F /* mauthUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03581C831BAED21900D5D95F /* mauth */ = {
+			isa = PBXGroup;
+			children = (
+				03581C841BAED21900D5D95F /* AppDelegate.swift */,
+				03581C861BAED21900D5D95F /* ViewController.swift */,
+				03581C881BAED21900D5D95F /* Main.storyboard */,
+				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
+				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
+				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
+				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
+				03581C901BAED21900D5D95F /* Info.plist */,
+			);
+			path = mauth;
+			sourceTree = "<group>";
+		};
+		03581C981BAED21900D5D95F /* mauthTests */ = {
+			isa = PBXGroup;
+			children = (
+				03581C991BAED21900D5D95F /* mauthTests.swift */,
+				03581C9B1BAED21900D5D95F /* Info.plist */,
+			);
+			path = mauthTests;
+			sourceTree = "<group>";
+		};
+		03581CA31BAED21900D5D95F /* mauthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				03581CA41BAED21900D5D95F /* mauthUITests.swift */,
+				03581CA61BAED21900D5D95F /* Info.plist */,
+			);
+			path = mauthUITests;
+			sourceTree = "<group>";
+		};
+		BA08C717C88E26D79B51FEAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D15C100F23E060F4D8BC33FE /* Pods-mauth.debug.xcconfig */,
+				7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB02B59CE29826B1D3C48AC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03581C801BAED21900D5D95F /* mauth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03581CA91BAED21900D5D95F /* Build configuration list for PBXNativeTarget "mauth" */;
+			buildPhases = (
+				CF6CA5C9BE9B2BED19EA988F /* Check Pods Manifest.lock */,
+				03581C7D1BAED21900D5D95F /* Sources */,
+				03581C7E1BAED21900D5D95F /* Frameworks */,
+				03581C7F1BAED21900D5D95F /* Resources */,
+				E25A63EC8D5A2CD14BE7B6E2 /* Copy Pods Resources */,
+				97823E595C735A9C15225916 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mauth;
+			productName = mauth;
+			productReference = 03581C811BAED21900D5D95F /* mauth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03581C941BAED21900D5D95F /* mauthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03581CAC1BAED21900D5D95F /* Build configuration list for PBXNativeTarget "mauthTests" */;
+			buildPhases = (
+				03581C911BAED21900D5D95F /* Sources */,
+				03581C921BAED21900D5D95F /* Frameworks */,
+				03581C931BAED21900D5D95F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03581C971BAED21900D5D95F /* PBXTargetDependency */,
+			);
+			name = mauthTests;
+			productName = mauthTests;
+			productReference = 03581C951BAED21900D5D95F /* mauthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03581C9F1BAED21900D5D95F /* mauthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03581CAF1BAED21900D5D95F /* Build configuration list for PBXNativeTarget "mauthUITests" */;
+			buildPhases = (
+				03581C9C1BAED21900D5D95F /* Sources */,
+				03581C9D1BAED21900D5D95F /* Frameworks */,
+				03581C9E1BAED21900D5D95F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03581CA21BAED21900D5D95F /* PBXTargetDependency */,
+			);
+			name = mauthUITests;
+			productName = mauthUITests;
+			productReference = 03581CA01BAED21900D5D95F /* mauthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03581C791BAED21800D5D95F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = emfo;
+				TargetAttributes = {
+					03581C801BAED21900D5D95F = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					03581C941BAED21900D5D95F = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 03581C801BAED21900D5D95F;
+					};
+					03581C9F1BAED21900D5D95F = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 03581C801BAED21900D5D95F;
+					};
+				};
+			};
+			buildConfigurationList = 03581C7C1BAED21800D5D95F /* Build configuration list for PBXProject "mauth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03581C781BAED21800D5D95F;
+			productRefGroup = 03581C821BAED21900D5D95F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03581C801BAED21900D5D95F /* mauth */,
+				03581C941BAED21900D5D95F /* mauthTests */,
+				03581C9F1BAED21900D5D95F /* mauthUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03581C7F1BAED21900D5D95F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */,
+				03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */,
+				03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03581C931BAED21900D5D95F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03581C9E1BAED21900D5D95F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		97823E595C735A9C15225916 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mauth/Pods-mauth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF6CA5C9BE9B2BED19EA988F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E25A63EC8D5A2CD14BE7B6E2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mauth/Pods-mauth-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03581C7D1BAED21900D5D95F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */,
+				03581C871BAED21900D5D95F /* ViewController.swift in Sources */,
+				0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */,
+				03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03581C911BAED21900D5D95F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03581C9A1BAED21900D5D95F /* mauthTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03581C9C1BAED21900D5D95F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03581CA51BAED21900D5D95F /* mauthUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03581C971BAED21900D5D95F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03581C801BAED21900D5D95F /* mauth */;
+			targetProxy = 03581C961BAED21900D5D95F /* PBXContainerItemProxy */;
+		};
+		03581CA21BAED21900D5D95F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03581C801BAED21900D5D95F /* mauth */;
+			targetProxy = 03581CA11BAED21900D5D95F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		03581C881BAED21900D5D95F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03581C891BAED21900D5D95F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03581C8E1BAED21900D5D95F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03581CA71BAED21900D5D95F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		03581CA81BAED21900D5D95F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03581CAA1BAED21900D5D95F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D15C100F23E060F4D8BC33FE /* Pods-mauth.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mauth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		03581CAB1BAED21900D5D95F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mauth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		03581CAD1BAED21900D5D95F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = mauthTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mauth.app/mauth";
+			};
+			name = Debug;
+		};
+		03581CAE1BAED21900D5D95F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = mauthTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mauth.app/mauth";
+			};
+			name = Release;
+		};
+		03581CB01BAED21900D5D95F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = mauthUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = mauth;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		03581CB11BAED21900D5D95F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = mauthUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = mauth;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03581C7C1BAED21800D5D95F /* Build configuration list for PBXProject "mauth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03581CA71BAED21900D5D95F /* Debug */,
+				03581CA81BAED21900D5D95F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03581CA91BAED21900D5D95F /* Build configuration list for PBXNativeTarget "mauth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03581CAA1BAED21900D5D95F /* Debug */,
+				03581CAB1BAED21900D5D95F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03581CAC1BAED21900D5D95F /* Build configuration list for PBXNativeTarget "mauthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03581CAD1BAED21900D5D95F /* Debug */,
+				03581CAE1BAED21900D5D95F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03581CAF1BAED21900D5D95F /* Build configuration list for PBXNativeTarget "mauthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03581CB01BAED21900D5D95F /* Debug */,
+				03581CB11BAED21900D5D95F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03581C791BAED21800D5D95F /* Project object */;
+}
