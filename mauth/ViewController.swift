@@ -16,10 +16,12 @@ class ViewController: UIViewController {
   @IBOutlet private weak var infoView: UIView!
   @IBOutlet private weak var addressLabel: UILabel!
 
-  private let baseUrl = NSURL(string: "http://ya.ru/")!
+  private let baseUrl🔓 = NSURL(string: "http://ya.ru/")!
+  private let baseUrl🔐 = NSURL(string: "https://ya.ru/")!
   private let url1111 = NSURL(string: "http://1.1.1.1/")!
 
-  private lazy var request: NSURLRequest = NSURLRequest(URL: self.baseUrl, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
+  private lazy var request🔓: NSURLRequest = NSURLRequest(URL: self.baseUrl🔓, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
+  private lazy var request🔐: NSURLRequest = NSURLRequest(URL: self.baseUrl🔐, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
   private var networkActivity = 0 {
     didSet {
       UIApplication.sharedApplication().networkActivityIndicatorVisible = networkActivity != 0
@@ -46,7 +48,7 @@ class ViewController: UIViewController {
 
   @IBAction func tryAuth() {
     userTappedOnce = false
-    webView.loadRequest(request)
+    makeDependingRequest()
   }
 
   @IBAction func try1111() {
@@ -64,6 +66,10 @@ class ViewController: UIViewController {
   }
 
   // MARK: - Helpers
+
+  func makeDependingRequest() {
+    webView.loadRequest(userTappedOnce ? request🔐 : request🔓)
+  }
 
   func logCurrent(completion: () -> Void) {
     webView.evaluateJavaScript("document.getElementsByTagName('html')[0].outerHTML") { result, error in
@@ -141,10 +147,10 @@ extension ViewController: WKNavigationDelegate {
   func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
     --networkActivity
     logCurrent { () -> Void in
-      let isBase = webView.URL?.host == self.baseUrl.host
+      let isBase = webView.URL?.host == self.baseUrl🔓.host
       if !isBase && self.userTappedOnce {
         //performSelector("tryAuth", withObject: nil, afterDelay: 0.1)
-        self.tryAuth()
+        self.makeDependingRequest()
       }
     }
   }
