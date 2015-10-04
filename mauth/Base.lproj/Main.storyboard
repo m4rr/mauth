@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,92 +17,90 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MB8-DK-0Ra" userLabel="Info View">
-                                <rect key="frame" x="0.0" y="505" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="515" width="600" height="85"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmy-CN-GNd">
-                                        <rect key="frame" x="500" y="0.0" width="100" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B7w-VV-FtF">
+                                        <rect key="frame" x="8" y="8" width="584" height="33.5"/>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="gaB-en-Ew4"/>
-                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Нажмите ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="на рекламу">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" на странице авторизации в метро. Дальше приложение будет перехватывать переадресациии, пока не достигнет Яндекса.">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyo-Wd-LXY">
+                                        <rect key="frame" x="526" y="49" width="66" height="28"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Logs..."/>
+                                        <connections>
+                                            <segue destination="CWJ-v0-QKR" kind="presentation" id="mYU-HZ-i1m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmy-CN-GNd">
+                                        <rect key="frame" x="261" y="49" width="78" height="28"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                         <state key="normal" title="Try Auth"/>
                                         <connections>
                                             <action selector="tryAuth" destination="BYZ-38-t0r" eventType="touchUpInside" id="fLH-lf-G4r"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B7w-VV-FtF">
-                                        <rect key="frame" x="10" y="0.0" width="490" height="100"/>
-                                        <animations/>
-                                        <string key="text">Tap on ad above. Then, app will try auth for you. If you see Yandex, the internet is ok.
-"Try Auth" by yourself, if you know what it does.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUW-wK-Wy6">
-                                        <rect key="frame" x="500" y="50" width="100" height="50"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="XXe-wv-opI"/>
-                                        </constraints>
-                                        <state key="normal" title="Try 1.1.1.1"/>
-                                        <connections>
-                                            <action selector="try1111" destination="BYZ-38-t0r" eventType="touchUpInside" id="1le-rM-6Gv"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pta-NQ-kTV">
-                                        <rect key="frame" x="360" y="60" width="140" height="30"/>
+                                        <rect key="frame" x="8" y="49" width="76" height="28"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="V2q-z0-2HG"/>
-                                            <constraint firstAttribute="height" constant="30" id="mBR-Si-aU4"/>
-                                        </constraints>
-                                        <state key="normal" title="Simulate JS-click"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="JS-click"/>
                                         <connections>
                                             <action selector="simulateJS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8J-5J-k4g"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyo-Wd-LXY">
-                                        <rect key="frame" x="300" y="60" width="50" height="30"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="gSS-WQ-P2S"/>
-                                            <constraint firstAttribute="width" constant="50" id="hhz-pp-lKU"/>
-                                        </constraints>
-                                        <state key="normal" title="Logs"/>
-                                        <connections>
-                                            <segue destination="CWJ-v0-QKR" kind="presentation" id="mYU-HZ-i1m"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.25" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Pta-NQ-kTV" secondAttribute="bottom" constant="10" id="63e-GG-Ukf"/>
-                                    <constraint firstItem="B7w-VV-FtF" firstAttribute="leading" secondItem="MB8-DK-0Ra" secondAttribute="leading" constant="10" id="CfM-u3-WY3"/>
-                                    <constraint firstAttribute="height" constant="100" id="IAD-kR-zhi"/>
-                                    <constraint firstItem="Hmy-CN-GNd" firstAttribute="top" secondItem="MB8-DK-0Ra" secondAttribute="top" id="Ikt-It-rOf"/>
-                                    <constraint firstAttribute="bottom" secondItem="CUW-wK-Wy6" secondAttribute="bottom" id="Kl9-GW-tnp"/>
-                                    <constraint firstItem="CUW-wK-Wy6" firstAttribute="height" secondItem="Hmy-CN-GNd" secondAttribute="height" id="LFr-bv-SrE"/>
-                                    <constraint firstItem="B7w-VV-FtF" firstAttribute="top" secondItem="MB8-DK-0Ra" secondAttribute="top" id="NhM-Dk-osX"/>
-                                    <constraint firstAttribute="bottom" secondItem="eyo-Wd-LXY" secondAttribute="bottom" constant="10" id="S1T-4T-OT5"/>
-                                    <constraint firstAttribute="bottom" secondItem="B7w-VV-FtF" secondAttribute="bottom" id="aFW-CI-mA2"/>
-                                    <constraint firstItem="Pta-NQ-kTV" firstAttribute="leading" secondItem="eyo-Wd-LXY" secondAttribute="trailing" constant="10" id="bjF-SW-JZQ"/>
-                                    <constraint firstItem="Hmy-CN-GNd" firstAttribute="leading" secondItem="B7w-VV-FtF" secondAttribute="trailing" id="dgY-i4-1h5"/>
-                                    <constraint firstItem="CUW-wK-Wy6" firstAttribute="top" secondItem="Hmy-CN-GNd" secondAttribute="bottom" id="tc7-2w-J6D"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hmy-CN-GNd" secondAttribute="trailing" id="xik-fx-57d"/>
-                                    <constraint firstAttribute="trailing" secondItem="CUW-wK-Wy6" secondAttribute="trailing" id="xok-Ks-jkY"/>
-                                    <constraint firstItem="CUW-wK-Wy6" firstAttribute="leading" secondItem="Pta-NQ-kTV" secondAttribute="trailing" id="ybe-HL-lTU"/>
+                                    <constraint firstItem="B7w-VV-FtF" firstAttribute="top" secondItem="MB8-DK-0Ra" secondAttribute="top" constant="8" id="0fS-7O-fHs"/>
+                                    <constraint firstItem="Hmy-CN-GNd" firstAttribute="top" secondItem="B7w-VV-FtF" secondAttribute="bottom" constant="8" id="BHH-QN-fm6"/>
+                                    <constraint firstItem="eyo-Wd-LXY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hmy-CN-GNd" secondAttribute="trailing" constant="8" id="Est-wP-oKG"/>
+                                    <constraint firstAttribute="trailing" secondItem="B7w-VV-FtF" secondAttribute="trailing" constant="8" id="GXw-91-2lu"/>
+                                    <constraint firstAttribute="trailing" secondItem="eyo-Wd-LXY" secondAttribute="trailing" constant="8" id="HDT-xp-cdx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hmy-CN-GNd" secondAttribute="bottom" constant="8" id="Jd9-h1-e88"/>
+                                    <constraint firstItem="B7w-VV-FtF" firstAttribute="leading" secondItem="MB8-DK-0Ra" secondAttribute="leading" constant="8" id="LaV-63-Jf2"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pta-NQ-kTV" secondAttribute="bottom" constant="8" id="NNC-ia-WWH"/>
+                                    <constraint firstItem="Hmy-CN-GNd" firstAttribute="centerX" secondItem="MB8-DK-0Ra" secondAttribute="centerX" id="V8L-sy-aHo"/>
+                                    <constraint firstAttribute="bottom" secondItem="eyo-Wd-LXY" secondAttribute="bottom" constant="8" id="Yh5-tH-KCC"/>
+                                    <constraint firstItem="Pta-NQ-kTV" firstAttribute="leading" secondItem="MB8-DK-0Ra" secondAttribute="leading" constant="8" id="crd-nL-CDm"/>
+                                    <constraint firstItem="Hmy-CN-GNd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Pta-NQ-kTV" secondAttribute="trailing" constant="8" id="zdL-wL-QHG"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="WtP-nF-06n">
-                                <rect key="frame" x="20" y="484" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="WtP-nF-06n">
+                                <rect key="frame" x="8" y="495" width="584" height="20"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="0.84418103448275861" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="LKz-v3-p7b"/>
+                                    <constraint firstAttribute="height" constant="20" id="GPq-KT-5qy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -113,13 +110,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MB8-DK-0Ra" secondAttribute="bottom" constant="-5" id="YEI-OV-Zv2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WtP-nF-06n" secondAttribute="trailing" id="cXs-tO-A7B"/>
-                            <constraint firstItem="WtP-nF-06n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eB8-rW-PCw"/>
-                            <constraint firstItem="MB8-DK-0Ra" firstAttribute="top" secondItem="WtP-nF-06n" secondAttribute="bottom" id="jQi-GP-gkx"/>
-                            <constraint firstItem="MB8-DK-0Ra" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="pyM-ie-tYf"/>
-                            <constraint firstItem="MB8-DK-0Ra" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t56-W0-wWs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MB8-DK-0Ra" secondAttribute="trailing" constant="-20" id="xx2-rB-UNf"/>
+                            <constraint firstItem="MB8-DK-0Ra" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Eo3-xk-1TP"/>
+                            <constraint firstAttribute="bottom" secondItem="MB8-DK-0Ra" secondAttribute="bottom" id="N53-gy-Ae5"/>
+                            <constraint firstItem="WtP-nF-06n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="Xjv-8q-elP"/>
+                            <constraint firstAttribute="trailing" secondItem="MB8-DK-0Ra" secondAttribute="trailing" id="dhu-9y-3dt"/>
+                            <constraint firstItem="MB8-DK-0Ra" firstAttribute="top" secondItem="WtP-nF-06n" secondAttribute="bottom" id="e2J-gb-Kua"/>
+                            <constraint firstAttribute="trailing" secondItem="WtP-nF-06n" secondAttribute="trailing" constant="8" id="ed7-aG-pMN"/>
                         </constraints>
                     </view>
                     <connections>
