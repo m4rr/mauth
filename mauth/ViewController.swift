@@ -80,6 +80,22 @@ class ViewController: UIViewController {
     webView.loadRequest(userTappedOnce ? request🔐 : request🔓)
   }
 
+  // try test this shit
+  func massRequest() {
+    func s() {
+      usleep(UInt32(0.1 * pow(10, 6)))
+    }
+
+    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+    dispatch_async(queue) { () -> Void in
+      self.webView.loadRequest(self.request🔐)
+      s()
+      self.webView.loadRequest(self.request🔓)
+      s()
+      self.webView.loadRequest(self.request🔐)
+    }
+  }
+
   func logCurrent(completion: () -> Void) {
     webView.evaluateJavaScript("document.getElementsByTagName('html')[0].outerHTML") { result, error in
       if let html = result as? String {
@@ -153,13 +169,25 @@ extension ViewController: WKNavigationDelegate {
     addressLabel.text = webView.URL?.absoluteString ?? ""
   }
 
+  /**
+
+  Firstly loaded http://ya.ru that redirected to metro auth page.
+
+  After tap on ad, loads ad-page,
+  and since userTappedOnce && webView.URL?.host != ya.ru, 
+  trying to load https://ya.ru.
+  
+  Next guess: massRequest https—http—https.
+
+  */
+
   func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
     --networkActivity
     logCurrent { () -> Void in
       let isBase = webView.URL?.host == self.baseUrl🔓.host
       if !isBase && self.userTappedOnce {
-        //performSelector("tryAuth", withObject: nil, afterDelay: 0.1)
-        self.makeDependingRequest()
+        //self.makeDependingRequest()
+        self.massRequest()
       }
     }
   }
