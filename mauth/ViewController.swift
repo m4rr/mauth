@@ -57,10 +57,19 @@ class ViewController: UIViewController {
   }
 
   @IBAction func simulateJS(sender: UIButton?) {
-    webView.evaluateJavaScript("var adLink = document.querySelector('a[href^=\"//\"]'); adLink.click();") { result, error in
-      print(result, error)
+    let aClick = [
+      //"var a1 = document.querySelector('a[href^=\"//\"]'); a1.click();",
+      "var a2 = document.querySelector('a[href^=\"https://ads.adfox\"]'); a2.click();",
+      "var a3 = document.querySelector('#content > a'); a3.click();",
+      "var a4 = document.querySelector('#content > a'); a4[0].click();",
+    ]
+
+    webView.evaluateJavaScript(aClick.reduce("", combine: +)) { result, error in
       if error == nil {
         self.userTappedOnce = true
+
+        let statusTitle = "js ok" + (result == nil ? "" : " result")
+        sender?.setTitle(statusTitle, forState: .Normal)
       }
     }
   }
