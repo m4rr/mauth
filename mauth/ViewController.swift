@@ -24,7 +24,7 @@ class ViewController: UIViewController {
   private lazy var request🔐: NSURLRequest = NSURLRequest(URL: self.baseUrl🔐, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
   private var networkActivity = 0 {
     didSet {
-      UIApplication.sharedApplication().networkActivityIndicatorVisible = networkActivity != 0
+      //UIApplication.sharedApplication().networkActivityIndicatorVisible = networkActivity != 0
     }
   }
 
