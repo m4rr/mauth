@@ -65,12 +65,12 @@ class ViewController: UIViewController {
     ]
 
     webView.evaluateJavaScript(aClick.reduce("", combine: +)) { result, error in
-      if error == nil {
+      //if error == nil {
         self.userTappedOnce = true
 
         let statusTitle = "js ok" + (result == nil ? "" : " result")
         sender?.setTitle(statusTitle, forState: .Normal)
-      }
+      //}
     }
   }
 
