@@ -219,6 +219,12 @@ extension ViewController: WKNavigationDelegate {
     --networkActivity
   }
 
+//  func webView(webView: WKWebView, decidePolicyForNavigationResponse navigationResponse: WKNavigationResponse, decisionHandler: (WKNavigationResponsePolicy) -> Void) {
+//    //
+//  }
+
+
+
 }
 
 // MARK: - WKUIDelegate
