@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import AVFoundation
 import PureLayout
 
 let willResignActiveNotificationName = "applicationWillResignActiveNotificationName"
@@ -16,6 +17,8 @@ let didBecomeActiveNotificationName = "applicationDidBecomeActiveNotificationNam
 class ViewController: UIViewController {
 
   private var webView: WKWebView!
+  private var fakeWebView: WKWebView?
+
   @IBOutlet private weak var infoView: UIView!
   @IBOutlet private weak var addressLabel: UILabel!
   @IBOutlet private weak var progressBar: UIProgressView!
@@ -46,6 +49,24 @@ class ViewController: UIViewController {
     set {
       NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
     }
+  }
+
+  // MARK: - Life
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    setupWebView()
+    tryAuth()
+
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeFakeFrame", name: willResignActiveNotificationName, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryAuth", name: didBecomeActiveNotificationName, object: nil)
+
+   let _ = try? AVAudioSession.sharedInstance().setActive(false)
+  }
+
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
   }
 
   // MARK: - UI
@@ -82,6 +103,22 @@ class ViewController: UIViewController {
 
   func makeDependingRequest() {
     webView.loadRequest(userTappedOnce ? request🔐 : request🔓)
+    if userTappedOnce {
+      loadFakeUnsecureRequest()
+    }
+  }
+
+  func loadFakeUnsecureRequest() {
+    fakeWebView = WKWebView(frame: CGRectZero, configuration: self.webView.configuration)
+    let q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+    dispatch_async(q) { () -> Void in
+      self.fakeWebView?.loadRequest(request🔓)
+    }
+  }
+
+  func removeFakeFrame() {
+    fakeWebView?.loadHTMLString("", baseURL: nil)
+    fakeWebView = nil
   }
 
   // try test this shit
@@ -140,21 +177,6 @@ class ViewController: UIViewController {
     updateViewConstraints()
   }
 
-  // MARK: - Life
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    setupWebView()
-    tryAuth()
-
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryAuth", name: didBecomeActiveNotificationName, object: nil)
-  }
-
-  deinit {
-    NSNotificationCenter.defaultCenter().removeObserver(self)
-  }
-
 }
 
 extension ViewController { // KVO
@@ -196,6 +218,10 @@ extension ViewController: UIGestureRecognizerDelegate {
 
 extension ViewController: WKNavigationDelegate {
 
+  func isBaseUrl(url: NSURL?) -> Bool {
+    return url?.host == baseUrl🔓.host // && url?.scheme == baseUrl🔓.scheme
+  }
+
   func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
     ++networkActivity
     addressLabel.text = webView.URL?.absoluteString ?? ""
@@ -216,10 +242,9 @@ extension ViewController: WKNavigationDelegate {
   func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
     --networkActivity
     logCurrent { () -> Void in
-      let isBase = webView.URL?.host == self.baseUrl🔓.host
-      if !isBase && self.userTappedOnce {
-        //self.makeDependingRequest()
-        self.massRequest()
+      if !self.isBaseUrl(webView.URL) && self.userTappedOnce {
+        self.makeDependingRequest()
+        //self.massRequest()
       }
     }
   }
@@ -229,10 +254,13 @@ extension ViewController: WKNavigationDelegate {
   }
 
 //  func webView(webView: WKWebView, decidePolicyForNavigationResponse navigationResponse: WKNavigationResponse, decisionHandler: (WKNavigationResponsePolicy) -> Void) {
-//    //
+//    if userTappedOnce && isBase🔓Url(navigationResponse.response.URL) {
+//      decisionHandler(.Cancel)
+//      //makeDependingRequest()
+//    } else {
+//      decisionHandler(.Allow)
+//    }
 //  }
-
-
 
 }
 
