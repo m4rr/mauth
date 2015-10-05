@@ -10,6 +10,8 @@ import UIKit
 import WebKit
 import PureLayout
 
+let didBecomeActiveNotificationName = "applicationDidBecomeActiveNotificationName"
+
 class ViewController: UIViewController {
 
   private var webView: WKWebView!
@@ -144,6 +146,12 @@ class ViewController: UIViewController {
 
     setupWebView()
     tryAuth()
+
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryAuth", name: didBecomeActiveNotificationName, object: nil)
+  }
+
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
   }
 
 }
