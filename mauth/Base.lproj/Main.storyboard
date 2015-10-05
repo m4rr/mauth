@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MB8-DK-0Ra" userLabel="Info View">
-                                <rect key="frame" x="0.0" y="515" width="600" height="85"/>
+                                <rect key="frame" x="0.0" y="514" width="600" height="85.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B7w-VV-FtF">
-                                        <rect key="frame" x="8" y="8" width="584" height="33.5"/>
+                                        <rect key="frame" x="8" y="8" width="584" height="33"/>
                                         <animations/>
                                         <attributedString key="attributedText">
                                             <fragment content="Нажмите ">
@@ -50,7 +50,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyo-Wd-LXY">
                                         <rect key="frame" x="526" y="49" width="66" height="28"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                         <state key="normal" title="Logs..."/>
                                         <connections>
@@ -58,11 +57,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmy-CN-GNd">
-                                        <rect key="frame" x="261" y="49" width="78" height="28"/>
+                                        <rect key="frame" x="253.5" y="49" width="93" height="28"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                        <state key="normal" title="Try Auth"/>
+                                        <state key="normal" title="Retry Auth"/>
                                         <connections>
                                             <action selector="tryAuth" destination="BYZ-38-t0r" eventType="touchUpInside" id="fLH-lf-G4r"/>
                                         </connections>
@@ -70,7 +68,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pta-NQ-kTV">
                                         <rect key="frame" x="8" y="49" width="76" height="28"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                         <state key="normal" title="JS-click"/>
                                         <connections>
@@ -79,7 +76,6 @@
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.25" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="B7w-VV-FtF" firstAttribute="top" secondItem="MB8-DK-0Ra" secondAttribute="top" constant="8" id="0fS-7O-fHs"/>
                                     <constraint firstItem="Hmy-CN-GNd" firstAttribute="top" secondItem="B7w-VV-FtF" secondAttribute="bottom" constant="8" id="BHH-QN-fm6"/>
@@ -96,31 +92,39 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="WtP-nF-06n">
-                                <rect key="frame" x="8" y="495" width="584" height="20"/>
+                                <rect key="frame" x="8" y="490" width="584" height="24"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="0.84418103448275861" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="GPq-KT-5qy"/>
+                                    <constraint firstAttribute="height" constant="24" id="GPq-KT-5qy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rq1-YP-l6T">
+                                <rect key="frame" x="0.0" y="512" width="600" height="2.5"/>
+                                <animations/>
+                            </progressView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="MB8-DK-0Ra" firstAttribute="top" secondItem="WtP-nF-06n" secondAttribute="bottom" id="2vB-7L-0g8"/>
                             <constraint firstItem="MB8-DK-0Ra" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Eo3-xk-1TP"/>
+                            <constraint firstItem="MB8-DK-0Ra" firstAttribute="top" secondItem="Rq1-YP-l6T" secondAttribute="bottom" id="KQH-3k-cdb"/>
                             <constraint firstAttribute="bottom" secondItem="MB8-DK-0Ra" secondAttribute="bottom" id="N53-gy-Ae5"/>
                             <constraint firstItem="WtP-nF-06n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="Xjv-8q-elP"/>
                             <constraint firstAttribute="trailing" secondItem="MB8-DK-0Ra" secondAttribute="trailing" id="dhu-9y-3dt"/>
-                            <constraint firstItem="MB8-DK-0Ra" firstAttribute="top" secondItem="WtP-nF-06n" secondAttribute="bottom" id="e2J-gb-Kua"/>
-                            <constraint firstAttribute="trailing" secondItem="WtP-nF-06n" secondAttribute="trailing" constant="8" id="ed7-aG-pMN"/>
+                            <constraint firstAttribute="trailing" secondItem="Rq1-YP-l6T" secondAttribute="trailing" id="i7X-5B-NX1"/>
+                            <constraint firstAttribute="trailing" secondItem="WtP-nF-06n" secondAttribute="trailing" constant="8" id="nvP-ph-FzX"/>
+                            <constraint firstItem="Rq1-YP-l6T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wbP-w4-dTS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="WtP-nF-06n" id="pCj-Fs-Gt5"/>
                         <outlet property="infoView" destination="MB8-DK-0Ra" id="WiC-is-sXw"/>
+                        <outlet property="progressBar" destination="Rq1-YP-l6T" id="DzU-J0-hrN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

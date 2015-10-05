@@ -15,6 +15,7 @@ class ViewController: UIViewController {
   private var webView: WKWebView!
   @IBOutlet private weak var infoView: UIView!
   @IBOutlet private weak var addressLabel: UILabel!
+  @IBOutlet private weak var progressBar: UIProgressView!
 
   private let baseUrl🔓 = NSURL(string: "http://ya.ru/")!
   private let baseUrl🔐 = NSURL(string: "https://ya.ru/")!
@@ -126,6 +127,7 @@ class ViewController: UIViewController {
     config.requiresUserActionForMediaPlayback = true
 
     webView = WKWebView(frame: view.bounds, configuration: config)
+    webView.addObserver(self, forKeyPath: "estimatedProgress", options: [.Old, .New], context: nil)
     webView.scrollView.addGestureRecognizer(tapGestureRecognizer)
     webView.navigationDelegate = self
     webView.UIDelegate = self
@@ -144,6 +146,27 @@ class ViewController: UIViewController {
     tryAuth()
   }
 
+}
+
+extension ViewController { // KVO
+
+  override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    guard let keyPath = keyPath, change = change else {
+      return;
+    }
+
+    switch keyPath {
+    case "estimatedProgress":
+      if let new = change["new"] as? Float, old = change["old"] as? Float {
+        dispatch_async(dispatch_get_main_queue()) {
+          self.progressBar.setProgress(new, animated: old < new)
+        }
+      }
+    default:
+      ()
+    }
+  }
+  
 }
 
 // MARK: - UIGestureRecognizerDelegate
