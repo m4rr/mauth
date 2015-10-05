@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import PureLayout
 
+let willResignActiveNotificationName = "applicationWillResignActiveNotificationName"
 let didBecomeActiveNotificationName = "applicationDidBecomeActiveNotificationName"
 
 class ViewController: UIViewController {
