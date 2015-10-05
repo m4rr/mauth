@@ -242,7 +242,9 @@ extension ViewController: WKNavigationDelegate {
   func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
     --networkActivity
     logCurrent { () -> Void in
-      if !self.isBaseUrl(webView.URL) && self.userTappedOnce {
+      if !self.userTappedOnce {
+        self.simulateJS(nil)
+      } else if !self.isBaseUrl(webView.URL) && self.userTappedOnce {
         self.makeDependingRequest()
         //self.massRequest()
       }
