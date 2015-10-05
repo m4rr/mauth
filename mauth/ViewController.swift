@@ -122,20 +122,20 @@ class ViewController: UIViewController {
   }
 
   // try test this shit
-  func massRequest() {
-    func s() {
-      usleep(UInt32(0.1 * pow(10, 6)))
-    }
-
-    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-    dispatch_async(queue) { () -> Void in
-      self.webView.loadRequest(self.request🔐)
-      s()
-      self.webView.loadRequest(self.request🔓)
-      s()
-      self.webView.loadRequest(self.request🔐)
-    }
-  }
+//  func massRequest() {
+//    func s() {
+//      usleep(UInt32(0.1 * pow(10, 6)))
+//    }
+//
+//    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+//    dispatch_async(queue) { () -> Void in
+//      self.webView.loadRequest(self.request🔐)
+//      s()
+//      self.webView.loadRequest(self.request🔓)
+//      s()
+//      self.webView.loadRequest(self.request🔐)
+//    }
+//  }
 
   func logCurrent(completion: () -> Void) {
     webView.evaluateJavaScript("document.getElementsByTagName('html')[0].outerHTML") { result, error in
