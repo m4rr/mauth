@@ -161,10 +161,15 @@ class ViewController: UIViewController {
 
   func setupWebView() {
     let config = WKWebViewConfiguration()
-    config.allowsAirPlayForMediaPlayback = false
     config.allowsInlineMediaPlayback = false
-    config.allowsPictureInPictureMediaPlayback = false
-    config.requiresUserActionForMediaPlayback = true
+
+    if #available(iOS 9.0, *) {
+      config.allowsAirPlayForMediaPlayback = false
+      config.allowsPictureInPictureMediaPlayback = false
+      config.requiresUserActionForMediaPlayback = true
+    } else {
+        // Fallback on earlier versions
+    }
 
     webView = WKWebView(frame: view.bounds, configuration: config)
     webView.addObserver(self, forKeyPath: "estimatedProgress", options: [.Old, .New], context: nil)
