@@ -11,6 +11,8 @@ Pull requests are welcome!
 #### Facebook
 * https://www.facebook.com/samat.galimov/posts/10154286155045760
 * https://www.facebook.com/ksavenkov/posts/1055035774515338
+* https://www.facebook.com/afisha/posts/10153677343729241
+* https://www.facebook.com/YodMedia/photos/a.534328250025904.1073741828.534316146693781/761776270614433/?type=3
 
 #### VK
 * https://vk.com/wall142146455_5450
@@ -25,6 +27,8 @@ Pull requests are welcome!
 #### Press, actually
 * https://tjournal.ru/c/15311-polzovatel-vipustil-specialnoe-prilozhenie-oblegchaushee-vhod-v-wifi-moskovskogo-metropolitena
 * http://www.gazeta.ru/tech/news/2015/10/06/n_7741163.shtml
+* http://gorod.afisha.ru/news/13010/
+* http://yodnews.ru/news/2015/10/07/mauth
 
 # Licence
 
