@@ -29,6 +29,7 @@ Pull requests are welcome!
 * http://www.gazeta.ru/tech/news/2015/10/06/n_7741163.shtml
 * http://gorod.afisha.ru/news/13010/
 * http://yodnews.ru/news/2015/10/07/mauth
+* https://www.iguides.ru/main/apps/ios/v_app_store_poyavitsya_prilozhenie_dlya_avtomaticheskoy_avtorizatsii_v_seti_wi_fi_moskovskogo_metro/
 
 # Licence
 
