@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeFakeFrame", name: willResignActiveNotificationName, object: nil)
     NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryAuth", name: didBecomeActiveNotificationName, object: nil)
 
-   let _ = try? AVAudioSession.sharedInstance().setActive(false)
+    let _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
   }
 
   deinit {
@@ -248,7 +248,7 @@ extension ViewController: WKNavigationDelegate {
     --networkActivity
     logCurrent { () -> Void in
       if !self.userTappedOnce {
-        self.simulateJS(nil)
+        self.performSelector("simulateJS:", withObject: nil, afterDelay: 0.5)
       } else if !self.isBaseUrl(webView.URL) && self.userTappedOnce {
         self.makeDependingRequest()
         //self.massRequest()
