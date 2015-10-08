@@ -249,7 +249,7 @@ extension ViewController: WKNavigationDelegate {
     --networkActivity
     logCurrent { () -> Void in
       if !self.userTappedOnce {
-        self.performSelector("simulateJS:", withObject: nil, afterDelay: 0.5)
+        self.performSelector("simulateJS:", withObject: nil, afterDelay: 1)
       } else if !self.isBaseUrl(webView.URL) && self.userTappedOnce {
         self.makeDependingRequest()
         //self.massRequest()
