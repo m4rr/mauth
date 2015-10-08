@@ -172,6 +172,9 @@ class ViewController: UIViewController {
       config.mediaPlaybackAllowsAirPlay = false
     }
 
+//    let userScript = WKUserScript(source: "var x = document.getElementsByClassName('audio'); var i; for (i = 0; i < x.length; i++) { x[i].outerHTML = ''; }", injectionTime: .AtDocumentEnd, forMainFrameOnly: false)
+//    config.userContentController.addUserScript(userScript)
+
     webView = WKWebView(frame: view.bounds, configuration: config)
     webView.addObserver(self, forKeyPath: "estimatedProgress", options: [.Old, .New], context: nil)
     webView.scrollView.addGestureRecognizer(tapGestureRecognizer)
