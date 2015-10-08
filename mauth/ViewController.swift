@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import AVFoundation
 import PureLayout
+import PKHUD
 
 let willResignActiveNotificationName = "applicationWillResignActiveNotificationName"
 let didBecomeActiveNotificationName = "applicationDidBecomeActiveNotificationName"
@@ -146,6 +147,27 @@ class ViewController: UIViewController {
 
       completion()
     }
+  }
+
+  func startAuth() {
+//    if PKHUD.sharedHUD.isVisible {
+//      PKHUD.sharedHUD.hide()
+//    }
+    PKHUD.sharedHUD.contentView = PKHUDProgressView()
+    PKHUD.sharedHUD.dimsBackground = false
+    PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
+    PKHUD.sharedHUD.show()
+  }
+
+  func doneAuth() {
+//    if PKHUD.sharedHUD.isVisible {
+//      PKHUD.sharedHUD.hide()
+//    }
+    PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+    PKHUD.sharedHUD.dimsBackground = false
+    PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
+    PKHUD.sharedHUD.show()
+    PKHUD.sharedHUD.hide(afterDelay: 2.0)
   }
 
   // MARK: - Setup
