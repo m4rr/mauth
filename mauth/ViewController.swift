@@ -74,7 +74,7 @@ class ViewController: UIViewController {
 
   @IBAction func tryAuth() {
     userTappedOnce = false
-    makeDependingRequest()
+    makeDependingRequest(currentUrl: nil)
   }
 
   @IBAction func try1111() {
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
 
   @IBAction func simulateJS(sender: UIButton?) {
     let aClick = [
-      //"var a1 = document.querySelector('a[href^=\"//\"]'); a1.click();",
+      "var a1 = document.querySelector('a[href^=\"//\"]'); a1.click();",
       "var a2 = document.querySelector('a[href^=\"https://ads.adfox\"]'); a2.click();",
       "var a3 = document.querySelector('#content > a'); a3.click();",
       "var a4 = document.querySelector('#content > a'); a4[0].click();",
@@ -102,8 +102,20 @@ class ViewController: UIViewController {
 
   // MARK: - Helpers
 
-  func makeDependingRequest() {
-    webView.loadRequest(userTappedOnce ? request🔐 : request🔓)
+  func makeDependingRequest(currentUrl currentUrl: NSURL?) {
+
+    let isBaseAndSecure = self.isSecureBaseUrl(currentUrl)
+
+    switch isBaseAndSecure {
+    case (true, true):
+      doneAuth()
+    case (true, false):
+      webView.loadRequest(request🔐)
+    default:
+      startAuth()
+      webView.loadRequest(request🔓)
+    }
+
     if userTappedOnce {
       loadFakeUnsecureRequest()
     }
@@ -202,6 +214,8 @@ class ViewController: UIViewController {
     webView.scrollView.addGestureRecognizer(tapGestureRecognizer)
     webView.navigationDelegate = self
     webView.UIDelegate = self
+    
+    webView.alpha = 0.3
 
     view.insertSubview(webView, belowSubview: infoView)
 
@@ -249,9 +263,13 @@ extension ViewController: UIGestureRecognizerDelegate {
 
 extension ViewController: WKNavigationDelegate {
 
-  func isBaseUrl(url: NSURL?) -> Bool {
-    return url?.host == baseUrl🔓.host // && url?.scheme == baseUrl🔓.scheme
+  func isSecureBaseUrl(url: NSURL?) -> (base: Bool, secure: Bool) {
+    return (url?.host == baseUrl🔐.host, url?.scheme == baseUrl🔐.scheme)
   }
+
+//  func isBaseSecureUrl(url: NSURL?) -> Bool {
+//    return url?.host == baseUrl🔓.host && url?.scheme == baseUrl🔐.scheme
+//  }
 
   func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
     ++networkActivity
@@ -275,10 +293,10 @@ extension ViewController: WKNavigationDelegate {
     logCurrent { () -> Void in
       if !self.userTappedOnce {
         self.performSelector("simulateJS:", withObject: nil, afterDelay: 1)
-      } else if !self.isBaseUrl(webView.URL) && self.userTappedOnce {
-        self.makeDependingRequest()
-        //self.massRequest()
+      } else {
+        self.makeDependingRequest(currentUrl: webView.URL)
       }
+
     }
   }
 
