@@ -168,7 +168,8 @@ class ViewController: UIViewController {
       config.allowsPictureInPictureMediaPlayback = false
       config.requiresUserActionForMediaPlayback = true
     } else {
-        // Fallback on earlier versions
+      config.mediaPlaybackRequiresUserAction = true
+      config.mediaPlaybackAllowsAirPlay = false
     }
 
     webView = WKWebView(frame: view.bounds, configuration: config)
