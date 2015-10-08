@@ -162,9 +162,6 @@ class ViewController: UIViewController {
   }
 
   func startAuth() {
-//    if PKHUD.sharedHUD.isVisible {
-//      PKHUD.sharedHUD.hide()
-//    }
     PKHUD.sharedHUD.contentView = PKHUDProgressView()
     PKHUD.sharedHUD.dimsBackground = false
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
@@ -172,9 +169,6 @@ class ViewController: UIViewController {
   }
 
   func doneAuth() {
-//    if PKHUD.sharedHUD.isVisible {
-//      PKHUD.sharedHUD.hide()
-//    }
     PKHUD.sharedHUD.contentView = PKHUDSuccessView()
     PKHUD.sharedHUD.dimsBackground = false
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
@@ -214,7 +208,7 @@ class ViewController: UIViewController {
     webView.scrollView.addGestureRecognizer(tapGestureRecognizer)
     webView.navigationDelegate = self
     webView.UIDelegate = self
-    
+
     webView.alpha = 0.3
 
     view.insertSubview(webView, belowSubview: infoView)
