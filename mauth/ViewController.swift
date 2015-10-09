@@ -188,7 +188,6 @@ class ViewController: UIViewController {
   }
 
   func startAuthHUD() {
-    PKHUD.sharedHUD.hide()
     PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Trying...")
     PKHUD.sharedHUD.dimsBackground = true
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
@@ -196,7 +195,6 @@ class ViewController: UIViewController {
   }
 
   func doneAuthHUD() {
-    PKHUD.sharedHUD.hide()
     PKHUD.sharedHUD.contentView = PKHUDSuccessView()
     PKHUD.sharedHUD.dimsBackground = false
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
