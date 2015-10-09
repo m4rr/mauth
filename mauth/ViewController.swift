@@ -28,6 +28,8 @@ class ViewController: UIViewController {
   private let baseUrl🔐 = NSURL(string: "https://ya.ru/")!
   private let url1111 = NSURL(string: "http://1.1.1.1/")!
 
+  private var loginCount = 0
+
   private lazy var request🔓: NSURLRequest = NSURLRequest(URL: self.baseUrl🔓, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
   private lazy var request🔐: NSURLRequest = NSURLRequest(URL: self.baseUrl🔐, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
   private var networkActivity = 0 {
@@ -60,21 +62,32 @@ class ViewController: UIViewController {
     setupWebView()
     tryAuth()
 
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeFakeFrame", name: willResignActiveNotificationName, object: nil)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryAuth", name: didBecomeActiveNotificationName, object: nil)
+    subscribeNotifications()
 
     let _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
   }
 
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+
+    subscribeNotifications()
+  }
+
+  override func viewDidDisappear(animated: Bool) {
+    super.viewDidDisappear(animated)
+
+    unsubscribeNotifications()
+  }
+
   deinit {
-    NSNotificationCenter.defaultCenter().removeObserver(self)
+    unsubscribeNotifications()
   }
 
   // MARK: - UI
 
   @IBAction func tryAuth() {
     userTappedOnce = false
-    makeDependingRequest(currentUrl: nil)
+    makeDependingRequest(nil)
   }
 
   @IBAction func try1111() {
@@ -84,35 +97,46 @@ class ViewController: UIViewController {
 
   @IBAction func simulateJS(sender: UIButton?) {
     let aClick = [
-      "var a1 = document.querySelector('a[href^=\"//\"]'); a1.click();",
-      "var a2 = document.querySelector('a[href^=\"https://ads.adfox\"]'); a2.click();",
-      "var a3 = document.querySelector('#content > a'); a3.click();",
-      "var a4 = document.querySelector('#content > a'); a4[0].click();",
+      "var a2 = document.querySelector(\"a[href^='https://ads.adfox']\"); a2.click();",
+      "var a3 = document.querySelector(\"#content > a\"); a3.click();",
+      "var a4 = document.querySelector(\"#content > a\"); a4[0].click();",
+      "var a1 = document.querySelector(\"a[href^='//']\"); a1.click();",
     ]
 
-    webView.evaluateJavaScript(aClick.reduce("", combine: +)) { result, error in
-      //if error == nil {
+    aClick.forEach { query in
+      webView.evaluateJavaScript(query) { result, error in
+        //if error == nil {
         self.userTappedOnce = true
 
         let statusTitle = "js ok" + (result == nil ? "" : " result")
         sender?.setTitle(statusTitle, forState: .Normal)
-      //}
+        //}
+      }
     }
   }
 
   // MARK: - Helpers
 
-  func makeDependingRequest(currentUrl currentUrl: NSURL?) {
+  func subscribeNotifications() {
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeFakeFrame", name: willResignActiveNotificationName, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "tryAuth", name: didBecomeActiveNotificationName, object: nil)
+  }
+
+  func unsubscribeNotifications() {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+
+  func makeDependingRequest(currentUrl: NSURL?) {
 
     let isBaseAndSecure = self.isSecureBaseUrl(currentUrl)
 
     switch isBaseAndSecure {
     case (true, true):
-      doneAuth()
+      doneAuthHUD()
     case (true, false):
       webView.loadRequest(request🔐)
     default:
-      startAuth()
+      startAuthHUD()
       webView.loadRequest(request🔓)
     }
 
@@ -163,14 +187,14 @@ class ViewController: UIViewController {
     }
   }
 
-  func startAuth() {
-    PKHUD.sharedHUD.contentView = PKHUDProgressView()
-    PKHUD.sharedHUD.dimsBackground = false
+  func startAuthHUD() {
+    PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Trying...")
+    PKHUD.sharedHUD.dimsBackground = true
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
     PKHUD.sharedHUD.show()
   }
 
-  func doneAuth() {
+  func doneAuthHUD() {
     PKHUD.sharedHUD.contentView = PKHUDSuccessView()
     PKHUD.sharedHUD.dimsBackground = false
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
@@ -287,10 +311,11 @@ extension ViewController: WKNavigationDelegate {
   func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
     --networkActivity
     logCurrent { () -> Void in
-      if !self.userTappedOnce {
-        self.performSelector("simulateJS:", withObject: nil, afterDelay: 1)
+      let maybeLogin = webView.URL?.host?.hasPrefix("login") ?? false
+      if !self.userTappedOnce || maybeLogin {
+        self.performSelector("simulateJS:", withObject: nil, afterDelay: 2)
       } else {
-        self.makeDependingRequest(currentUrl: webView.URL)
+        self.performSelector("makeDependingRequest:", withObject: webView.URL, afterDelay: 1)
       }
 
     }
