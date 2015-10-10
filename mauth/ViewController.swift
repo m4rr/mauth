@@ -28,7 +28,7 @@ class ViewController: UIViewController {
   private let baseUrl🔐 = NSURL(string: "https://ya.ru/")!
   private let url1111 = NSURL(string: "http://1.1.1.1/")!
 
-  private var loginCount = 0
+  private var maybeCount = 0
 
   private lazy var request🔓: NSURLRequest = NSURLRequest(URL: self.baseUrl🔓, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
   private lazy var request🔐: NSURLRequest = NSURLRequest(URL: self.baseUrl🔐, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 1)
@@ -313,11 +313,17 @@ extension ViewController: WKNavigationDelegate {
     logCurrent { () -> Void in
       let maybeLogin = webView.URL?.host?.hasPrefix("login") ?? false
       if !self.userTappedOnce || maybeLogin {
+        if maybeLogin {
+          if ++self.maybeCount > 1 {
+            self.performSelector("makeDependingRequest:", withObject: webView.URL, afterDelay: 1)
+
+            return;
+          }
+        }
         self.performSelector("simulateJS:", withObject: nil, afterDelay: 2)
       } else {
         self.performSelector("makeDependingRequest:", withObject: webView.URL, afterDelay: 1)
       }
-
     }
   }
 
