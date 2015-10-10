@@ -315,7 +315,8 @@ extension ViewController: WKNavigationDelegate {
     --networkActivity
     logCurrent { () -> Void in
       let maybeLogin = webView.URL?.host?.hasPrefix("login") ?? false
-      if !self.userTappedOnce || maybeLogin {
+      let isYandex = webView.URL?.host == self.baseUrl🔓.host
+      if !isYandex && (!self.userTappedOnce || maybeLogin) {
         if maybeLogin {
           if ++self.maybeCount > 1 {
             self.performSelector("makeDependingRequest:", withObject: webView.URL, afterDelay: 1)
