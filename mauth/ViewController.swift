@@ -188,6 +188,9 @@ class ViewController: UIViewController {
   }
 
   func startAuthHUD() {
+    if PKHUD.sharedHUD.isVisible {
+      return;
+    }
     PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Trying...")
     PKHUD.sharedHUD.dimsBackground = true
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
