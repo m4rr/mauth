@@ -16,7 +16,7 @@
 		03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */; };
 		03581C9A1BAED21900D5D95F /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C991BAED21900D5D95F /* mauthTests.swift */; };
 		03581CA51BAED21900D5D95F /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581CA41BAED21900D5D95F /* mauthUITests.swift */; };
-		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,7 +236,7 @@
 				TargetAttributes = {
 					03581C801BAED21900D5D95F = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = Y5P7AX9UM2;
+						DevelopmentTeam = 47B3VSZ2Q5;
 					};
 					03581C941BAED21900D5D95F = {
 						CreatedOnToolsVersion = 7.0;
@@ -507,7 +507,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = mauth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauth;
+				PRODUCT_BUNDLE_IDENTIFIER = DV.Rollerschool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -518,10 +518,10 @@
 			baseConfigurationReference = 7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = mauth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauth;
+				PRODUCT_BUNDLE_IDENTIFIER = DV.Rollerschool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
