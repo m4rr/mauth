@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   private lazy var enteredBackground: NSDate = NSDate()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    let session = AVAudioSession.sharedInstance();
+    
+    let _ = try? session.setCategory(AVAudioSessionCategoryAmbient);
+    let _ = try? session.setActive(true);
+    
     return true
   }
 
