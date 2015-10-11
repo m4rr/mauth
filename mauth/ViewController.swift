@@ -73,6 +73,12 @@ class ViewController: UIViewController {
     subscribeNotifications()
   }
 
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+
+    PKHUD.sharedHUD.hide(animated: true)
+  }
+
   override func viewDidDisappear(animated: Bool) {
     super.viewDidDisappear(animated)
 
