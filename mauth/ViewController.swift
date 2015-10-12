@@ -325,14 +325,21 @@ extension ViewController: WKNavigationDelegate {
       if !isYandex && (!self.userTappedOnce || maybeLogin) {
         if maybeLogin {
           if ++self.maybeCount > 1 {
-            self.performSelector("makeDependingRequest:", withObject: webView.URL, afterDelay: 1)
+            dispatch_after_delay_on_main_queue(1) {
+              self.makeDependingRequest(webView.URL)
+            }
 
             return;
           }
         }
-        self.performSelector("simulateJS:", withObject: nil, afterDelay: 2)
+
+        dispatch_after_delay_on_main_queue(2) {
+          self.simulateJS(nil)
+        }
       } else {
-        self.performSelector("makeDependingRequest:", withObject: webView.URL, afterDelay: 1)
+        dispatch_after_delay_on_main_queue(1) {
+          self.makeDependingRequest(webView.URL)
+        }
       }
     }
   }
