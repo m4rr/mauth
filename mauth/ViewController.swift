@@ -103,20 +103,30 @@ class ViewController: UIViewController {
 
   @IBAction func simulateJS(sender: UIButton?) {
     let aClick = [
-      "var a2 = document.querySelector(\"a[href^='https://ads.adfox']\"); a2.click();",
-      "var a3 = document.querySelector(\"#content > a\"); a3.click();",
-      "var a4 = document.querySelector(\"#content > a\"); a4[0].click();",
-      "var a1 = document.querySelector(\"a[href^='//']\"); a1.click();",
+//      "var a2 = document.querySelector(\"a[href^='https://ads.adfox']\"); a2.click();",
+//      "var a3 = document.querySelector(\"#content > a\"); a3.click();",
+//      "var a4 = document.querySelector(\"#content > a\"); a4[0].click();",
+//      "document.querySelector(\"a[href^='//']\").click();",
+      "document.querySelector('#disableAd > a').click();",
+      "document.querySelector('a.b-header__button is-on-left-side').click();",
     ]
+
+    var errCount = 0
 
     aClick.forEach { query in
       webView.evaluateJavaScript(query) { result, error in
-        //if error == nil {
         self.userTappedOnce = true
 
         let statusTitle = "js ok" + (result == nil ? "" : " result")
         sender?.setTitle(statusTitle, forState: .Normal)
-        //}
+
+        if let error = error where error.code == WKErrorCode.JavaScriptExceptionOccurred.rawValue {
+          if ++errCount == 1 {
+            dispatch_after_delay_on_main_queue(2) {
+              self.makeDependingRequest(self.webView.URL)
+            }
+          }
+        }
       }
     }
   }
@@ -322,7 +332,7 @@ extension ViewController: WKNavigationDelegate {
     logCurrent { () -> Void in
       let maybeLogin = webView.URL?.host?.hasPrefix("login") ?? false
       let isYandex = webView.URL?.host == self.baseUrl🔓.host
-      if !isYandex && (!self.userTappedOnce || maybeLogin) {
+      if (!self.userTappedOnce || maybeLogin) {
         if maybeLogin {
           if ++self.maybeCount > 1 {
             dispatch_after_delay_on_main_queue(1) {
