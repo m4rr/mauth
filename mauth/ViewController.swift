@@ -23,7 +23,7 @@ class ViewController: UIViewController {
   @IBOutlet private weak var addressLabel: UILabel!
   @IBOutlet private weak var progressBar: UIProgressView!
 
-  private let baseUrl🔓 = NSURL(string: "http://ya.ru")!
+  private let baseUrl🔓 = NSURL(string: "http://ya.ru/")!
   private let baseUrl🔐 = NSURL(string: "https://ya.ru/")!
   private let url1111 = NSURL(string: "http://1.1.1.1/")!
 
