@@ -233,6 +233,7 @@ class ViewController: UIViewController {
   func setupWebView() {
     let config = WKWebViewConfiguration()
     config.allowsInlineMediaPlayback = false
+    config.suppressesIncrementalRendering = true
 
 //    if #available(iOS 9.0, *) {
       config.allowsAirPlayForMediaPlayback = false
