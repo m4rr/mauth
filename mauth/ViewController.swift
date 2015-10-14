@@ -104,6 +104,7 @@ class ViewController: UIViewController {
 //      "var a3 = document.querySelector(\"#content > a\"); a3.click();",
 //      "var a4 = document.querySelector(\"#content > a\"); a4[0].click();",
 //      "document.querySelector(\"a[href^='//']\").click();",
+      "document.querySelector('a.disableAd').click();",
       "document.querySelector('#disableAd > a').click();",
       "document.querySelector('a.b-header__button is-on-left-side').click();",
     ]
