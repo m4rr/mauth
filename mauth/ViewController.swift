@@ -233,7 +233,7 @@ class ViewController: UIViewController {
       return;
     }
     PKHUD.sharedHUD.contentView = PKHUDProgressView() // PKHUDTextView(text: "В процессе…")
-    PKHUD.sharedHUD.dimsBackground = true
+    PKHUD.sharedHUD.dimsBackground = false
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
     PKHUD.sharedHUD.show()
   }
