@@ -280,7 +280,7 @@ class ViewController: UIViewController {
     webView.navigationDelegate = self
     webView.UIDelegate = self
 
-    webView.alpha = 0.3
+    webView.alpha = 0.1
 
     view.insertSubview(webView, belowSubview: infoView)
 
