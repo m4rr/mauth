@@ -59,15 +59,14 @@ class ViewController: UIViewController {
     super.viewDidLoad()
 
     setupWebView()
-    tryAuth()
-
-    subscribeNotifications()
   }
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
     subscribeNotifications()
+
+    tryAuth()
   }
 
   override func viewWillDisappear(animated: Bool) {
@@ -205,7 +204,7 @@ class ViewController: UIViewController {
     if PKHUD.sharedHUD.isVisible {
       return;
     }
-    PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Trying...")
+    PKHUD.sharedHUD.contentView = PKHUDTextView(text: "В процессе…")
     PKHUD.sharedHUD.dimsBackground = true
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
     PKHUD.sharedHUD.show()
