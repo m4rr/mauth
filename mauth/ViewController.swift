@@ -232,7 +232,7 @@ class ViewController: UIViewController {
     if PKHUD.sharedHUD.isVisible {
       return;
     }
-    PKHUD.sharedHUD.contentView = PKHUDTextView(text: "В процессе…")
+    PKHUD.sharedHUD.contentView = PKHUDProgressView() // PKHUDTextView(text: "В процессе…")
     PKHUD.sharedHUD.dimsBackground = true
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
     PKHUD.sharedHUD.show()
