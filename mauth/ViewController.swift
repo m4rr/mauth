@@ -97,6 +97,34 @@ class ViewController: UIViewController {
     webView.loadRequest(NSURLRequest(URL: url1111))
   }
 
+  func openURL(url: NSURL?) {
+    guard let url = url else {
+      return;
+    }
+
+    let app = UIApplication.sharedApplication()
+//    if app.canOpenURL(url) {
+      app.openURL(url)
+//    }
+  }
+
+  @IBAction func openTwitter(sender: AnyObject) {
+    openURL(NSURL(string: "twitter://"))
+  }
+  
+  @IBAction func openFacebook(sender: AnyObject) {
+    openURL(NSURL(string: "fb://"))
+  }
+  
+  @IBAction func openInstagram(sender: AnyObject) {
+    openURL(NSURL(string: "instagram://"))
+  }
+  
+  @IBAction func openSafari(sender: AnyObject) {
+    openURL(NSURL(string: "https://m4rr.ru"))
+  }
+  
+
   @IBAction func simulateJS(sender: UIButton?) {
     let aClick = [
 //      "var a2 = document.querySelector(\"a[href^='https://ads.adfox']\"); a2.click();",

@@ -57,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmy-CN-GNd">
-                                        <rect key="frame" x="253.5" y="49" width="93" height="28"/>
+                                        <rect key="frame" x="253" y="49" width="93" height="28"/>
                                         <animations/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                         <state key="normal" title="Retry Auth"/>
@@ -106,11 +106,69 @@
                                 <rect key="frame" x="0.0" y="512" width="600" height="2.5"/>
                                 <animations/>
                             </progressView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByS-iO-ebd">
+                                <rect key="frame" x="235" y="350" width="130" height="140"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j3o-lc-y6K">
+                                        <rect key="frame" x="10" y="10" width="110" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYY-Jk-BAz">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Open Twitter"/>
+                                                <connections>
+                                                    <action selector="openTwitter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dAB-ze-ewN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJZ-MR-J40">
+                                                <rect key="frame" x="0.0" y="30" width="110" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Open Facebook"/>
+                                                <connections>
+                                                    <action selector="openFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hKV-TY-2j2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKy-Ra-DbP">
+                                                <rect key="frame" x="0.0" y="60" width="110" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Open Instagram"/>
+                                                <connections>
+                                                    <action selector="openInstagram:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yuo-Lh-Vv2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-q2-S7J">
+                                                <rect key="frame" x="0.0" y="90" width="110" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Open Safari"/>
+                                                <connections>
+                                                    <action selector="openSafari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ay9-y1-dyL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="j3o-lc-y6K" secondAttribute="trailing" constant="10" id="1ZK-DC-SNc"/>
+                                    <constraint firstAttribute="bottom" secondItem="j3o-lc-y6K" secondAttribute="bottom" constant="10" id="Rm7-BK-nR1"/>
+                                    <constraint firstItem="j3o-lc-y6K" firstAttribute="top" secondItem="ByS-iO-ebd" secondAttribute="top" constant="10" id="fnS-69-ZJm"/>
+                                    <constraint firstItem="j3o-lc-y6K" firstAttribute="leading" secondItem="ByS-iO-ebd" secondAttribute="leading" constant="10" id="sS1-uI-yK4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WtP-nF-06n" firstAttribute="top" secondItem="ByS-iO-ebd" secondAttribute="bottom" id="1gX-Xw-D1k"/>
                             <constraint firstItem="MB8-DK-0Ra" firstAttribute="top" secondItem="WtP-nF-06n" secondAttribute="bottom" id="2vB-7L-0g8"/>
+                            <constraint firstItem="ByS-iO-ebd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Rs-s6-VNi"/>
                             <constraint firstItem="MB8-DK-0Ra" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Eo3-xk-1TP"/>
                             <constraint firstItem="MB8-DK-0Ra" firstAttribute="top" secondItem="Rq1-YP-l6T" secondAttribute="bottom" id="KQH-3k-cdb"/>
                             <constraint firstAttribute="bottom" secondItem="MB8-DK-0Ra" secondAttribute="bottom" id="N53-gy-Ae5"/>
