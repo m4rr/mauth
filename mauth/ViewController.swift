@@ -127,9 +127,6 @@ class ViewController: UIViewController {
 
   @IBAction func simulateJS(sender: UIButton?) {
     let aClick = [
-//      "var a2 = document.querySelector(\"a[href^='https://ads.adfox']\"); a2.click();",
-//      "var a3 = document.querySelector(\"#content > a\"); a3.click();",
-//      "var a4 = document.querySelector(\"#content > a\"); a4[0].click();",
 //      "document.querySelector(\"a[href^='//']\").click();",
       "document.querySelector('a.disableAd').click();",
       "document.querySelector('#disableAd > a').click();",
