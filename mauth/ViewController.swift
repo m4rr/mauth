@@ -89,6 +89,7 @@ class ViewController: UIViewController {
 
   @IBAction func tryAuth() {
     userTappedOnce = false
+    maybeCount = 0
     makeDependingRequest(nil)
   }
 
