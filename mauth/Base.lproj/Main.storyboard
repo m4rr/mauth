@@ -107,10 +107,10 @@
                                 <animations/>
                             </progressView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByS-iO-ebd">
-                                <rect key="frame" x="235" y="350" width="130" height="140"/>
+                                <rect key="frame" x="235" y="320" width="130" height="170"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j3o-lc-y6K">
-                                        <rect key="frame" x="10" y="10" width="110" height="120"/>
+                                        <rect key="frame" x="10" y="10" width="110" height="150"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYY-Jk-BAz">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
@@ -136,8 +136,16 @@
                                                     <action selector="openInstagram:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yuo-Lh-Vv2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-q2-S7J">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-r3-JZK">
                                                 <rect key="frame" x="0.0" y="90" width="110" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Open VK"/>
+                                                <connections>
+                                                    <action selector="openVk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tPO-Dw-E9a"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-q2-S7J">
+                                                <rect key="frame" x="0.0" y="120" width="110" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Open Safari"/>
                                                 <connections>

@@ -121,10 +121,13 @@ class ViewController: UIViewController {
     openURL(NSURL(string: "instagram://"))
   }
   
+  @IBAction func openVk(sender: AnyObject) {
+    openURL(NSURL(string: "vk://"))
+  }
+
   @IBAction func openSafari(sender: AnyObject) {
     openURL(NSURL(string: "https://m4rr.ru"))
   }
-  
 
   @IBAction func simulateJS(sender: UIButton?) {
     let aClick = [
