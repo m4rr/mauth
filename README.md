@@ -6,7 +6,7 @@ Try to automatically authorization in metro wi-fi.
 
 Pull requests are welcome!
 
-# Press
+# Press about us
 
 #### Facebook
 * https://www.facebook.com/samat.galimov/posts/10154286155045760
