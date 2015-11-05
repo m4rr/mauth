@@ -193,7 +193,7 @@ class ViewController: UIViewController {
     }
     let q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
     dispatch_async(q) { () -> Void in
-      self.fakeWebView?.loadRequest(request🔓)
+      self.fakeWebView?.loadRequest(self.request🔓)
     }
   }
 
@@ -263,14 +263,14 @@ class ViewController: UIViewController {
     config.allowsInlineMediaPlayback = false
     config.suppressesIncrementalRendering = true
 
-//    if #available(iOS 9.0, *) {
+    if #available(iOS 9.0, *) {
       config.allowsAirPlayForMediaPlayback = false
       config.allowsPictureInPictureMediaPlayback = false
       config.requiresUserActionForMediaPlayback = true
-//    } else {
-//      config.mediaPlaybackRequiresUserAction = true
-//      config.mediaPlaybackAllowsAirPlay = false
-//    }
+    } else {
+      config.mediaPlaybackRequiresUserAction = true
+      config.mediaPlaybackAllowsAirPlay = false
+    }
 
 //    let userScript = WKUserScript(source: "var x = document.getElementsByClassName('audio'); var i; for (i = 0; i < x.length; i++) { x[i].outerHTML = ''; }", injectionTime: .AtDocumentEnd, forMainFrameOnly: false)
 //    config.userContentController.addUserScript(userScript)

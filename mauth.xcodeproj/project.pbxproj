@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; settings = {ASSET_TAGS = (); }; };
+		0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */; };
+		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
 		03581C871BAED21900D5D95F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C861BAED21900D5D95F /* ViewController.swift */; };
 		03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C881BAED21900D5D95F /* Main.storyboard */; };
@@ -16,9 +16,9 @@
 		03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */; };
 		03581C9A1BAED21900D5D95F /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C991BAED21900D5D95F /* mauthTests.swift */; };
 		03581CA51BAED21900D5D95F /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581CA41BAED21900D5D95F /* mauthUITests.swift */; };
-		03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Car.swift */; settings = {ASSET_TAGS = (); }; };
-		03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD400D1BCAEA8C0040B866 /* Sugar.swift */; settings = {ASSET_TAGS = (); }; };
-		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Car.swift */; };
+		03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD400D1BCAEA8C0040B866 /* Sugar.swift */; };
+		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -463,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -501,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
