@@ -358,7 +358,7 @@ extension ViewController: WKNavigationDelegate {
     --networkActivity
     logCurrent { () -> Void in
       let maybeLogin = webView.URL?.host?.hasPrefix("login") ?? false
-      let isYandex = webView.URL?.host == self.baseUrl🔓.host
+      //let isYandex = webView.URL?.host == self.baseUrl🔓.host
       if (!self.userTappedOnce || maybeLogin) {
         if maybeLogin {
           if ++self.maybeCount > 1 {
