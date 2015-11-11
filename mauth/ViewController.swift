@@ -370,7 +370,7 @@ extension ViewController: WKNavigationDelegate {
           }
         }
 
-        dispatch_after_delay_on_main_queue(2) {
+        dispatch_after_delay_on_main_queue(4) {
           self.simulateJS(nil)
         }
       } else {
