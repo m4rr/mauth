@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C40a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -108,88 +108,117 @@
                                 <animations/>
                             </progressView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByS-iO-ebd">
-                                <rect key="frame" x="235" y="340" width="130" height="150"/>
+                                <rect key="frame" x="176" y="434" width="248" height="56"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYY-Jk-BAz">
-                                        <rect key="frame" x="8" y="0.0" width="114" height="30"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYY-Jk-BAz">
+                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="o4v-tH-rQq"/>
+                                            <constraint firstAttribute="height" constant="40" id="65B-To-QWP"/>
+                                            <constraint firstAttribute="width" constant="40" id="OUF-Su-SxT"/>
                                         </constraints>
-                                        <state key="normal" title="Open Twitter"/>
+                                        <state key="normal" image="social_twitter"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="openTwitter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dAB-ze-ewN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJZ-MR-J40">
-                                        <rect key="frame" x="8" y="30" width="114" height="30"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKy-Ra-DbP">
+                                        <rect key="frame" x="152" y="8" width="40" height="40"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="I8i-Aq-CS3"/>
+                                            <constraint firstAttribute="height" constant="40" id="B5S-Nq-5Px"/>
+                                            <constraint firstAttribute="width" constant="40" id="IYH-aY-wLH"/>
                                         </constraints>
-                                        <state key="normal" title="Open Facebook"/>
-                                        <connections>
-                                            <action selector="openFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hKV-TY-2j2"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKy-Ra-DbP">
-                                        <rect key="frame" x="8" y="60" width="114" height="30"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="g1J-C4-8b1"/>
-                                        </constraints>
-                                        <state key="normal" title="Open Instagram"/>
+                                        <state key="normal" image="social_instagram"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="openInstagram:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yuo-Lh-Vv2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-q2-S7J">
-                                        <rect key="frame" x="8" y="120" width="114" height="30"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJZ-MR-J40">
+                                        <rect key="frame" x="56" y="8" width="40" height="40"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="kBZ-zc-0a8"/>
+                                            <constraint firstAttribute="width" constant="40" id="SI1-im-WWo"/>
+                                            <constraint firstAttribute="height" constant="40" id="geq-BY-vQt"/>
                                         </constraints>
-                                        <state key="normal" title="Open Safari"/>
+                                        <state key="normal" image="social_fb"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="openSafari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ay9-y1-dyL"/>
+                                            <action selector="openFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hKV-TY-2j2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-r3-JZK">
-                                        <rect key="frame" x="8" y="90" width="114" height="30"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-r3-JZK">
+                                        <rect key="frame" x="104" y="8" width="40" height="40"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="DpQ-o2-R8S"/>
+                                            <constraint firstAttribute="height" constant="40" id="D7b-qS-h9M"/>
+                                            <constraint firstAttribute="width" constant="40" id="Vvg-1h-M86"/>
                                         </constraints>
-                                        <state key="normal" title="Open VK"/>
+                                        <state key="normal" image="social_vk"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="openVk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tPO-Dw-E9a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-q2-S7J">
+                                        <rect key="frame" x="200" y="8" width="40" height="40"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="WT7-hj-Nom"/>
+                                            <constraint firstAttribute="width" constant="40" id="gv6-Or-P22"/>
+                                        </constraints>
+                                        <state key="normal" image="social_safari"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="openSafari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ay9-y1-dyL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Dhh-q2-S7J" secondAttribute="bottom" id="1OC-Lh-pF2"/>
-                                    <constraint firstItem="IKy-Ra-DbP" firstAttribute="top" secondItem="FJZ-MR-J40" secondAttribute="bottom" id="1ri-cp-Byp"/>
-                                    <constraint firstAttribute="trailing" secondItem="FJZ-MR-J40" secondAttribute="trailing" constant="8" id="4aL-JP-KPi"/>
-                                    <constraint firstAttribute="width" constant="130" id="6zM-GV-YfW"/>
-                                    <constraint firstItem="Dhh-q2-S7J" firstAttribute="leading" secondItem="ByS-iO-ebd" secondAttribute="leading" constant="8" id="Ctc-gG-kIm"/>
-                                    <constraint firstAttribute="trailing" secondItem="bZO-r3-JZK" secondAttribute="trailing" constant="8" id="Iao-Vz-MzL"/>
-                                    <constraint firstItem="FJZ-MR-J40" firstAttribute="leading" secondItem="ByS-iO-ebd" secondAttribute="leading" constant="8" id="KOX-xx-iMf"/>
-                                    <constraint firstAttribute="trailing" secondItem="Dhh-q2-S7J" secondAttribute="trailing" constant="8" id="aMv-PE-JNa"/>
-                                    <constraint firstItem="bZO-r3-JZK" firstAttribute="leading" secondItem="ByS-iO-ebd" secondAttribute="leading" constant="8" id="bKZ-FV-rwD"/>
-                                    <constraint firstItem="lYY-Jk-BAz" firstAttribute="leading" secondItem="ByS-iO-ebd" secondAttribute="leading" constant="8" id="cJb-i4-19W"/>
-                                    <constraint firstItem="FJZ-MR-J40" firstAttribute="top" secondItem="lYY-Jk-BAz" secondAttribute="bottom" id="cSr-c3-S3q"/>
-                                    <constraint firstItem="Dhh-q2-S7J" firstAttribute="top" secondItem="bZO-r3-JZK" secondAttribute="bottom" id="fZL-xn-dRx"/>
-                                    <constraint firstItem="bZO-r3-JZK" firstAttribute="top" secondItem="IKy-Ra-DbP" secondAttribute="bottom" id="fzK-Et-eyz"/>
-                                    <constraint firstItem="lYY-Jk-BAz" firstAttribute="top" secondItem="ByS-iO-ebd" secondAttribute="top" id="gTR-Lz-4Eb"/>
-                                    <constraint firstAttribute="trailing" secondItem="lYY-Jk-BAz" secondAttribute="trailing" constant="8" id="koI-gx-RYw"/>
-                                    <constraint firstItem="IKy-Ra-DbP" firstAttribute="leading" secondItem="ByS-iO-ebd" secondAttribute="leading" constant="8" id="sHx-1a-FSc"/>
-                                    <constraint firstAttribute="trailing" secondItem="IKy-Ra-DbP" secondAttribute="trailing" constant="8" id="uPF-dH-tlD"/>
+                                    <constraint firstItem="lYY-Jk-BAz" firstAttribute="leading" secondItem="ByS-iO-ebd" secondAttribute="leading" constant="8" id="2oY-ug-AN2"/>
+                                    <constraint firstItem="IKy-Ra-DbP" firstAttribute="leading" secondItem="bZO-r3-JZK" secondAttribute="trailing" constant="8" id="4zQ-kq-5HO"/>
+                                    <constraint firstAttribute="bottom" secondItem="FJZ-MR-J40" secondAttribute="bottom" constant="8" id="5hQ-av-G0I"/>
+                                    <constraint firstItem="Dhh-q2-S7J" firstAttribute="top" secondItem="ByS-iO-ebd" secondAttribute="top" constant="8" id="7V7-4n-Q7v"/>
+                                    <constraint firstItem="bZO-r3-JZK" firstAttribute="top" secondItem="ByS-iO-ebd" secondAttribute="top" constant="8" id="93Q-wZ-zKA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dhh-q2-S7J" secondAttribute="bottom" constant="8" id="HMg-HS-mxY"/>
+                                    <constraint firstItem="FJZ-MR-J40" firstAttribute="top" secondItem="ByS-iO-ebd" secondAttribute="top" constant="8" id="NHX-2F-4Ym"/>
+                                    <constraint firstItem="lYY-Jk-BAz" firstAttribute="top" secondItem="ByS-iO-ebd" secondAttribute="top" constant="8" id="d5S-wY-7vD"/>
+                                    <constraint firstItem="Dhh-q2-S7J" firstAttribute="leading" secondItem="IKy-Ra-DbP" secondAttribute="trailing" constant="8" id="isk-0R-hIT"/>
+                                    <constraint firstAttribute="bottom" secondItem="bZO-r3-JZK" secondAttribute="bottom" constant="8" id="it2-cx-mb5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dhh-q2-S7J" secondAttribute="trailing" constant="8" id="oYz-3l-yI1"/>
+                                    <constraint firstItem="bZO-r3-JZK" firstAttribute="leading" secondItem="FJZ-MR-J40" secondAttribute="trailing" constant="8" id="q7F-5O-gvM"/>
+                                    <constraint firstItem="IKy-Ra-DbP" firstAttribute="top" secondItem="ByS-iO-ebd" secondAttribute="top" constant="8" id="tKA-bo-C63"/>
+                                    <constraint firstAttribute="bottom" secondItem="IKy-Ra-DbP" secondAttribute="bottom" constant="8" id="vR2-a6-jpI"/>
+                                    <constraint firstItem="FJZ-MR-J40" firstAttribute="leading" secondItem="lYY-Jk-BAz" secondAttribute="trailing" constant="8" id="xHx-ud-TGO"/>
+                                    <constraint firstAttribute="bottom" secondItem="lYY-Jk-BAz" secondAttribute="bottom" constant="8" id="z04-rz-NMd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
+                                        <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -327,4 +356,11 @@
             <point key="canvasLocation" x="1198" y="968"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="social_fb" width="50" height="50"/>
+        <image name="social_instagram" width="50" height="50"/>
+        <image name="social_safari" width="50" height="50"/>
+        <image name="social_twitter" width="50" height="50"/>
+        <image name="social_vk" width="50" height="50"/>
+    </resources>
 </document>
