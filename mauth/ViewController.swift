@@ -104,9 +104,9 @@ class ViewController: UIViewController {
     }
 
     let app = UIApplication.sharedApplication()
-//    if app.canOpenURL(url) {
+    if app.canOpenURL(url) {
       app.openURL(url)
-//    }
+    }
   }
 
   @IBAction func openTwitter(sender: AnyObject) {
