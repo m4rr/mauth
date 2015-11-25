@@ -2,7 +2,7 @@
 
 Try to automatically authorization in metro wi-fi. Finally, approved!
 
-[![Download on the App Store](https://blog.m4rr.ru/pictures/Download_on_the_App_Store@2x.png =202x60)](https://itunes.apple.com/app/moscow-metro-wi-fi-authorization/id1041801794?l=en&mt=8)
+[![Download on the App Store](./Download_on_the_App_Store@2x.png =202x60)](https://itunes.apple.com/app/moscow-metro-wi-fi-authorization/id1041801794?l=en&mt=8)
 
 # Contributions
 
