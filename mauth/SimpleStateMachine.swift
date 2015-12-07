@@ -12,7 +12,7 @@ enum SimpleStateType: Int {
   case Unauthorized, Processing, Authorized
 }
 
-protocol SimpleStateMachine {
+protocol SimpleStateMachineProtocol {
 
   func simulateClick()
 
@@ -22,7 +22,7 @@ protocol SimpleStateMachine {
 
 }
 
-extension SimpleStateMachine {
+extension SimpleStateMachineProtocol {
 
   func shouldTransition(from from: SimpleStateType, to: SimpleStateType) -> Bool {
     switch (from, to) {
@@ -46,7 +46,7 @@ extension SimpleStateMachine {
 
 }
 
-class SimpleConnector: SimpleStateMachine {
+class SimpleConnector: SimpleStateMachineProtocol {
 
   func simulateClick() {
 
