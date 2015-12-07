@@ -244,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = emfo;
+				ORGANIZATIONNAME = m4rr;
 				TargetAttributes = {
 					03581C801BAED21900D5D95F = {
 						CreatedOnToolsVersion = 7.0;
