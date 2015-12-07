@@ -93,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0345B0101C1602F400FA4C8A /* Complicated State Machine */ = {
+			isa = PBXGroup;
+			children = (
+				038816B21C15EDB3000E6843 /* StateMachine.swift */,
+				038816AF1C15E9BA000E6843 /* Connector.swift */,
+			);
+			name = "Complicated State Machine";
+			sourceTree = "<group>";
+		};
+		0345B0111C16030E00FA4C8A /* To do — Social Network */ = {
+			isa = PBXGroup;
+			children = (
+				03BCFF431BC95EEF000AD1D2 /* Car.swift */,
+			);
+			name = "To do — Social Network";
+			sourceTree = "<group>";
+		};
 		03581C781BAED21800D5D95F = {
 			isa = PBXGroup;
 			children = (
@@ -122,11 +139,10 @@
 			children = (
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C861BAED21900D5D95F /* ViewController.swift */,
-				038816B21C15EDB3000E6843 /* StateMachine.swift */,
-				038816AF1C15E9BA000E6843 /* Connector.swift */,
-				0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */,
-				03BCFF431BC95EEF000AD1D2 /* Car.swift */,
 				03CD400D1BCAEA8C0040B866 /* Sugar.swift */,
+				0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */,
+				0345B0101C1602F400FA4C8A /* Complicated State Machine */,
+				0345B0111C16030E00FA4C8A /* To do — Social Network */,
 				035EC9891BBBFCE200EA5CAD /* Logger */,
 				03581C881BAED21900D5D95F /* Main.storyboard */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
