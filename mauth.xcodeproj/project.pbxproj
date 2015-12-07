@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
+		0345B00F1C15FB8200FA4C8A /* SimpleStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
 		03581C871BAED21900D5D95F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C861BAED21900D5D95F /* ViewController.swift */; };
 		03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C881BAED21900D5D95F /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTableViewController.swift; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
+		0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleStateMachine.swift; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03581C861BAED21900D5D95F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				03581C861BAED21900D5D95F /* ViewController.swift */,
 				038816B21C15EDB3000E6843 /* StateMachine.swift */,
 				038816AF1C15E9BA000E6843 /* Connector.swift */,
+				0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */,
 				03BCFF431BC95EEF000AD1D2 /* Car.swift */,
 				03CD400D1BCAEA8C0040B866 /* Sugar.swift */,
 				035EC9891BBBFCE200EA5CAD /* Logger */,
@@ -377,6 +380,7 @@
 				03581C871BAED21900D5D95F /* ViewController.swift in Sources */,
 				03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */,
 				038816B31C15EDB3000E6843 /* StateMachine.swift in Sources */,
+				0345B00F1C15FB8200FA4C8A /* SimpleStateMachine.swift in Sources */,
 				03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */,
 				0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */,
 				038816B01C15E9BA000E6843 /* Connector.swift in Sources */,
