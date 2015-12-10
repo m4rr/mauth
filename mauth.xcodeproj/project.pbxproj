@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
+		032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */; };
 		0345B00F1C15FB8200FA4C8A /* SimpleStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
 		03581C871BAED21900D5D95F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C861BAED21900D5D95F /* ViewController.swift */; };
@@ -17,7 +18,6 @@
 		03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */; };
 		03581C9A1BAED21900D5D95F /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C991BAED21900D5D95F /* mauthTests.swift */; };
 		03581CA51BAED21900D5D95F /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581CA41BAED21900D5D95F /* mauthUITests.swift */; };
-		038816B01C15E9BA000E6843 /* ConnectorX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038816AF1C15E9BA000E6843 /* ConnectorX.swift */; };
 		038816B31C15EDB3000E6843 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038816B21C15EDB3000E6843 /* StateMachine.swift */; };
 		03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Car.swift */; };
 		03C1539F1C19EA120038ACC5 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* States.swift */; };
@@ -45,6 +45,7 @@
 /* Begin PBXFileReference section */
 		0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTableViewController.swift; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
+		032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
 		0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleStateMachine.swift; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		03581CA01BAED21900D5D95F /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581CA41BAED21900D5D95F /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
 		03581CA61BAED21900D5D95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		038816AF1C15E9BA000E6843 /* ConnectorX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorX.swift; sourceTree = "<group>"; };
 		038816B21C15EDB3000E6843 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
@@ -74,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */,
 				407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,7 +101,6 @@
 			children = (
 				03C1539E1C19EA120038ACC5 /* States.swift */,
 				038816B21C15EDB3000E6843 /* StateMachine.swift */,
-				038816AF1C15E9BA000E6843 /* ConnectorX.swift */,
 			);
 			name = "Complicated State Machine";
 			sourceTree = "<group>";
@@ -194,6 +194,7 @@
 		CB02B59CE29826B1D3C48AC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */,
 				38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */,
 			);
 			name = Frameworks;
@@ -403,7 +404,6 @@
 				03C1539F1C19EA120038ACC5 /* States.swift in Sources */,
 				03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */,
 				0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */,
-				038816B01C15E9BA000E6843 /* ConnectorX.swift in Sources */,
 				03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -533,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
