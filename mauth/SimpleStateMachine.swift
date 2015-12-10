@@ -44,36 +44,4 @@ class SimpleConnector {
     когда_загрузилось
   }
 
-  func shouldTransition(from from: SimpleStateType, to: SimpleStateType) -> Bool {
-    switch (from, to) {
-    case (.Unauthorized, .Processing), (.Processing, .Authorized), (.Authorized, .Unauthorized):
-      return true
-    default:
-      return false
-    }
-  }
-
-  func didTransition(from from: SimpleStateType, to: SimpleStateType) -> Void {
-    switch (from, to) {
-    case (.Unauthorized, .Processing):
-      simulateClick()
-    case (.Processing, .Authorized):
-      tryHTTPS()
-    default:
-      tryHTTP()
-    }
-  }
-
-  func simulateClick() {
-
-  }
-
-  func tryHTTP() {
-
-  }
-
-  func tryHTTPS() {
-
-  }
-
 }
