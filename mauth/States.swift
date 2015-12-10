@@ -46,15 +46,15 @@ class StartedState: GKState {
 
 }
 
-class TryHttpState: GKState {
-  override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == TryAdState.self || stateClass == TryHttpsState.self
-  }
-}
-
 class TryAdState: GKState {
   override func isValidNextState(stateClass: AnyClass) -> Bool {
     return stateClass == TryHttpState.self
+  }
+}
+
+class TryHttpState: GKState {
+  override func isValidNextState(stateClass: AnyClass) -> Bool {
+    return stateClass == TryAdState.self || stateClass == TryHttpsState.self
   }
 }
 
