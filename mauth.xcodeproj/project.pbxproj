@@ -101,7 +101,7 @@
 			children = (
 				03CD400D1BCAEA8C0040B866 /* Sugar.swift */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0345B0101C1602F400FA4C8A /* Trash */ = {
@@ -109,7 +109,7 @@
 			children = (
 				0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */,
 			);
-			name = Trash;
+			path = Trash;
 			sourceTree = "<group>";
 		};
 		0345B0111C16030E00FA4C8A /* To do — Social Network */ = {
@@ -117,18 +117,18 @@
 			children = (
 				03BCFF431BC95EEF000AD1D2 /* Car.swift */,
 			);
-			name = "To do — Social Network";
+			path = "To do — Social Network";
 			sourceTree = "<group>";
 		};
 		03581C781BAED21800D5D95F = {
 			isa = PBXGroup;
 			children = (
+				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
+				BA08C717C88E26D79B51FEAC /* Pods */,
+				03581C821BAED21900D5D95F /* Products */,
 				03581C831BAED21900D5D95F /* mauth */,
 				03581C981BAED21900D5D95F /* mauthTests */,
 				03581CA31BAED21900D5D95F /* mauthUITests */,
-				03581C821BAED21900D5D95F /* Products */,
-				BA08C717C88E26D79B51FEAC /* Pods */,
-				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,18 +147,18 @@
 		03581C831BAED21900D5D95F /* mauth */ = {
 			isa = PBXGroup;
 			children = (
-				03581C841BAED21900D5D95F /* AppDelegate.swift */,
-				03581C861BAED21900D5D95F /* ViewController.swift */,
 				033F30081C1A46FA00EEDFB5 /* Helpers */,
-				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
-				038816B21C15EDB3000E6843 /* ConnectorLogic.swift */,
-				0345B0101C1602F400FA4C8A /* Trash */,
-				0345B0111C16030E00FA4C8A /* To do — Social Network */,
 				035EC9891BBBFCE200EA5CAD /* Logger */,
-				03581C881BAED21900D5D95F /* Main.storyboard */,
+				0345B0111C16030E00FA4C8A /* To do — Social Network */,
+				0345B0101C1602F400FA4C8A /* Trash */,
+				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
-				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
+				038816B21C15EDB3000E6843 /* ConnectorLogic.swift */,
+				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
 				03581C901BAED21900D5D95F /* Info.plist */,
+				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
+				03581C881BAED21900D5D95F /* Main.storyboard */,
+				03581C861BAED21900D5D95F /* ViewController.swift */,
 			);
 			path = mauth;
 			sourceTree = "<group>";
@@ -166,8 +166,8 @@
 		03581C981BAED21900D5D95F /* mauthTests */ = {
 			isa = PBXGroup;
 			children = (
-				03581C991BAED21900D5D95F /* mauthTests.swift */,
 				03581C9B1BAED21900D5D95F /* Info.plist */,
+				03581C991BAED21900D5D95F /* mauthTests.swift */,
 			);
 			path = mauthTests;
 			sourceTree = "<group>";
@@ -175,8 +175,8 @@
 		03581CA31BAED21900D5D95F /* mauthUITests */ = {
 			isa = PBXGroup;
 			children = (
-				03581CA41BAED21900D5D95F /* mauthUITests.swift */,
 				03581CA61BAED21900D5D95F /* Info.plist */,
+				03581CA41BAED21900D5D95F /* mauthUITests.swift */,
 			);
 			path = mauthUITests;
 			sourceTree = "<group>";
@@ -184,10 +184,10 @@
 		035EC9891BBBFCE200EA5CAD /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
 				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
+				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
 			);
-			name = Logger;
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		BA08C717C88E26D79B51FEAC /* Pods */ = {
@@ -454,6 +454,7 @@
 				03581C891BAED21900D5D95F /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */ = {
@@ -462,6 +463,7 @@
 				03581C8E1BAED21900D5D95F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
