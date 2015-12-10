@@ -96,13 +96,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0345B0101C1602F400FA4C8A /* Complicated State Machine */ = {
+		033F30081C1A46FA00EEDFB5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
-				038816B21C15EDB3000E6843 /* ConnectorLogic.swift */,
+				03CD400D1BCAEA8C0040B866 /* Sugar.swift */,
 			);
-			name = "Complicated State Machine";
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		0345B0101C1602F400FA4C8A /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */,
+			);
+			name = Trash;
 			sourceTree = "<group>";
 		};
 		0345B0111C16030E00FA4C8A /* To do — Social Network */ = {
@@ -142,9 +149,10 @@
 			children = (
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C861BAED21900D5D95F /* ViewController.swift */,
-				03CD400D1BCAEA8C0040B866 /* Sugar.swift */,
-				0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */,
-				0345B0101C1602F400FA4C8A /* Complicated State Machine */,
+				033F30081C1A46FA00EEDFB5 /* Helpers */,
+				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
+				038816B21C15EDB3000E6843 /* ConnectorLogic.swift */,
+				0345B0101C1602F400FA4C8A /* Trash */,
 				0345B0111C16030E00FA4C8A /* To do — Social Network */,
 				035EC9891BBBFCE200EA5CAD /* Logger */,
 				03581C881BAED21900D5D95F /* Main.storyboard */,
