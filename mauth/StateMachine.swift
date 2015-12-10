@@ -9,25 +9,18 @@
 import Foundation
 import GameplayKit
 
+class Connector {
 
+  lazy var unitedStates: [GKState] = [StartedState(), TryHttpState(), TryAdState(), TryHttpsState(), SuccessState(), ErrorState()]
 
+  lazy var stateMachine: GKStateMachine = {
+    return GKStateMachine(states: self.unitedStates)
+  }()
 
-let startedState = StartedState()
-startedState... = self
+  init() {
 
-let tryHTTP🔓State = TryHTTP🔓State()
-tryHTTP🔓State... = self
+    stateMachine.enterState(StartedState)
 
-let tryAdState = TryAdState()
-tryAdState... = self
+  }
 
-let tryHTTPS🔐State = TryHTTPS🔐State()
-tryHTTPS🔐State... = self
-
-let successState = SuccessState()
-successState... = self
-
-let errorState = ErrorState()
-errorState... = self
-
-
+}

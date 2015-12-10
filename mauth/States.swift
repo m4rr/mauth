@@ -26,11 +26,10 @@ import GameplayKit
 
  */
 
-@available(iOS 9.0, *)
 class StartedState: GKState {
 
   override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == TryHTTP🔓State.self
+    return stateClass == TryHttpState.self
   }
 
   override func didEnterWithPreviousState(previousState: GKState?) {
@@ -47,35 +46,30 @@ class StartedState: GKState {
 
 }
 
-@available(iOS 9.0, *)
-class TryHTTP🔓State: GKState {
+class TryHttpState: GKState {
   override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == TryAdState.self || stateClass == TryHTTPS🔐State.self
+    return stateClass == TryAdState.self || stateClass == TryHttpsState.self
   }
 }
 
-@available(iOS 9.0, *)
 class TryAdState: GKState {
   override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == TryHTTP🔓State.self
+    return stateClass == TryHttpState.self
   }
 }
 
-@available(iOS 9.0, *)
-class TryHTTPS🔐State: GKState {
+class TryHttpsState: GKState {
   override func isValidNextState(stateClass: AnyClass) -> Bool {
     return stateClass == SuccessState.self || stateClass == ErrorState.self
   }
 }
 
-@available(iOS 9.0, *)
 class SuccessState: GKState {
   override func isValidNextState(stateClass: AnyClass) -> Bool {
     return stateClass == StartedState.self
   }
 }
 
-@available(iOS 9.0, *)
 class ErrorState: GKState {
   override func isValidNextState(stateClass: AnyClass) -> Bool {
     return stateClass == StartedState.self
