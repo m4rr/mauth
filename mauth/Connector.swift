@@ -9,18 +9,32 @@
 import Foundation
 import GameplayKit
 
-class Connector {
+enum ConnectorNotification: String {
 
-  lazy var unitedStates: [GKState] = [StartedState(), TryHttpState(), TryAdState(), TryHttpsState(), SuccessState(), ErrorState()]
+  case connectHttpNotificationName // = "connectHttpNotificationName"
+
+}
+
+class ConnectorLogic {
+
+  private func sendMessage(notification name: ConnectorNotification) {
+    NSNotificationCenter.defaultCenter().postNotificationName(name.rawValue, object: nil)
+  }
 
   lazy var stateMachine: GKStateMachine = {
-    return GKStateMachine(states: self.unitedStates)
+    let unitedStates = [
+      UnauthorizedState(),
+      TryAdState(),
+      TryHttpState(),
+      TryHttpsState(),
+      SuccessState(), ErrorState()
+    ]
+
+    return GKStateMachine(states: unitedStates)
   }()
 
   init() {
-
-    stateMachine.enterState(StartedState)
-
+    stateMachine.enterState(UnauthorizedState)
   }
 
 }
