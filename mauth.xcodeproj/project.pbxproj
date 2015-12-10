@@ -10,6 +10,7 @@
 		0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */; };
+		033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F30091C1A47D900EEDFB5 /* NeatViewController.swift */; };
 		0345B00F1C15FB8200FA4C8A /* SimpleStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
 		03581C871BAED21900D5D95F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C861BAED21900D5D95F /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTableViewController.swift; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
 		032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
+		033F30091C1A47D900EEDFB5 /* NeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeatViewController.swift; sourceTree = "<group>"; };
 		0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleStateMachine.swift; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,12 +125,12 @@
 		03581C781BAED21800D5D95F = {
 			isa = PBXGroup;
 			children = (
-				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
-				BA08C717C88E26D79B51FEAC /* Pods */,
-				03581C821BAED21900D5D95F /* Products */,
 				03581C831BAED21900D5D95F /* mauth */,
 				03581C981BAED21900D5D95F /* mauthTests */,
 				03581CA31BAED21900D5D95F /* mauthUITests */,
+				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
+				BA08C717C88E26D79B51FEAC /* Pods */,
+				03581C821BAED21900D5D95F /* Products */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -159,6 +161,7 @@
 				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
 				03581C881BAED21900D5D95F /* Main.storyboard */,
 				03581C861BAED21900D5D95F /* ViewController.swift */,
+				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
 			);
 			path = mauth;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			files = (
 				0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */,
 				03581C871BAED21900D5D95F /* ViewController.swift in Sources */,
+				033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */,
 				03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */,
 				038816B31C15EDB3000E6843 /* ConnectorLogic.swift in Sources */,
 				0345B00F1C15FB8200FA4C8A /* SimpleStateMachine.swift in Sources */,
