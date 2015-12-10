@@ -26,7 +26,13 @@ import GameplayKit
 
  */
 
-class StartedState: GKState {
+class ConnectorState: GKState {
+
+//  unowned var logic: ConnectorLogic?
+
+}
+
+class UnauthorizedState: ConnectorState {
 
   override func isValidNextState(stateClass: AnyClass) -> Bool {
     return stateClass == TryHttpState.self
@@ -36,52 +42,78 @@ class StartedState: GKState {
 
   }
 
-  override func updateWithDeltaTime(seconds: NSTimeInterval) {
-
-  }
-
   override func willExitWithNextState(nextState: GKState) {
 
   }
 
 }
 
-class TryAdState: GKState {
+class TryAdState: ConnectorState {
 
   override func isValidNextState(stateClass: AnyClass) -> Bool {
     return stateClass == TryHttpState.self
   }
 
-}
+  override func didEnterWithPreviousState(previousState: GKState?) {
+    // clickJS
 
-class TryHttpState: GKState {
+    let opQueue = NSOperationQueue.mainQueue()
 
-  override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == TryAdState.self || stateClass == TryHttpsState.self
+    opQueue.addOperationWithBlock { () -> Void in
+      dispatch_after_delay_on_main_queue(2) {
+        // simulateJS
+      }
+    }
+
   }
 
 }
 
-class TryHttpsState: GKState {
+class TryHttpState: ConnectorState {
 
   override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == SuccessState.self || stateClass == ErrorState.self
+    return stateClass == TryAdState.self
+      || stateClass == TryHttpsState.self
+      || stateClass == ErrorState.self
+  }
+
+  override func didEnterWithPreviousState(previousState: GKState?) {
+    // webview.load HTTP
+  }
+
+  override func willExitWithNextState(nextState: GKState) {
+    //
   }
 
 }
 
-class SuccessState: GKState {
+class TryHttpsState: ConnectorState {
 
   override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == StartedState.self
+    return stateClass == SuccessState.self
+      || stateClass == ErrorState.self
+  }
+
+  override func didEnterWithPreviousState(previousState: GKState?) {
+    if previousState is TryHttpState {
+      // webview.load HTTPS
+    }
   }
 
 }
 
-class ErrorState: GKState {
+class SuccessState: ConnectorState {
 
   override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == StartedState.self
+    return stateClass == UnauthorizedState.self
+  }
+
+}
+
+class ErrorState: ConnectorState {
+
+  override func isValidNextState(stateClass: AnyClass) -> Bool {
+    return stateClass == UnauthorizedState.self
   }
   
 }
