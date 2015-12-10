@@ -140,6 +140,7 @@ class ViewController: UIViewController {
     var errCount = 0
 
     aClick.forEach { query in
+
       webView.evaluateJavaScript(query) { result, error in
         self.userTappedOnce = true
 
