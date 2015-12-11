@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import WebKit
 
 class NeatViewController: UIViewController {
 
   let noteCenter = NSNotificationCenter.defaultCenter()
 
-  lazy var connector = ConnectorLogic()
+  lazy var webView = WKWebView()
 
+  lazy var connector: Connector = {
+    return Connector(webView: self.webView)
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
 
-    // Do any additional setup after loading the view.
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+
+
+    webView.navigationDelegate = connector
   }
 
   override func didReceiveMemoryWarning() {
@@ -38,3 +47,8 @@ class NeatViewController: UIViewController {
   */
 
 }
+
+
+
+
+

@@ -26,16 +26,29 @@ import GameplayKit
 
  */
 
+protocol ConnectorStateDelegate: class {
+
+  func connectorTryHttp()
+
+}
+
 class ConnectorState: GKState {
 
-//  unowned var logic: ConnectorLogic?
+  weak var logic: ConnectorStateDelegate?
+
+  init(logic: ConnectorStateDelegate) {
+    super.init()
+
+    self.logic = logic
+  }
 
 }
 
 class UnauthorizedState: ConnectorState {
 
   override func isValidNextState(stateClass: AnyClass) -> Bool {
-    return stateClass == TryHttpState.self
+    return stateClass == TryAdState.self
+      || stateClass == TryHttpState.self
   }
 
   override func didEnterWithPreviousState(previousState: GKState?) {
@@ -43,7 +56,7 @@ class UnauthorizedState: ConnectorState {
   }
 
   override func willExitWithNextState(nextState: GKState) {
-
+    logic?.connectorTryHttp()
   }
 
 }
