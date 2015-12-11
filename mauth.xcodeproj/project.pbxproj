@@ -19,7 +19,7 @@
 		03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */; };
 		03581C9A1BAED21900D5D95F /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C991BAED21900D5D95F /* mauthTests.swift */; };
 		03581CA51BAED21900D5D95F /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581CA41BAED21900D5D95F /* mauthUITests.swift */; };
-		038816B31C15EDB3000E6843 /* ConnectorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038816B21C15EDB3000E6843 /* ConnectorLogic.swift */; };
+		038816B31C15EDB3000E6843 /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038816B21C15EDB3000E6843 /* Connector.swift */; };
 		03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Car.swift */; };
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD400D1BCAEA8C0040B866 /* Sugar.swift */; };
@@ -62,7 +62,7 @@
 		03581CA01BAED21900D5D95F /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581CA41BAED21900D5D95F /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
 		03581CA61BAED21900D5D95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		038816B21C15EDB3000E6843 /* ConnectorLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorLogic.swift; sourceTree = "<group>"; };
+		038816B21C15EDB3000E6843 /* Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
 		03CD400D1BCAEA8C0040B866 /* Sugar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sugar.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				0345B0101C1602F400FA4C8A /* Trash */,
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
-				038816B21C15EDB3000E6843 /* ConnectorLogic.swift */,
+				038816B21C15EDB3000E6843 /* Connector.swift */,
 				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
 				03581C901BAED21900D5D95F /* Info.plist */,
 				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
@@ -411,7 +411,7 @@
 				03581C871BAED21900D5D95F /* ViewController.swift in Sources */,
 				033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */,
 				03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */,
-				038816B31C15EDB3000E6843 /* ConnectorLogic.swift in Sources */,
+				038816B31C15EDB3000E6843 /* Connector.swift in Sources */,
 				0345B00F1C15FB8200FA4C8A /* SimpleStateMachine.swift in Sources */,
 				03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */,
 				03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */,
