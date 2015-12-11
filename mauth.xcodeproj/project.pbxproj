@@ -106,6 +106,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		033F300B1C1ADDDA00EEDFB5 /* State Machine */ = {
+			isa = PBXGroup;
+			children = (
+				038816B21C15EDB3000E6843 /* Connector.swift */,
+				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
+			);
+			name = "State Machine";
+			path = mauth;
+			sourceTree = "<group>";
+		};
 		0345B0101C1602F400FA4C8A /* Trash */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		03581C781BAED21800D5D95F = {
 			isa = PBXGroup;
 			children = (
+				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
 				03581C831BAED21900D5D95F /* mauth */,
 				03581C981BAED21900D5D95F /* mauthTests */,
 				03581CA31BAED21900D5D95F /* mauthUITests */,
@@ -155,8 +166,6 @@
 				0345B0101C1602F400FA4C8A /* Trash */,
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
-				038816B21C15EDB3000E6843 /* Connector.swift */,
-				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
 				03581C901BAED21900D5D95F /* Info.plist */,
 				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
 				03581C881BAED21900D5D95F /* Main.storyboard */,
