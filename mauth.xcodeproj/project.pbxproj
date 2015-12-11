@@ -11,7 +11,6 @@
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */; };
 		033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F30091C1A47D900EEDFB5 /* NeatViewController.swift */; };
-		0345B00F1C15FB8200FA4C8A /* SimpleStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
 		03581C871BAED21900D5D95F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C861BAED21900D5D95F /* ViewController.swift */; };
 		03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C881BAED21900D5D95F /* Main.storyboard */; };
@@ -48,7 +47,6 @@
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
 		032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
 		033F30091C1A47D900EEDFB5 /* NeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeatViewController.swift; sourceTree = "<group>"; };
-		0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleStateMachine.swift; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03581C861BAED21900D5D95F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +99,8 @@
 		033F30081C1A46FA00EEDFB5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
+				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
 				03CD400D1BCAEA8C0040B866 /* Sugar.swift */,
 			);
 			path = Helpers;
@@ -113,14 +113,6 @@
 				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
 			);
 			path = "State Machine";
-			sourceTree = "<group>";
-		};
-		0345B0101C1602F400FA4C8A /* Trash */ = {
-			isa = PBXGroup;
-			children = (
-				0345B00E1C15FB8200FA4C8A /* SimpleStateMachine.swift */,
-			);
-			path = Trash;
 			sourceTree = "<group>";
 		};
 		0345B0111C16030E00FA4C8A /* To do — Social Network */ = {
@@ -160,9 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				033F30081C1A46FA00EEDFB5 /* Helpers */,
-				035EC9891BBBFCE200EA5CAD /* Logger */,
 				0345B0111C16030E00FA4C8A /* To do — Social Network */,
-				0345B0101C1602F400FA4C8A /* Trash */,
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
 				03581C901BAED21900D5D95F /* Info.plist */,
@@ -190,15 +180,6 @@
 				03581CA41BAED21900D5D95F /* mauthUITests.swift */,
 			);
 			path = mauthUITests;
-			sourceTree = "<group>";
-		};
-		035EC9891BBBFCE200EA5CAD /* Logger */ = {
-			isa = PBXGroup;
-			children = (
-				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
-				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
-			);
-			path = Logger;
 			sourceTree = "<group>";
 		};
 		BA08C717C88E26D79B51FEAC /* Pods */ = {
@@ -420,7 +401,6 @@
 				033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */,
 				03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */,
 				038816B31C15EDB3000E6843 /* Connector.swift in Sources */,
-				0345B00F1C15FB8200FA4C8A /* SimpleStateMachine.swift in Sources */,
 				03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */,
 				03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */,
 				0317D9581BBBE01500E6DE46 /* LoggerTableViewController.swift in Sources */,
