@@ -33,7 +33,7 @@ class Connector: NSObject {
     stateMachine.enterState(UnauthorizedState)
   }
 
-  private let baseUrl🔓 = NSURL(string: "http://ya.ru/")!
+  private let baseUrl🔓 = NSURL(string: "http://talala.ru/")!
   private let baseUrl🔐 = NSURL(string: "https://ya.ru/")!
 
   private lazy var request🔓: NSURLRequest = NSURLRequest(URL: self.baseUrl🔓, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 10)
@@ -48,6 +48,10 @@ extension Connector: ConnectorStateDelegate {
     webView?.loadRequest(request🔓)
   }
 
+  func connectorTryHttps() {
+    webView?.loadRequest(request🔐)
+  }
+
 }
 
 
@@ -57,13 +61,21 @@ extension Connector: WKNavigationDelegate {
 
   func isSecureBaseUrl(url: NSURL) -> (secure: Bool, base: Bool) {
     let secure = url.scheme == baseUrl🔐.scheme
-    let base = url.host == baseUrl🔓.host
+    let base: Bool
+
+    if secure {
+      base = url.host == baseUrl🔐.host
+    } else {
+      base = url.host == baseUrl🔓.host
+    }
 
     return (secure, base)
   }
 
   func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
     //    addressLabel.text = webView.URL?.absoluteString ?? ""
+
+    print(webView.URL?.absoluteString)
   }
 
   /**
@@ -84,6 +96,8 @@ extension Connector: WKNavigationDelegate {
     guard let url = webView.URL else {
       return;
     }
+
+    print(url)
 
     switch isSecureBaseUrl(url) {
     case (_, false):
@@ -144,5 +158,9 @@ extension Connector: WKNavigationDelegate {
   //      decisionHandler(.Allow)
   //    }
   //  }
+
+  func webView(webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+    //
+  }
   
 }

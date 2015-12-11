@@ -30,6 +30,8 @@ protocol ConnectorStateDelegate: class {
 
   func connectorTryHttp()
 
+  func connectorTryHttps()
+
 }
 
 class ConnectorState: GKState {
@@ -42,6 +44,10 @@ class ConnectorState: GKState {
     self.logic = logic
   }
 
+  override func didEnterWithPreviousState(previousState: GKState?) {
+    print("Entered " + "\(self.dynamicType)")
+  }
+
 }
 
 class UnauthorizedState: ConnectorState {
@@ -52,11 +58,13 @@ class UnauthorizedState: ConnectorState {
   }
 
   override func didEnterWithPreviousState(previousState: GKState?) {
+    super.didEnterWithPreviousState(nil)
+
+    stateMachine?.enterState(TryHttpState)
 
   }
 
   override func willExitWithNextState(nextState: GKState) {
-    logic?.connectorTryHttp()
   }
 
 }
@@ -68,6 +76,8 @@ class TryAdState: ConnectorState {
   }
 
   override func didEnterWithPreviousState(previousState: GKState?) {
+    super.didEnterWithPreviousState(nil)
+
     // clickJS
 
     let opQueue = NSOperationQueue.mainQueue()
@@ -91,7 +101,10 @@ class TryHttpState: ConnectorState {
   }
 
   override func didEnterWithPreviousState(previousState: GKState?) {
+    super.didEnterWithPreviousState(nil)
+
     // webview.load HTTP
+    logic?.connectorTryHttp()
   }
 
   override func willExitWithNextState(nextState: GKState) {
@@ -108,8 +121,12 @@ class TryHttpsState: ConnectorState {
   }
 
   override func didEnterWithPreviousState(previousState: GKState?) {
+    super.didEnterWithPreviousState(nil)
+
     if previousState is TryHttpState {
       // webview.load HTTPS
+
+      logic?.connectorTryHttps()
     }
   }
 
@@ -121,6 +138,10 @@ class SuccessState: ConnectorState {
     return stateClass == UnauthorizedState.self
   }
 
+  override func didEnterWithPreviousState(previousState: GKState?) {
+    super.didEnterWithPreviousState(nil)
+  }
+
 }
 
 class ErrorState: ConnectorState {
@@ -128,5 +149,9 @@ class ErrorState: ConnectorState {
   override func isValidNextState(stateClass: AnyClass) -> Bool {
     return stateClass == UnauthorizedState.self
   }
-  
+
+  override func didEnterWithPreviousState(previousState: GKState?) {
+    super.didEnterWithPreviousState(nil)
+  }
+
 }
