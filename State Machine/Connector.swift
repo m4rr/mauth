@@ -54,7 +54,6 @@ extension Connector: ConnectorStateDelegate {
 
 }
 
-
 // MARK: - WKNavigationDelegate
 
 extension Connector: WKNavigationDelegate {
