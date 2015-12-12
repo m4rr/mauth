@@ -65,6 +65,7 @@ class UnauthorizedState: ConnectorState {
   }
 
   override func willExitWithNextState(nextState: GKState) {
+    //
   }
 
 }
