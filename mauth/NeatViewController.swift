@@ -75,9 +75,9 @@ class NeatViewController: UIViewController {
 
   func startOperating() {
     if #available(iOS 9.0, *) {
-        webView.loadData(NSData(), MIMEType: "text/html", characterEncodingName: "utf-8", baseURL: NSURL())
+      webView.loadHTMLString("", baseURL: nil)
     } else {
-        // Fallback on earlier versions
+      // Fallback on earlier versions
     }
 
     let operation = OpenPageOperation(webView: webView, delegate: self)
@@ -96,6 +96,13 @@ class NeatViewController: UIViewController {
   }
   */
 
+  @IBAction func retryButtonTap(sender: AnyObject) {
+    updateLog("  //", "retry")
+
+    startOperating()
+    uiscroll
+  }
+
 }
 
 
@@ -104,6 +111,8 @@ extension NeatViewController: ConnectorDelegate { // KVO
 
   func updateLog(prefix: String = "", _ text: String) {
     logTextView.text = (logTextView.text ?? "") + prefix + " " + text + "\n"
+//    logTextView.setContentOffset()
+
   }
 
   func connectorDidStartLoad(url: String) {

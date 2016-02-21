@@ -33,10 +33,8 @@ class OpenPageOperation: Operation {
   init(webView: WKWebView! = nil, delegate: ConnectorDelegate) {
     assert(webView != nil, "webView should not be nil")
 
-    self.webView = webView
     self.delegate = delegate
-
-
+    self.webView = webView
 
     super.init()
 
@@ -95,6 +93,10 @@ class OpenPageOperation: Operation {
     }
   }
 
+  override func finished(errors: [NSError]) {
+    webView.removeObserver(self, forKeyPath: "estimatedProgress")
+  }
+
 }
 
 class OpenSecurePageOperation: OpenPageOperation {
@@ -103,11 +105,11 @@ class OpenSecurePageOperation: OpenPageOperation {
 
 class OpenNotSecurePageOperation: OpenPageOperation {
 
-  override func execute() {
-    dispatch_async(dispatch_get_main_queue()) {
-      self.webView.loadRequest(NSURLRequest(URL: baseUrl🔓))
-    }
-  }
+//  override func execute() {
+//    dispatch_async(dispatch_get_main_queue()) {
+//      self.webView.loadRequest(NSURLRequest(URL: baseUrl🔓))
+//    }
+//  }
 
 }
 
