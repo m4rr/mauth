@@ -23,9 +23,8 @@ class ViewController: UIViewController {
   @IBOutlet private weak var addressLabel: UILabel!
   @IBOutlet private weak var progressBar: UIProgressView!
 
-  private let baseUrl🔓 = NSURL(string: "http://ya.ru/")!
-  private let baseUrl🔐 = NSURL(string: "https://ya.ru/")!
-  private let url1111 = NSURL(string: "http://1.1.1.1/")!
+  private let baseUrl🔓 = NSURL(string: "http://www.artlebedev.ru/news/1995/")!
+  private let baseUrl🔐 = NSURL(string: "https://www.artlebedev.ru/news/1995/")!
 
   private var maybeCount = 0
 
@@ -91,11 +90,6 @@ class ViewController: UIViewController {
     userTappedOnce = false
     maybeCount = 0
     makeDependingRequest(nil)
-  }
-
-  @IBAction func try1111() {
-    userTappedOnce = false
-    webView.loadRequest(NSURLRequest(URL: url1111))
   }
 
   func openURL(url: NSURL?) {

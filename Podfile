@@ -5,3 +5,7 @@ target 'mauth' do
   pod 'PureLayout'
   pod 'PKHUD'
 end
+
+target 'mauthTests' do
+
+end
