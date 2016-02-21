@@ -23,9 +23,9 @@ class ViewController: UIViewController {
   @IBOutlet private weak var addressLabel: UILabel!
   @IBOutlet private weak var progressBar: UIProgressView!
 
-  private let baseUrl🔓 = NSURL(string: "http://ya.ru/")!
-  private let baseUrl🔐 = NSURL(string: "https://ya.ru/")!
   private let url1111 = NSURL(string: "http://1.1.1.1/")!
+  private let baseUrl🔓 = NSURL(string: "http://www.artlebedev.ru/news/1995/")!
+  private let baseUrl🔐 = NSURL(string: "https://www.artlebedev.ru/news/1995/")!
 
   private var maybeCount = 0
 
