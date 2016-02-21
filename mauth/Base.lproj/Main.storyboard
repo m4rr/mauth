@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ky7-jk-2ZT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ky7-jk-2ZT">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Neat View Controller-->
@@ -16,8 +17,64 @@
                     <view key="view" contentMode="scaleToFill" id="mpO-zo-UKl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciN-YV-gat">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://chars.cc" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-43-Now">
+                                        <rect key="frame" x="8" y="28" width="585" height="28"/>
+                                        <color key="backgroundColor" white="1" alpha="0.74981142241379306" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="eRx-ym-7iT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UiB-xy-Vvt">
+                                        <rect key="frame" x="0.0" y="62" width="600" height="2"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.95090682954596195" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mgu-43-Now" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" constant="8" id="A2V-O0-o3H"/>
+                                    <constraint firstItem="mgu-43-Now" firstAttribute="centerX" secondItem="ciN-YV-gat" secondAttribute="centerX" id="QMl-rJ-Fdd"/>
+                                    <constraint firstAttribute="bottom" secondItem="UiB-xy-Vvt" secondAttribute="bottom" id="UTy-Bt-CWX"/>
+                                    <constraint firstAttribute="trailing" secondItem="UiB-xy-Vvt" secondAttribute="trailing" id="fPM-4X-Zqc"/>
+                                    <constraint firstAttribute="height" constant="64" id="hV5-Aa-rnR"/>
+                                    <constraint firstItem="mgu-43-Now" firstAttribute="centerY" secondItem="ciN-YV-gat" secondAttribute="centerY" constant="10" id="jHh-rh-XeE"/>
+                                    <constraint firstItem="UiB-xy-Vvt" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" id="s1h-i4-UfV"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Eh-0dc">
+                                <rect key="frame" x="8" y="292" width="584" height="300"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="syk-Bl-cmg" firstAttribute="top" secondItem="FpO-Eh-0dc" secondAttribute="bottom" constant="8" id="4C6-nh-gNA"/>
+                            <constraint firstItem="ciN-YV-gat" firstAttribute="leading" secondItem="mpO-zo-UKl" secondAttribute="leading" id="GPF-ii-ovZ"/>
+                            <constraint firstItem="FpO-Eh-0dc" firstAttribute="height" secondItem="mpO-zo-UKl" secondAttribute="height" multiplier="1:2" id="OfI-ks-pbl"/>
+                            <constraint firstItem="ciN-YV-gat" firstAttribute="top" secondItem="mpO-zo-UKl" secondAttribute="top" id="TJT-xR-3Tr"/>
+                            <constraint firstAttribute="trailing" secondItem="FpO-Eh-0dc" secondAttribute="trailing" constant="8" id="dSM-xc-Lb8"/>
+                            <constraint firstItem="FpO-Eh-0dc" firstAttribute="leading" secondItem="mpO-zo-UKl" secondAttribute="leading" constant="8" id="wfs-DJ-Q0g"/>
+                            <constraint firstAttribute="trailing" secondItem="ciN-YV-gat" secondAttribute="trailing" id="x6e-V2-ADX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="mgu-43-Now" id="LoJ-lP-kvN"/>
+                        <outlet property="logTextView" destination="FpO-Eh-0dc" id="kXN-iQ-Do9"/>
+                        <outlet property="navBar" destination="ciN-YV-gat" id="nqn-4d-4kT"/>
+                        <outlet property="progressBar" destination="UiB-xy-Vvt" id="rLb-Bm-THT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZ8-BR-GKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

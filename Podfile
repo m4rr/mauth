@@ -1,4 +1,4 @@
-platform :ios, '9.1'
+platform :ios, '8.3'
 use_frameworks!
 
 target 'mauth' do

@@ -13,29 +13,29 @@ import PureLayout
 class NeatViewController: UIViewController {
 
   private lazy var webView = WKWebView()
+  @IBOutlet weak var navBar: UIView!
+  @IBOutlet weak var addressLabel: UILabel!
+  @IBOutlet weak var progressBar: UIProgressView!
+  @IBOutlet weak var logTextView: UITextView!
 
-  private var connector: Connector?
+  let operationQueue = OperationQueue()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     setupWebView()
-  }
 
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
 
-    connector = Connector(webView: webView)
-    webView.navigationDelegate = connector
-  }
+    let operation = OpenPageOperation(webView: webView, delegate: self)
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+    operationQueue.addOperation(operation)
+
+
   }
 
   override func updateViewConstraints() {
-    webView.autoPinEdgesToSuperviewEdges()
+    webView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: .Top)
+    webView.autoPinEdge(.Top, toEdge: .Bottom, ofView: navBar)
 
     super.updateViewConstraints()
   }
@@ -58,13 +58,14 @@ class NeatViewController: UIViewController {
     //    config.userContentController.addUserScript(userScript)
 
     webView = WKWebView(frame: view.bounds, configuration: config)
-    webView.addObserver(self, forKeyPath: "estimatedProgress", options: [.Old, .New], context: nil)
+//    webView.scrollView.contentInset.top = 20
 //    webView.scrollView.addGestureRecognizer(tapGestureRecognizer)
-    webView.navigationDelegate = connector
 
-    webView.alpha = 0.2
+    webView.alpha = 0.3
 
-    view.addSubview(webView)
+    navigationController?.navigationBarHidden = false
+
+    view.insertSubview(webView, atIndex: 0)
 
     view.setNeedsUpdateConstraints()
   }
@@ -85,23 +86,27 @@ class NeatViewController: UIViewController {
 
 
 
-extension NeatViewController { // KVO
+extension NeatViewController: ConnectorDelegate { // KVO
 
-  override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-    guard let keyPath = keyPath, change = change else {
-      return;
-    }
+  func updateLog(prefix: String = "", _ text: String) {
+    logTextView.text = (logTextView.text ?? "") + prefix + " " + text + "\n"
+  }
 
-    switch keyPath {
-    case "estimatedProgress":
-      if let new = change["new"] as? Float, old = change["old"] as? Float {
-        print(new)
-        dispatch_async(dispatch_get_main_queue()) {
-//          self.progressBar.setProgress(new, animated: old < new)
-        }
-      }
-    default:
-      ()
+  func connectorDidStartLoad(url: String) {
+    addressLabel.text = url
+    updateLog("StartLoad", url)
+  }
+
+  func connectorDidEndLoad(title: String, url: String) {
+    addressLabel.text = url
+    updateLog("EndLoad", url)
+  }
+
+  func connectorProgress(old old: Float, new: Float) {
+    progressBar.setProgress(new, animated: old < new)
+
+    UIView.animateWithDuration(0.5) {
+      self.progressBar.alpha = new < 1 ? 1 : 0
     }
   }
   
