@@ -24,18 +24,14 @@ class NeatViewController: UIViewController {
     super.viewDidLoad()
 
     setupWebView()
-
-
-    let operation = OpenPageOperation(webView: webView, delegate: self)
-
-    operationQueue.addOperation(operation)
-
-
+    startOperating()
   }
 
   override func updateViewConstraints() {
-    webView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: .Top)
+    webView.autoPinEdge(.Left, toEdge: .Left, ofView: view)
+    webView.autoPinEdge(.Right, toEdge: .Right, ofView: view)
     webView.autoPinEdge(.Top, toEdge: .Bottom, ofView: navBar)
+    webView.autoPinEdge(.Bottom, toEdge: .Top, ofView: logTextView)
 
     super.updateViewConstraints()
   }
@@ -61,7 +57,14 @@ class NeatViewController: UIViewController {
 //    webView.scrollView.contentInset.top = 20
 //    webView.scrollView.addGestureRecognizer(tapGestureRecognizer)
 
+    if #available(iOS 9.0, *) {
+        webView.customUserAgent = "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_2_1 like Mac OS X; nb-no) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148a Safari/6533.18.5"
+    } else {
+        // Fallback on earlier versions
+    }
+
     webView.alpha = 0.3
+
 
     navigationController?.navigationBarHidden = false
 
@@ -70,6 +73,17 @@ class NeatViewController: UIViewController {
     view.setNeedsUpdateConstraints()
   }
 
+  func startOperating() {
+    if #available(iOS 9.0, *) {
+        webView.loadData(NSData(), MIMEType: "text/html", characterEncodingName: "utf-8", baseURL: NSURL())
+    } else {
+        // Fallback on earlier versions
+    }
+
+    let operation = OpenPageOperation(webView: webView, delegate: self)
+    operationQueue.addOperation(operation)
+
+  }
 
 
   /*

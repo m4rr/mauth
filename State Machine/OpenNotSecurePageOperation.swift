@@ -44,14 +44,8 @@ class OpenPageOperation: Operation {
   }
 
   private func isSecureBaseUrl(url: NSURL) -> (secure: Bool, base: Bool) {
-    let secure = url.scheme == baseUrl🔐.scheme
-    let base: Bool
-
-    if secure {
-      base = url.host == baseUrl🔐.host
-    } else {
-      base = url.host == baseUrl🔓.host
-    }
+    let secure = webView.hasOnlySecureContent // url.scheme == baseUrl🔐.scheme
+    let base = url.host == (secure ? baseUrl🔐 : baseUrl🔓).host
 
     return (secure, base)
   }
@@ -67,7 +61,7 @@ class OpenPageOperation: Operation {
 
 
   func openDependingPage() {
-    guard let url = webView.URL else {
+    guard let url = webView.URL where url.absoluteString != "about:blank" else {
       webView.loadRequest(request🔓)
 
       return;

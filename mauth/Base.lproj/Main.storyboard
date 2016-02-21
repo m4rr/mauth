@@ -40,7 +40,7 @@
                                         <rect key="frame" x="0.0" y="62" width="600" height="2"/>
                                     </progressView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.95090682954596195" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="mgu-43-Now" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" constant="8" id="A2V-O0-o3H"/>
                                     <constraint firstItem="mgu-43-Now" firstAttribute="centerX" secondItem="ciN-YV-gat" secondAttribute="centerX" id="QMl-rJ-Fdd"/>
@@ -51,7 +51,7 @@
                                     <constraint firstItem="UiB-xy-Vvt" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" id="s1h-i4-UfV"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Eh-0dc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Eh-0dc">
                                 <rect key="frame" x="8" y="292" width="584" height="300"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
