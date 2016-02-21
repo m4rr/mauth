@@ -11,9 +11,6 @@ import WebKit
 import PureLayout
 import PKHUD
 
-let willResignActiveNotificationName = "applicationWillResignActiveNotificationName"
-let didBecomeActiveNotificationName = "applicationDidBecomeActiveNotificationName"
-
 class ViewController: UIViewController {
 
   private var webView: WKWebView!
