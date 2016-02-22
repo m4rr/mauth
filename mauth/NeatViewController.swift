@@ -95,22 +95,20 @@ class NeatViewController: UIViewController {
 
 extension NeatViewController: ConnectorDelegate { // KVO
 
-  func updateLog(prefix: String = "", _ text: String) {
-//    logTextView.text = (logTextView.text ?? "") + prefix + " " + text + "\n"
-
-    logTextView.text = prefix + " " + text + "\n" + (logTextView.text ?? "")
-
-
-//    logTextView.scrollRangeToVisible(NSRange(location: logTextView.text.characters.count, length: 0))
+  func updateLog(prefix: String, _ text: String) {
+    let t = prefix + " " + text + "\n"
+    logTextView.text = t + (logTextView.text ?? "")
   }
 
   func connectorDidStartLoad(url: String) {
     addressLabel.text = url
+
     updateLog("▶", url)
   }
 
   func connectorDidEndLoad(title: String, url: String) {
     addressLabel.text = url
+
     updateLog("◼", url)
   }
 
@@ -121,7 +119,7 @@ extension NeatViewController: ConnectorDelegate { // KVO
       self.progressBar.alpha = new < 1 ? 1 : 0
     }
   }
-  
+
 }
 
 
