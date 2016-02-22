@@ -73,7 +73,7 @@ class NeatViewController: UIViewController {
     view.setNeedsUpdateConstraints()
   }
 
-  func startOperating() {
+  private func startOperating() {
     if #available(iOS 9.0, *) {
       webView.loadHTMLString("", baseURL: nil)
     } else {
@@ -85,44 +85,33 @@ class NeatViewController: UIViewController {
 
   }
 
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
-  }
-  */
-
   @IBAction func retryButtonTap(sender: AnyObject) {
-    updateLog("  //", "retry")
+    updateLog("⤴\u{fe0e}", "retry") // ⎋
 
     startOperating()
-    uiscroll
   }
 
 }
 
-
-
 extension NeatViewController: ConnectorDelegate { // KVO
 
   func updateLog(prefix: String = "", _ text: String) {
-    logTextView.text = (logTextView.text ?? "") + prefix + " " + text + "\n"
-//    logTextView.setContentOffset()
+//    logTextView.text = (logTextView.text ?? "") + prefix + " " + text + "\n"
 
+    logTextView.text = prefix + " " + text + "\n" + (logTextView.text ?? "")
+
+
+//    logTextView.scrollRangeToVisible(NSRange(location: logTextView.text.characters.count, length: 0))
   }
 
   func connectorDidStartLoad(url: String) {
     addressLabel.text = url
-    updateLog("StartLoad", url)
+    updateLog("▶", url)
   }
 
   func connectorDidEndLoad(title: String, url: String) {
     addressLabel.text = url
-    updateLog("EndLoad", url)
+    updateLog("◼", url)
   }
 
   func connectorProgress(old old: Float, new: Float) {
