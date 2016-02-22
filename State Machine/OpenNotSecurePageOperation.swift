@@ -59,8 +59,13 @@ class OpenPageOperation: Operation {
 
 
   func openDependingPage() {
+
+    if webView.loading {
+       webView.stopLoading()
+    }
+
     guard let url = webView.URL where url.absoluteString != "about:blank" else {
-      webView.loadRequest(request🔓)
+      connectorTryHttp()
 
       return;
     }
@@ -70,10 +75,10 @@ class OpenPageOperation: Operation {
       cancel()
 
     case (secure: false, base: true): // try secure
-      webView.loadRequest(request🔐)
+      connectorTryHttps()
 
     case (secure: true, base: false): // done
-      webView.loadRequest(request🔐)
+      connectorTryHttps()
 
     case (secure: true, base: true): // done
       finish()
@@ -104,12 +109,6 @@ class OpenSecurePageOperation: OpenPageOperation {
 }
 
 class OpenNotSecurePageOperation: OpenPageOperation {
-
-//  override func execute() {
-//    dispatch_async(dispatch_get_main_queue()) {
-//      self.webView.loadRequest(NSURLRequest(URL: baseUrl🔓))
-//    }
-//  }
 
 }
 

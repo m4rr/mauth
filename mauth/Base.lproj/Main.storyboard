@@ -40,9 +40,9 @@
                                         <rect key="frame" x="0.0" y="62" width="600" height="2"/>
                                     </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-MO-jyi">
-                                        <rect key="frame" x="540" y="33" width="53" height="18"/>
+                                        <rect key="frame" x="540" y="28" width="53" height="28"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="5"/>
                                         <state key="normal" title="Retry"/>
                                         <connections>
                                             <action selector="retryButtonTap:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="Rm1-UD-M0v"/>
@@ -63,9 +63,9 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Eh-0dc">
-                                <rect key="frame" x="8" y="292" width="584" height="300"/>
+                                <rect key="frame" x="8" y="392" width="584" height="200"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -73,7 +73,7 @@
                         <constraints>
                             <constraint firstItem="syk-Bl-cmg" firstAttribute="top" secondItem="FpO-Eh-0dc" secondAttribute="bottom" constant="8" id="4C6-nh-gNA"/>
                             <constraint firstItem="ciN-YV-gat" firstAttribute="leading" secondItem="mpO-zo-UKl" secondAttribute="leading" id="GPF-ii-ovZ"/>
-                            <constraint firstItem="FpO-Eh-0dc" firstAttribute="height" secondItem="mpO-zo-UKl" secondAttribute="height" multiplier="1:2" id="OfI-ks-pbl"/>
+                            <constraint firstItem="FpO-Eh-0dc" firstAttribute="height" secondItem="mpO-zo-UKl" secondAttribute="height" multiplier="1:3" id="OfI-ks-pbl"/>
                             <constraint firstItem="ciN-YV-gat" firstAttribute="top" secondItem="mpO-zo-UKl" secondAttribute="top" id="TJT-xR-3Tr"/>
                             <constraint firstAttribute="trailing" secondItem="FpO-Eh-0dc" secondAttribute="trailing" constant="8" id="dSM-xc-Lb8"/>
                             <constraint firstItem="FpO-Eh-0dc" firstAttribute="leading" secondItem="mpO-zo-UKl" secondAttribute="leading" constant="8" id="wfs-DJ-Q0g"/>
