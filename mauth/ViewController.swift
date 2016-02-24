@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
   private var log: [String: AnyObject] {
     get {
-      return NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
+      return [:] // NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
     }
     set {
       NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
@@ -336,7 +336,7 @@ extension ViewController: WKNavigationDelegate {
 
   /**
 
-  Firstly loaded http://ya.ru that redirected to metro auth page.
+  Firstly loaded http://ya.ru that redirected to auth page.
 
   After tap on ad, loads ad-page,
   and since userTappedOnce && webView.URL?.host != ya.ru, 
