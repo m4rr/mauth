@@ -56,7 +56,15 @@ class OpenPageOperation: Operation {
     webView.loadRequest(request🔐)
   }
 
+  func checkWillRefresh(completion: (willRefresh: Bool) -> Void) {
+    webView.evaluateJavaScript("document.getElementsByTagName('html')[0].outerHTML") { result, error in
+      if let html = result as? String, _ = html.rangeOfString("http-equiv=\"refresh\"") {
+        return completion(willRefresh: true)
+      }
 
+      return completion(willRefresh: false)
+    }
+  }
 
   func openDependingPage() {
 
@@ -75,7 +83,15 @@ class OpenPageOperation: Operation {
       cancel()
 
     case (secure: false, base: true): // try secure
-      connectorTryHttps()
+      checkWillRefresh { (willRefresh) -> Void in
+        if willRefresh {
+          ()
+        } else {
+          self.connectorTryHttps()
+        }
+      }
+
+      () // wait for <meta http-equiv=refresh> redirect
 
     case (secure: true, base: false): // done
       connectorTryHttps()
