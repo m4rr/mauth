@@ -26,6 +26,11 @@ class NeatViewController: UIViewController {
 
     setupWebView()
     startOperating()
+    subscribeNotifications()
+  }
+
+  deinit {
+    unsubscribeNotifications()
   }
 
   override func updateViewConstraints() {
@@ -37,7 +42,15 @@ class NeatViewController: UIViewController {
     super.updateViewConstraints()
   }
 
-  func setupWebView() {
+  private func subscribeNotifications() {
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "startOperating", name: didBecomeActiveNotificationName, object: nil)
+  }
+
+  private func unsubscribeNotifications() {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+
+  private func setupWebView() {
     let config = WKWebViewConfiguration()
     config.allowsInlineMediaPlayback = false
     config.suppressesIncrementalRendering = false
@@ -74,7 +87,7 @@ class NeatViewController: UIViewController {
     view.setNeedsUpdateConstraints()
   }
 
-  private func startOperating() {
+  func startOperating() {
     if #available(iOS 9.0, *) {
       webView.loadHTMLString("", baseURL: nil)
     } else {
