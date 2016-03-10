@@ -22,6 +22,8 @@ protocol ConnectorDelegate: class {
   func connectorDidEndLoad(title: String, url: String)
 
   func connectorProgress(old old: Float, new: Float)
+
+  func connectorDidGetSecurePageMatchHost()
   
 }
 
@@ -97,6 +99,8 @@ class OpenPageOperation: Operation {
       connectorTryHttps()
 
     case (secure: true, base: true): // done
+      delegate?.connectorDidGetSecurePageMatchHost()
+      
       finish()
 
 //    default:

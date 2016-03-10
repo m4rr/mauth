@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import PureLayout
+import PKHUD
 
 class NeatViewController: UIViewController {
 
@@ -120,7 +121,16 @@ extension NeatViewController: ConnectorDelegate { // KVO
     }
   }
 
+  func connectorDidGetSecurePageMatchHost() {
+    showSuccessHUD()
+  }
+
+  func showSuccessHUD() {
+    PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+    PKHUD.sharedHUD.dimsBackground = false
+    PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
+    PKHUD.sharedHUD.show()
+    PKHUD.sharedHUD.hide(afterDelay: 2.0)
+  }
+
 }
-
-
-
