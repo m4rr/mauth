@@ -31,7 +31,7 @@ class NeatViewController: UIViewController {
     webView.autoPinEdge(.Left, toEdge: .Left, ofView: view)
     webView.autoPinEdge(.Right, toEdge: .Right, ofView: view)
     webView.autoPinEdge(.Top, toEdge: .Bottom, ofView: navBar)
-    webView.autoPinEdge(.Bottom, toEdge: .Top, ofView: logTextView)
+    webView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: view)
 
     super.updateViewConstraints()
   }
