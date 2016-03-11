@@ -104,7 +104,7 @@ class OpenPageOperation: Operation {
 
     case (secure: true, base: true): // done
       delegate?.connectorDidGetSecurePageMatchHost()
-      
+
       finish()
 
 //    default:
