@@ -82,7 +82,11 @@ class OpenPageOperation: Operation {
 
     switch isSecureBaseUrl(url) {
     case (secure: false, base: false): // wait for user action
-      cancel()
+      if url.host?.rangeOfString("wi-fi.") == nil {
+        connectorTryHttp()
+      } else {
+        cancel()
+      }
 
     case (secure: false, base: true): // try secure
       checkWillRefresh { (willRefresh) -> Void in
