@@ -6,6 +6,7 @@
 //  Copyright © 2016 m4rr. All rights reserved.
 //
 
+import Foundation
 import WebKit
 
 private let baseUrl🔓 = NSURL(string: "http://www.artlebedev.ru/news/1995/")! // unsecure but trusted website
@@ -82,7 +83,7 @@ class OpenPageOperation: Operation {
 
     switch isSecureBaseUrl(url) {
     case (secure: false, base: false): // wait for user action
-      if url.host?.rangeOfString("wi-fi.") == nil {
+      if url.host?.containsString("wi-fi") == false {
         connectorTryHttp()
       } else {
         cancel()
