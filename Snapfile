@@ -5,8 +5,8 @@ devices([
   "iPhone 6 Plus",
   "iPhone 5",
   "iPhone 4s",
-  "iPad Retina",
-  "iPad Pro"
+#  "iPad Retina",  # these two screenshots made in split-screen mode
+#  "iPad Pro"      # so, can't be automated
 ])
 
 languages([
