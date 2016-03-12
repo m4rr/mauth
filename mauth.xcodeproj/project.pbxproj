@@ -18,7 +18,6 @@
 		03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */; };
 		0368FBED1C7A221700B8EC01 /* CalendarCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */; };
 		0368FBEE1C7A221700B8EC01 /* CloudCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */; };
-		0368FBEF1C7A221700B8EC01 /* HealthCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCC1C7A221700B8EC01 /* HealthCondition.swift */; };
 		0368FBF01C7A221700B8EC01 /* LocationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */; };
 		0368FBF11C7A221700B8EC01 /* MutuallyExclusive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCE1C7A221700B8EC01 /* MutuallyExclusive.swift */; };
 		0368FBF21C7A221700B8EC01 /* NegatedCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCF1C7A221700B8EC01 /* NegatedCondition.swift */; };
@@ -68,7 +67,6 @@
 		03581C901BAED21900D5D95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCondition.swift; sourceTree = "<group>"; };
 		0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCondition.swift; sourceTree = "<group>"; };
-		0368FBCC1C7A221700B8EC01 /* HealthCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthCondition.swift; sourceTree = "<group>"; };
 		0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCondition.swift; sourceTree = "<group>"; };
 		0368FBCE1C7A221700B8EC01 /* MutuallyExclusive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutuallyExclusive.swift; sourceTree = "<group>"; };
 		0368FBCF1C7A221700B8EC01 /* NegatedCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NegatedCondition.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			children = (
 				0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */,
 				0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */,
-				0368FBCC1C7A221700B8EC01 /* HealthCondition.swift */,
 				0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */,
 				0368FBCE1C7A221700B8EC01 /* MutuallyExclusive.swift */,
 				0368FBCF1C7A221700B8EC01 /* NegatedCondition.swift */,
@@ -455,7 +452,6 @@
 				03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */,
 				0368FBFC1C7A221700B8EC01 /* CKContainer+Operations.swift in Sources */,
 				0368FC001C7A221700B8EC01 /* UIUserNotifications+Operations.swift in Sources */,
-				0368FBEF1C7A221700B8EC01 /* HealthCondition.swift in Sources */,
 				0368FBF41C7A221700B8EC01 /* OperationCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
