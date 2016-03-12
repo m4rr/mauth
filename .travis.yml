@@ -10,4 +10,4 @@ osx_image: xcode7.2
 xcode_sdk: iphonesimulator9.2
 
 script:
-- xcodebuild clean build test -project mauth.xcworkspace -scheme mauthTests
+- xcodebuild clean build test -project mauth.xcodeproj -scheme mauthTests
