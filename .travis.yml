@@ -7,4 +7,4 @@ branches:
  only:
  - statemachine
 
-script: xcodebuild -workspace mauth.xcworkspace -scheme mauth -sdk iphonesimulator9.2 ONLY_ACTIVE_ARCH=NO
+script: xcodebuild -workspace mauth.xcworkspace -scheme mauth -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
