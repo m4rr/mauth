@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03581C9F1BAED21900D5D95F"
+               BlueprintIdentifier = "03C1CA9E1C942EC3006C2549"
                BuildableName = "mauthUITests.xctest"
                BlueprintName = "mauthUITests"
                ReferencedContainer = "container:mauth.xcodeproj">

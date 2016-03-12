@@ -48,9 +48,11 @@
 		0368FC0A1C7A221700B8EC01 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEB1C7A221700B8EC01 /* Operation.swift */; };
 		0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */; };
 		0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */; };
+		0393CD2C1C943310007BD0B7 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 0393CD2B1C943310007BD0B7 /* Snapfile */; };
 		03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Car.swift */; };
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
+		03C1CAAE1C942F70006C2549 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */; };
 		03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD400D1BCAEA8C0040B866 /* Sugar.swift */; };
 		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; };
 /* End PBXBuildFile section */
@@ -118,11 +120,13 @@
 		0368FBEB1C7A221700B8EC01 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
+		0393CD2B1C943310007BD0B7 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		03BCFF431BC95EEF000AD1D2 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C1CAA11C942EC3006C2549 /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
 		03C1CAA31C942EC3006C2549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		03CD400D1BCAEA8C0040B866 /* Sugar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sugar.swift; sourceTree = "<group>"; };
 		38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,7 +200,6 @@
 		03581C781BAED21800D5D95F = {
 			isa = PBXGroup;
 			children = (
-				03C1CAA01C942EC3006C2549 /* mauthUITests */,
 				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
 				BA08C717C88E26D79B51FEAC /* Pods */,
 				03581C821BAED21900D5D95F /* Products */,
@@ -204,6 +207,7 @@
 				033F300B1C1ADDDA00EEDFB5 /* State Machine Operations */,
 				0368FBC81C7A221700B8EC01 /* Operations */,
 				030B85F11C941A260071F48C /* mauthTests */,
+				03C1CAA01C942EC3006C2549 /* mauthUITests */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -315,6 +319,8 @@
 		03C1CAA01C942EC3006C2549 /* mauthUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0393CD2B1C943310007BD0B7 /* Snapfile */,
+				03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */,
 				03C1CAA11C942EC3006C2549 /* mauthUITests.swift */,
 				03C1CAA31C942EC3006C2549 /* Info.plist */,
 			);
@@ -464,6 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0393CD2C1C943310007BD0B7 /* Snapfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */,
+				03C1CAAE1C942F70006C2549 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +778,7 @@
 		};
 		03C1CAA61C942EC3006C2549 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D15C100F23E060F4D8BC33FE /* Pods-mauth.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -786,6 +795,7 @@
 		};
 		03C1CAA71C942EC3006C2549 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -836,6 +846,7 @@
 				03C1CAA71C942EC3006C2549 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
