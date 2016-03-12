@@ -561,6 +561,7 @@
 /* Begin XCBuildConfiguration section */
 		030B85F71C941A260071F48C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D15C100F23E060F4D8BC33FE /* Pods-mauth.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -577,6 +578,7 @@
 		};
 		030B85F81C941A260071F48C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -704,6 +706,7 @@
 				030B85F81C941A260071F48C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03581C7C1BAED21800D5D95F /* Build configuration list for PBXProject "mauth" */ = {
 			isa = XCConfigurationList;
