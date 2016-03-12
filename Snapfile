@@ -18,7 +18,6 @@ languages([
 
 output_directory "./screenshots"
 
-clear_previous_screenshots true
+#clear_previous_screenshots true
 
-stop_after_first_error true
-
+# stop_after_first_error true
