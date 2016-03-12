@@ -68,7 +68,7 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.35026939655172412" colorSpace="calibratedRGB"/>
                                 <string key="text">
 Тапните на рекламу.</string>
-                                <color key="textColor" white="0.49800755033557048" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.39654991610738255" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
