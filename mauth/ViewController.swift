@@ -11,9 +11,6 @@ import WebKit
 import PureLayout
 import PKHUD
 
-let willResignActiveNotificationName = "applicationWillResignActiveNotificationName"
-let didBecomeActiveNotificationName = "applicationDidBecomeActiveNotificationName"
-
 class ViewController: UIViewController {
 
   private var webView: WKWebView!
@@ -45,7 +42,7 @@ class ViewController: UIViewController {
 
   private var log: [String: AnyObject] {
     get {
-      return NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
+      return [:] // NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
     }
     set {
       NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
@@ -134,6 +131,7 @@ class ViewController: UIViewController {
     var errCount = 0
 
     aClick.forEach { query in
+
       webView.evaluateJavaScript(query) { result, error in
         self.userTappedOnce = true
 
@@ -338,7 +336,7 @@ extension ViewController: WKNavigationDelegate {
 
   /**
 
-  Firstly loaded http://ya.ru that redirected to metro auth page.
+  Firstly loaded http://ya.ru that redirected to auth page.
 
   After tap on ad, loads ad-page,
   and since userTappedOnce && webView.URL?.host != ya.ru, 

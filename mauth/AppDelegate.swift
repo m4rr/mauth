@@ -9,6 +9,9 @@
 import UIKit
 import AVFoundation
 
+let willResignActiveNotificationName = "applicationWillResignActiveNotificationName"
+let didBecomeActiveNotificationName = "applicationDidBecomeActiveNotificationName"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
