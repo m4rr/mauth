@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoggerTableViewController: UITableViewController {
+class LogTableViewController: UITableViewController {
 
   private var log: [(String, AnyObject)] = [] // Array(NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:])
 

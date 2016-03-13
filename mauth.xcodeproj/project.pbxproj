@@ -170,8 +170,8 @@
 		033F30081C1A46FA00EEDFB5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
 				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
+				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

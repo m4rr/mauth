@@ -201,7 +201,7 @@
         <!--Logs-->
         <scene sceneID="Mpb-ej-kzX">
             <objects>
-                <tableViewController id="3A1-Oa-g9s" customClass="LoggerTableViewController" customModule="mauth" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3A1-Oa-g9s" customClass="LogTableViewController" customModule="mauth" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="otu-nu-f2f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
