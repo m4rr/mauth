@@ -53,7 +53,6 @@
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
 		03C1CAAE1C942F70006C2549 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */; };
-		03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD400D1BCAEA8C0040B866 /* Sugar.swift */; };
 		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,7 +126,6 @@
 		03C1CAA11C942EC3006C2549 /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
 		03C1CAA31C942EC3006C2549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		03CD400D1BCAEA8C0040B866 /* Sugar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sugar.swift; sourceTree = "<group>"; };
 		38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.release.xcconfig"; sourceTree = "<group>"; };
 		D15C100F23E060F4D8BC33FE /* Pods-mauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			children = (
 				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
 				0317D9571BBBE01500E6DE46 /* LoggerTableViewController.swift */,
-				03CD400D1BCAEA8C0040B866 /* Sugar.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -561,7 +558,6 @@
 				0368FBF01C7A221700B8EC01 /* LocationCondition.swift in Sources */,
 				0368FC031C7A221700B8EC01 /* TimeoutObserver.swift in Sources */,
 				033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */,
-				03CD400E1BCAEA8C0040B866 /* Sugar.swift in Sources */,
 				0368FBF71C7A221700B8EC01 /* PhotosCondition.swift in Sources */,
 				0368FBED1C7A221700B8EC01 /* CalendarCondition.swift in Sources */,
 				0368FBF31C7A221700B8EC01 /* NoCancelledDependencies.swift in Sources */,
