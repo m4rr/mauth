@@ -104,16 +104,13 @@ class NeatViewController: UIViewController {
 
   private func setupQuickOpenView() {
     view.addSubview(quickOpenView)
-
     //quickOpenView.layer.borderColor = UIColor(white: 0.8, alpha: 1).CGColor
     quickOpenView.layer.borderWidth = 0
-
     quickOpenView.layer.cornerRadius = 2
-
     quickOpenView.layer.shadowColor = UIColor(white: 0.6, alpha: 1).CGColor
     quickOpenView.layer.shadowOffset = CGSize(width: 0, height: 2)
-    quickOpenView.layer.shadowOpacity = 0
-    quickOpenView.layer.shadowRadius = 10
+    quickOpenView.layer.shadowOpacity = 1
+    quickOpenView.layer.shadowRadius = 5
 
     quickOpenButtons.forEach {
       $0.layer.cornerRadius = 2
@@ -185,7 +182,6 @@ extension NeatViewController: ConnectorDelegate {
 
   private func hideQuickOpen() {
     quickOpenView.hidden = true
-    quickOpenView.layer.shadowOpacity = 0.2
   }
 
   private func showQuickOpen() {
@@ -195,20 +191,7 @@ extension NeatViewController: ConnectorDelegate {
     UIView.animateWithDuration(0.2, delay: 1, options: .CurveEaseIn,
       animations: {
         self.quickOpenView.alpha = 1
-      },
-      completion: { [unowned self] _ in
-        self.quickOpenView.layer.shadowOpacity = 0.2
-
-        let anim = CABasicAnimation(keyPath: "shadowOpacity")
-        anim.cumulative = true
-        anim.duration = 0.3
-        anim.timingFunction = CAMediaTimingFunction(name: "easeIn")
-        anim.fromValue = self.quickOpenView.layer.shadowOpacity
-        anim.toValue = 1
-        self.quickOpenView.layer.addAnimation(anim, forKey: "shadowOpacity")
-
-        self.quickOpenView.layer.shadowOpacity = 1
-    })
+      }, completion: nil)
   }
 
 }
