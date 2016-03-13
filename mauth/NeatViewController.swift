@@ -56,7 +56,7 @@ class NeatViewController: UIViewController {
   }
 
   private func subscribeNotifications() {
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "startOperating", name: didBecomeActiveNotificationName, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "startOperating", name: didBecomeActiveNotification, object: nil)
   }
 
   private func unsubscribeNotifications() {
@@ -132,6 +132,8 @@ class NeatViewController: UIViewController {
   }
 
 }
+
+// MARK: ConnectorDelegate
 
 extension NeatViewController: ConnectorDelegate {
 

@@ -184,7 +184,7 @@
 				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
 			);
 			name = "State Machine Operations";
-			path = "State Machine";
+			path = "../State Machine";
 			sourceTree = "<group>";
 		};
 		0345B0111C16030E00FA4C8A /* To do — Social Network */ = {
@@ -199,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				03581C831BAED21900D5D95F /* mauth */,
-				033F300B1C1ADDDA00EEDFB5 /* State Machine Operations */,
 				0368FBC81C7A221700B8EC01 /* Operations */,
 				030B85F11C941A260071F48C /* mauthTests */,
 				03C1CAA01C942EC3006C2549 /* mauthUITests */,
@@ -229,6 +228,7 @@
 				03581C881BAED21900D5D95F /* Main.storyboard */,
 				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
+				033F300B1C1ADDDA00EEDFB5 /* State Machine Operations */,
 				033F30081C1A46FA00EEDFB5 /* Logs */,
 				0345B0111C16030E00FA4C8A /* To do — Social Network */,
 				03DF11061C958149007108DA /* Info */,
