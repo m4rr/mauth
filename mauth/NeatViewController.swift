@@ -199,3 +199,39 @@ extension NeatViewController {
 
 
 }
+
+extension NeatViewController {
+
+  // MARK: UI Actions
+
+  private func openURL(urlString: String) {
+    guard let url = NSURL(string: urlString) else {
+      return
+    }
+
+    if UIApplication.sharedApplication().canOpenURL(url) {
+       UIApplication.sharedApplication().openURL(url)
+    }
+  }
+
+  @IBAction func openTwitter(sender: AnyObject) {
+    openURL("twitter://")
+  }
+
+  @IBAction func openFacebook(sender: AnyObject) {
+    openURL("fb://")
+  }
+
+  @IBAction func openInstagram(sender: AnyObject) {
+    openURL("instagram://")
+  }
+
+  @IBAction func openVk(sender: AnyObject) {
+    openURL("vk://")
+  }
+
+  @IBAction func openSafari(sender: AnyObject) {
+    openURL("https://m4rr.ru")
+  }
+
+}
