@@ -25,17 +25,22 @@ import PKHUD
 
 class NeatViewController: UIViewController {
 
+  @IBOutlet var quickOpenButtons: [UIButton]!
+  
   private lazy var webView = WKWebView()
   @IBOutlet weak var navBar: UIView!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var progressBar: UIProgressView!
   @IBOutlet weak var logTextView: UITextView!
 
+  @IBOutlet var quickOpenView: UIView!
+
   let operationQueue = OperationQueue()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    setupQuickOpenView()
     setupWebView()
     startOperating()
     subscribeNotifications()
@@ -50,6 +55,9 @@ class NeatViewController: UIViewController {
     webView.autoPinEdge(.Right, toEdge: .Right, ofView: view)
     webView.autoPinEdge(.Top, toEdge: .Bottom, ofView: navBar)
     webView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: view)
+
+    quickOpenView.autoAlignAxis(.Horizontal, toSameAxisOfView: logTextView)
+    quickOpenView.autoAlignAxis(.Vertical, toSameAxisOfView: logTextView)
 
     super.updateViewConstraints()
   }
@@ -94,7 +102,28 @@ class NeatViewController: UIViewController {
     view.updateConstraintsIfNeeded()
   }
 
+  private func setupQuickOpenView() {
+    view.addSubview(quickOpenView)
+
+    //quickOpenView.layer.borderColor = UIColor(white: 0.8, alpha: 1).CGColor
+    quickOpenView.layer.borderWidth = 0
+
+    quickOpenView.layer.cornerRadius = 2
+
+    quickOpenView.layer.shadowColor = UIColor(white: 0.6, alpha: 1).CGColor
+    quickOpenView.layer.shadowOffset = CGSize(width: 0, height: 2)
+    quickOpenView.layer.shadowOpacity = 0
+    quickOpenView.layer.shadowRadius = 10
+
+    quickOpenButtons.forEach {
+      $0.layer.cornerRadius = 2
+    }
+  }
+
+  /// This also used via selector.
   func startOperating() {
+    hideQuickOpen()
+
     if #available(iOS 9.0, *) {
       webView.loadHTMLString("", baseURL: nil)
     } else {
@@ -114,7 +143,7 @@ class NeatViewController: UIViewController {
 
 }
 
-extension NeatViewController: ConnectorDelegate { // KVO
+extension NeatViewController: ConnectorDelegate {
 
   func updateLog(prefix: String, _ text: String) {
     let t = prefix + " " + text + "\n"
@@ -143,9 +172,10 @@ extension NeatViewController: ConnectorDelegate { // KVO
 
   func connectorDidGetSecurePageMatchHost() {
     showSuccessHUD()
+    showQuickOpen()
   }
 
-  func showSuccessHUD() {
+  private func showSuccessHUD() {
     PKHUD.sharedHUD.contentView = PKHUDSuccessView()
     PKHUD.sharedHUD.dimsBackground = false
     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
@@ -153,11 +183,39 @@ extension NeatViewController: ConnectorDelegate { // KVO
     PKHUD.sharedHUD.hide(afterDelay: 2.0)
   }
 
+  private func hideQuickOpen() {
+    quickOpenView.hidden = true
+    quickOpenView.layer.shadowOpacity = 0.2
+  }
+
+  private func showQuickOpen() {
+    quickOpenView.alpha = 0
+    quickOpenView.hidden = false
+
+    UIView.animateWithDuration(0.2, delay: 1, options: .CurveEaseIn,
+      animations: {
+        self.quickOpenView.alpha = 1
+      },
+      completion: { [unowned self] _ in
+        self.quickOpenView.layer.shadowOpacity = 0.2
+
+        let anim = CABasicAnimation(keyPath: "shadowOpacity")
+        anim.cumulative = true
+        anim.duration = 0.3
+        anim.timingFunction = CAMediaTimingFunction(name: "easeIn")
+        anim.fromValue = self.quickOpenView.layer.shadowOpacity
+        anim.toValue = 1
+        self.quickOpenView.layer.addAnimation(anim, forKey: "shadowOpacity")
+
+        self.quickOpenView.layer.shadowOpacity = 1
+    })
+  }
+
 }
 
-extension NeatViewController {
+// MARK: UI Actions
 
-  // MARK: UI Actions
+extension NeatViewController {
 
   private func openURL(urlString: String) {
     guard let url = NSURL(string: urlString) else {
@@ -177,12 +235,12 @@ extension NeatViewController {
     openURL("fb://")
   }
 
-  @IBAction func openInstagram(sender: AnyObject) {
-    openURL("instagram://")
-  }
-
   @IBAction func openVk(sender: AnyObject) {
     openURL("vk://")
+  }
+
+  @IBAction func openInstagram(sender: AnyObject) {
+    openURL("instagram://")
   }
 
   @IBAction func openSafari(sender: AnyObject) {

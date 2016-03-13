@@ -167,12 +167,13 @@
 			path = mauthTests;
 			sourceTree = "<group>";
 		};
-		033F30081C1A46FA00EEDFB5 /* Helpers */ = {
+		033F30081C1A46FA00EEDFB5 /* Logs */ = {
 			isa = PBXGroup;
 			children = (
 				0317D9571BBBE01500E6DE46 /* LogTableViewController.swift */,
 				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
 			);
+			name = Logs;
 			path = Helpers;
 			sourceTree = "<group>";
 		};
@@ -223,7 +224,7 @@
 		03581C831BAED21900D5D95F /* mauth */ = {
 			isa = PBXGroup;
 			children = (
-				033F30081C1A46FA00EEDFB5 /* Helpers */,
+				033F30081C1A46FA00EEDFB5 /* Logs */,
 				0345B0111C16030E00FA4C8A /* To do — Social Network */,
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
