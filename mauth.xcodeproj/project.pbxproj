@@ -13,7 +13,6 @@
 		032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */; };
 		033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F30091C1A47D900EEDFB5 /* NeatViewController.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
-		03581C871BAED21900D5D95F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C861BAED21900D5D95F /* ViewController.swift */; };
 		03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C881BAED21900D5D95F /* Main.storyboard */; };
 		03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8B1BAED21900D5D95F /* Assets.xcassets */; };
 		03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */; };
@@ -49,6 +48,7 @@
 		0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */; };
 		0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */; };
 		0393CD2C1C943310007BD0B7 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 0393CD2B1C943310007BD0B7 /* Snapfile */; };
+		03A202161C955B2900A4A8EB /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 03A202151C955B2900A4A8EB /* .travis.yml */; };
 		03BCFF441BC95EEF000AD1D2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Car.swift */; };
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
@@ -84,7 +84,6 @@
 		033F30091C1A47D900EEDFB5 /* NeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeatViewController.swift; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03581C861BAED21900D5D95F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03581C891BAED21900D5D95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03581C8B1BAED21900D5D95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03581C8E1BAED21900D5D95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
 		0393CD2B1C943310007BD0B7 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		03A202151C955B2900A4A8EB /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		03BCFF431BC95EEF000AD1D2 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,14 +200,14 @@
 		03581C781BAED21800D5D95F = {
 			isa = PBXGroup;
 			children = (
-				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
-				BA08C717C88E26D79B51FEAC /* Pods */,
-				03581C821BAED21900D5D95F /* Products */,
 				03581C831BAED21900D5D95F /* mauth */,
 				033F300B1C1ADDDA00EEDFB5 /* State Machine Operations */,
 				0368FBC81C7A221700B8EC01 /* Operations */,
 				030B85F11C941A260071F48C /* mauthTests */,
 				03C1CAA01C942EC3006C2549 /* mauthUITests */,
+				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
+				03581C821BAED21900D5D95F /* Products */,
+				BA08C717C88E26D79B51FEAC /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -231,10 +231,10 @@
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
 				03581C901BAED21900D5D95F /* Info.plist */,
+				03A202151C955B2900A4A8EB /* .travis.yml */,
 				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
 				03581C881BAED21900D5D95F /* Main.storyboard */,
 				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
-				03581C861BAED21900D5D95F /* ViewController.swift */,
 			);
 			path = mauth;
 			sourceTree = "<group>";
@@ -463,6 +463,7 @@
 				03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */,
 				03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */,
 				03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */,
+				03A202161C955B2900A4A8EB /* .travis.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +558,6 @@
 				0368FC0A1C7A221700B8EC01 /* Operation.swift in Sources */,
 				0368FBFF1C7A221700B8EC01 /* NSOperation+Operations.swift in Sources */,
 				0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */,
-				03581C871BAED21900D5D95F /* ViewController.swift in Sources */,
 				0368FBF01C7A221700B8EC01 /* LocationCondition.swift in Sources */,
 				0368FC031C7A221700B8EC01 /* TimeoutObserver.swift in Sources */,
 				033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */,
