@@ -11,6 +11,18 @@ import WebKit
 import PureLayout
 import PKHUD
 
+/**
+
+ Firstly loaded http://ya.ru that redirected to auth page.
+
+ After tap on ad, loads ad-page,
+ and since userTappedOnce && webView.URL?.host != ya.ru,
+ trying to load https://ya.ru.
+
+ Next guess: massRequest https—http—https.
+
+ */
+
 class NeatViewController: UIViewController {
 
   private lazy var webView = WKWebView()
