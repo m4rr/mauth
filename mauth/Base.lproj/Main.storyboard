@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciN-YV-gat">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://chars.cc" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-43-Now" userLabel="addressLabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-43-Now" userLabel="addressLabel">
                                         <rect key="frame" x="8" y="28" width="585" height="28"/>
                                         <color key="backgroundColor" white="1" alpha="0.74981142241379306" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration" identifier="addressLabel"/>
@@ -41,10 +41,10 @@
                                         <rect key="frame" x="0.0" y="62" width="600" height="2"/>
                                     </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-MO-jyi">
-                                        <rect key="frame" x="540" y="28" width="53" height="28"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="562" y="28" width="27" height="28"/>
+                                        <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="5"/>
-                                        <state key="normal" title="Retry"/>
+                                        <state key="normal" image="RefreshButton"/>
                                         <connections>
                                             <action selector="retryButtonTap:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="Rm1-UD-M0v"/>
                                         </connections>
@@ -53,9 +53,10 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="mgu-43-Now" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" constant="8" id="A2V-O0-o3H"/>
+                                    <constraint firstItem="ae7-MO-jyi" firstAttribute="height" secondItem="mgu-43-Now" secondAttribute="height" id="Jpa-rQ-9Yp"/>
                                     <constraint firstItem="mgu-43-Now" firstAttribute="centerX" secondItem="ciN-YV-gat" secondAttribute="centerX" id="QMl-rJ-Fdd"/>
                                     <constraint firstAttribute="bottom" secondItem="UiB-xy-Vvt" secondAttribute="bottom" id="UTy-Bt-CWX"/>
-                                    <constraint firstItem="ae7-MO-jyi" firstAttribute="trailing" secondItem="mgu-43-Now" secondAttribute="trailing" id="Yja-m5-KQ3"/>
+                                    <constraint firstItem="ae7-MO-jyi" firstAttribute="trailing" secondItem="mgu-43-Now" secondAttribute="trailing" constant="-4" id="Yja-m5-KQ3"/>
                                     <constraint firstAttribute="trailing" secondItem="UiB-xy-Vvt" secondAttribute="trailing" id="fPM-4X-Zqc"/>
                                     <constraint firstAttribute="height" constant="64" id="hV5-Aa-rnR"/>
                                     <constraint firstItem="mgu-43-Now" firstAttribute="centerY" secondItem="ciN-YV-gat" secondAttribute="centerY" constant="10" id="jHh-rh-XeE"/>
@@ -315,6 +316,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="RefreshButton" width="11" height="15"/>
         <image name="social_fb" width="50" height="50"/>
         <image name="social_instagram" width="50" height="50"/>
         <image name="social_safari" width="50" height="50"/>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,18 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="256" translatesAutoresizingMaskIntoConstraints="NO" id="mkC-OE-epa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="mkC-OE-epa">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p68-Oy-DMb" userLabel="nav View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3JQ-Kd-AQV" userLabel="addressLabel">
+                                        <rect key="frame" x="8" y="28" width="585" height="28"/>
+                                        <color key="backgroundColor" white="1" alpha="0.74981142239999998" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="addressLabel"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="eQR-b5-7sO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3JQ-Kd-AQV" firstAttribute="leading" secondItem="p68-Oy-DMb" secondAttribute="leading" constant="8" id="A61-r3-njF"/>
+                                    <constraint firstAttribute="height" constant="64" id="V4c-WU-SWw"/>
+                                    <constraint firstItem="3JQ-Kd-AQV" firstAttribute="centerY" secondItem="p68-Oy-DMb" secondAttribute="centerY" constant="10" id="osC-cB-xFN"/>
+                                    <constraint firstItem="3JQ-Kd-AQV" firstAttribute="centerX" secondItem="p68-Oy-DMb" secondAttribute="centerX" id="yBn-lv-1mQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mkC-OE-epa" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="6c8-Xh-bae"/>
                             <constraint firstAttribute="trailing" secondItem="mkC-OE-epa" secondAttribute="trailing" id="cx9-P0-S40"/>
                             <constraint firstItem="mkC-OE-epa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="dvR-tZ-VIb"/>
+                            <constraint firstItem="p68-Oy-DMb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="nX3-O3-7fV"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="mkC-OE-epa" secondAttribute="bottom" id="sUs-Lh-aNA"/>
+                            <constraint firstItem="p68-Oy-DMb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="spa-XS-OQ3"/>
+                            <constraint firstAttribute="trailing" secondItem="p68-Oy-DMb" secondAttribute="trailing" id="y8P-ln-viq"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +62,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="256" width="256" height="256"/>
+        <image name="splash" width="256" height="256"/>
     </resources>
 </document>
