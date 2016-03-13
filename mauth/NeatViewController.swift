@@ -24,8 +24,6 @@ import PKHUD
  */
 
 class NeatViewController: UIViewController {
-
-  @IBOutlet var quickOpenButtons: [UIButton]!
   
   private lazy var webView = WKWebView()
   @IBOutlet weak var navBar: UIView!
@@ -112,7 +110,7 @@ class NeatViewController: UIViewController {
     quickOpenView.layer.shadowOpacity = 1
     quickOpenView.layer.shadowRadius = 5
 
-    quickOpenButtons.forEach {
+    quickOpenView.subviews.forEach {
       $0.layer.cornerRadius = 2
     }
   }
@@ -188,7 +186,7 @@ extension NeatViewController: ConnectorDelegate {
     quickOpenView.alpha = 0
     quickOpenView.hidden = false
 
-    UIView.animateWithDuration(0.2, delay: 1, options: .CurveEaseIn,
+    UIView.animateWithDuration(0.25, delay: 0, options: .CurveEaseIn,
       animations: {
         self.quickOpenView.alpha = 1
       }, completion: nil)
@@ -197,6 +195,10 @@ extension NeatViewController: ConnectorDelegate {
 }
 
 // MARK: UI Actions
+
+func ~=(lhs: String, rhs: String?) -> Bool {
+  return lhs == rhs
+}
 
 extension NeatViewController {
 
@@ -210,24 +212,21 @@ extension NeatViewController {
     }
   }
 
-  @IBAction func openTwitter(sender: AnyObject) {
-    openURL("twitter://")
-  }
-
-  @IBAction func openFacebook(sender: AnyObject) {
-    openURL("fb://")
-  }
-
-  @IBAction func openVk(sender: AnyObject) {
-    openURL("vk://")
-  }
-
-  @IBAction func openInstagram(sender: AnyObject) {
-    openURL("instagram://")
-  }
-
-  @IBAction func openSafari(sender: AnyObject) {
-    openURL("https://m4rr.ru")
+  @IBAction func openApp(sender: UIButton) {
+    switch sender.accessibilityIdentifier {
+    case "openTwitter":
+      openURL("twitter://")
+    case "openFacebook":
+      openURL("fb://")
+    case "openVk":
+      openURL("vk://")
+    case "openInstagram":
+      openURL("instagram://")
+    case "openSafari":
+      openURL("https://m4rr.ru")
+    default:
+      ()
+    }
   }
 
 }

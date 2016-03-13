@@ -224,15 +224,14 @@
 		03581C831BAED21900D5D95F /* mauth */ = {
 			isa = PBXGroup;
 			children = (
+				03581C841BAED21900D5D95F /* AppDelegate.swift */,
+				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
+				03581C881BAED21900D5D95F /* Main.storyboard */,
+				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
+				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
 				033F30081C1A46FA00EEDFB5 /* Logs */,
 				0345B0111C16030E00FA4C8A /* To do — Social Network */,
-				03581C841BAED21900D5D95F /* AppDelegate.swift */,
-				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
-				03581C901BAED21900D5D95F /* Info.plist */,
-				03A202151C955B2900A4A8EB /* .travis.yml */,
-				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
-				03581C881BAED21900D5D95F /* Main.storyboard */,
-				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
+				03DF11061C958149007108DA /* Info */,
 			);
 			path = mauth;
 			sourceTree = "<group>";
@@ -323,6 +322,15 @@
 				03C1CAA31C942EC3006C2549 /* Info.plist */,
 			);
 			path = mauthUITests;
+			sourceTree = "<group>";
+		};
+		03DF11061C958149007108DA /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				03581C901BAED21900D5D95F /* Info.plist */,
+				03A202151C955B2900A4A8EB /* .travis.yml */,
+			);
+			name = Info;
 			sourceTree = "<group>";
 		};
 		BA08C717C88E26D79B51FEAC /* Pods */ = {

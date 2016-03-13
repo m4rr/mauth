@@ -91,11 +91,6 @@
                         <outlet property="navBar" destination="ciN-YV-gat" id="nqn-4d-4kT"/>
                         <outlet property="progressBar" destination="UiB-xy-Vvt" id="rLb-Bm-THT"/>
                         <outlet property="quickOpenView" destination="ByS-iO-ebd" id="z8s-eV-zLo"/>
-                        <outletCollection property="quickOpenButtons" destination="IKy-Ra-DbP" collectionClass="NSMutableArray" id="4d6-j8-lDQ"/>
-                        <outletCollection property="quickOpenButtons" destination="Dhh-q2-S7J" collectionClass="NSMutableArray" id="y8D-RV-dfO"/>
-                        <outletCollection property="quickOpenButtons" destination="bZO-r3-JZK" collectionClass="NSMutableArray" id="xwK-GW-Ckt"/>
-                        <outletCollection property="quickOpenButtons" destination="FJZ-MR-J40" collectionClass="NSMutableArray" id="Fb4-oh-JAI"/>
-                        <outletCollection property="quickOpenButtons" destination="lYY-Jk-BAz" collectionClass="NSMutableArray" id="SYw-3M-1Yo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZ8-BR-GKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,82 +109,62 @@
                         </label>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYY-Jk-BAz" userLabel="twitter Button">
                             <rect key="frame" x="8" y="38" width="40" height="40"/>
+                            <accessibility key="accessibilityConfiguration" identifier="openTwitter"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="65B-To-QWP"/>
                                 <constraint firstAttribute="width" constant="40" id="OUF-Su-SxT"/>
                             </constraints>
                             <state key="normal" image="social_twitter"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="openTwitter:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="Vrv-rx-ErV"/>
+                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="ubr-04-Ch9"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJZ-MR-J40" userLabel="facebook Button">
                             <rect key="frame" x="56" y="38" width="40" height="40"/>
+                            <accessibility key="accessibilityConfiguration" identifier="openFacebook"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="SI1-im-WWo"/>
                                 <constraint firstAttribute="height" constant="40" id="geq-BY-vQt"/>
                             </constraints>
                             <state key="normal" image="social_fb"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="openFacebook:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="47C-8J-C9T"/>
+                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="tgJ-nX-c8g"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-r3-JZK" userLabel="vk Button">
                             <rect key="frame" x="104" y="38" width="40" height="40"/>
+                            <accessibility key="accessibilityConfiguration" identifier="openVk"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="D7b-qS-h9M"/>
                                 <constraint firstAttribute="width" constant="40" id="Vvg-1h-M86"/>
                             </constraints>
                             <state key="normal" image="social_vk"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="openVk:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="ZAI-5S-0AJ"/>
+                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="b5y-hZ-s6p"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKy-Ra-DbP" userLabel="instagram Button">
                             <rect key="frame" x="152" y="38" width="40" height="40"/>
+                            <accessibility key="accessibilityConfiguration" identifier="openInstagram"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="B5S-Nq-5Px"/>
                                 <constraint firstAttribute="width" constant="40" id="IYH-aY-wLH"/>
                             </constraints>
                             <state key="normal" image="social_instagram"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="openInstagram:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="bc6-b5-Rx0"/>
+                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="WOd-dZ-H4d"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-q2-S7J" userLabel="safari Button">
                             <rect key="frame" x="200" y="38" width="40" height="40"/>
+                            <accessibility key="accessibilityConfiguration" identifier="openSafari"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="WT7-hj-Nom"/>
                                 <constraint firstAttribute="width" constant="40" id="gv6-Or-P22"/>
                             </constraints>
                             <state key="normal" image="social_safari"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="openSafari:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="csy-MW-cd8"/>
+                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="bM8-8K-fOP"/>
                             </connections>
                         </button>
                     </subviews>
