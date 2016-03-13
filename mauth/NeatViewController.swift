@@ -2,7 +2,7 @@
 //  NeatViewController.swift
 //  mauth
 //
-//  Created by Marat S. on 11.12.15.
+//  Created by Marat S. on 11.12.15. (First vesion — on 20.09.15: commit 2b3a696.)
 //  Copyright © 2015 m4rr. All rights reserved.
 //
 
@@ -13,13 +13,9 @@ import PKHUD
 
 /**
 
- Firstly loaded http://ya.ru that redirected to auth page.
-
- After tap on ad, loads ad-page,
- and since userTappedOnce && webView.URL?.host != ya.ru,
- trying to load https://ya.ru.
-
- Next guess: massRequest https—http—https.
+ Firstly loaded http-page that redirected to the auth page.
+ Tap on ad loads an ad-page.
+ After that trying to load a https-page.
 
  */
 
@@ -30,7 +26,6 @@ class NeatViewController: UIViewController {
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var progressBar: UIProgressView!
   @IBOutlet weak var logTextView: UITextView!
-
   @IBOutlet var quickOpenView: UIView!
 
   let operationQueue = OperationQueue()
@@ -196,10 +191,6 @@ extension NeatViewController: ConnectorDelegate {
 
 // MARK: UI Actions
 
-func ~=(lhs: String, rhs: String?) -> Bool {
-  return lhs == rhs
-}
-
 extension NeatViewController {
 
   private func openURL(urlString: String) {
@@ -229,4 +220,9 @@ extension NeatViewController {
     }
   }
 
+}
+
+/// Parttern matching for Optional<String> for the case of "accessibilityIdentifier".
+func ~=(lhs: String, rhs: String?) -> Bool {
+  return lhs == rhs
 }
