@@ -68,8 +68,6 @@ class NeatViewController: UIViewController {
     //config.userContentController.addUserScript(userScript)
 
     webView = WKWebView(frame: view.bounds, configuration: config)
-//    webView.scrollView.contentInset.top = 20
-//    webView.scrollView.addGestureRecognizer(tapGestureRecognizer)
 
     if #available(iOS 9.0, *) {
         webView.customUserAgent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E; FerrariGT)" // vertu user-agent :)
@@ -79,12 +77,9 @@ class NeatViewController: UIViewController {
 
     webView.alpha = 0.3
 
-
-    navigationController?.navigationBarHidden = false
-
     view.insertSubview(webView, atIndex: 0)
 
-    view.setNeedsUpdateConstraints()
+    view.updateConstraintsIfNeeded()
   }
 
   func startOperating() {
