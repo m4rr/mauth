@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		030B85F31C941A260071F48C /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B85F21C941A260071F48C /* mauthTests.swift */; };
-		0317D9581BBBE01500E6DE46 /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9571BBBE01500E6DE46 /* LogTableViewController.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		031DA7281C95A9410092FFBA /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DA7271C95A9410092FFBA /* LogManager.swift */; };
 		032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */; };
@@ -78,7 +77,6 @@
 		030B85F01C941A260071F48C /* mauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030B85F21C941A260071F48C /* mauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthTests.swift; sourceTree = "<group>"; };
 		030B85F41C941A260071F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0317D9571BBBE01500E6DE46 /* LogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
 		031DA7271C95A9410092FFBA /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
@@ -173,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				031DA7271C95A9410092FFBA /* LogManager.swift */,
-				0317D9571BBBE01500E6DE46 /* LogTableViewController.swift */,
 				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
 			);
 			path = Logs;
@@ -587,7 +584,6 @@
 				0368FC081C7A221700B8EC01 /* GroupOperation.swift in Sources */,
 				0368FBFB1C7A221700B8EC01 /* UserNotificationCondition.swift in Sources */,
 				0368FBEE1C7A221700B8EC01 /* CloudCondition.swift in Sources */,
-				0317D9581BBBE01500E6DE46 /* LogTableViewController.swift in Sources */,
 				03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */,
 				0368FBFC1C7A221700B8EC01 /* CKContainer+Operations.swift in Sources */,
 				0368FC001C7A221700B8EC01 /* UIUserNotifications+Operations.swift in Sources */,
