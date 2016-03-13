@@ -51,7 +51,7 @@ class NeatViewController: UIViewController {
     webView.autoPinEdge(.Top, toEdge: .Bottom, ofView: navBar)
     webView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: view)
 
-    quickOpenView.autoAlignAxis(.Horizontal, toSameAxisOfView: logTextView)
+    quickOpenView.autoAlignAxis(.Horizontal, toSameAxisOfView: logTextView, withMultiplier: 0.95)
     quickOpenView.autoAlignAxis(.Vertical, toSameAxisOfView: logTextView)
 
     super.updateViewConstraints()
@@ -102,7 +102,7 @@ class NeatViewController: UIViewController {
     //quickOpenView.layer.borderColor = UIColor(white: 0.8, alpha: 1).CGColor
     quickOpenView.layer.borderWidth = 0
     quickOpenView.layer.cornerRadius = 2
-    quickOpenView.layer.shadowColor = UIColor(white: 0.6, alpha: 1).CGColor
+    quickOpenView.layer.shadowColor = UIColor(white: 0.5, alpha: 1).CGColor
     quickOpenView.layer.shadowOffset = CGSize(width: 0, height: 2)
     quickOpenView.layer.shadowOpacity = 1
     quickOpenView.layer.shadowRadius = 5
@@ -133,16 +133,19 @@ class NeatViewController: UIViewController {
     startOperating()
   }
 
+  // Shake-shake-shake.
   override func canBecomeFirstResponder() -> Bool {
     return true
   }
 
+  // Shake gesture to view source code.
   override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
     if motion == .MotionShake {
       performSegueWithIdentifier("show-source-code", sender: nil)
     }
   }
 
+  // Unwind from source code viewer to here.
   @IBAction func unwindToNeat(segue: UIStoryboardSegue) {
 
   }
@@ -240,7 +243,7 @@ extension NeatViewController {
 
 }
 
-/// Parttern matching for Optional<String> for the case of "accessibilityIdentifier".
+/// Parttern matching of Optional<String> for the "accessibilityIdentifier" case.
 func ~=(lhs: String, rhs: String?) -> Bool {
   return lhs == rhs
 }

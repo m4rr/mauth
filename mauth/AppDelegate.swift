@@ -21,12 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   private lazy var resignActiveAt: NSDate = NSDate()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    let session = AVAudioSession.sharedInstance();
-    
-    let _ = try? session.setCategory(AVAudioSessionCategoryAmbient);
-    let _ = try? session.setActive(true);
-    
+    tryDisableAudioSession()
+
     return true
+  }
+
+  func tryDisableAudioSession() {
+    let session = AVAudioSession.sharedInstance()
+    let _ = try? session.setCategory(AVAudioSessionCategoryAmbient)
+    let _ = try? session.setActive(true)
   }
 
   func applicationWillResignActive(application: UIApplication) {
@@ -57,5 +60,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-
+  
 }

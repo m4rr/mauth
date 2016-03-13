@@ -13,7 +13,7 @@ class LogManager {
 
   static var shared: LogManager!
 
-  private weak var webView: WKWebView!
+  private weak var webView: WKWebView?
 
   init(webView: WKWebView) {
     self.webView = webView
@@ -22,7 +22,7 @@ class LogManager {
   }
 
   func logSourceCode(completion: (host: String, text: String) -> Void) {
-    guard let url = webView.URL, host = url.host else {
+    guard let webView = webView, url = webView.URL, host = url.host else {
       return
     }
 
