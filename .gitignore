@@ -45,5 +45,4 @@ Carthage/Build
 
 # Fastalne
 
-Fastfile
-screenshots/
+fastlane/
