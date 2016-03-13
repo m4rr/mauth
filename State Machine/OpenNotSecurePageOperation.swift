@@ -144,7 +144,7 @@ class OpenNotSecurePageOperation: OpenPageOperation {
 
 
 
-// MARK: - WKNavigationDelegate
+// MARK: WKNavigationDelegate
 
 extension OpenPageOperation: WKNavigationDelegate {
 
@@ -201,6 +201,49 @@ extension OpenPageOperation: WKNavigationDelegate {
 
 
 
+// MARK: JavaScript
 
+extension OpenPageOperation {
+
+  @IBAction func simulateJS(sender: UIButton?) {
+    let aClick = [
+      //"document.querySelector(\"a[href^='//']\").click();",
+      "document.querySelector('a.disableAd').click();",
+      "document.querySelector('#disableAd > a').click();",
+      "document.querySelector('a.b-header__button is-on-left-side').click();",
+    ]
+
+    aClick.forEach { query in
+      webView.evaluateJavaScript(query) { result, error in
+        if let error = error where error.code == WKErrorCode.JavaScriptExceptionOccurred.rawValue {
+          // clicking by defunct selectors guaranteed produce errors
+        }
+      }
+    }
+  }
+
+  @IBAction func logSourceCode(sender: AnyObject) {
+    let url = webView.URL?.absoluteString ?? ""
+    let querySelector = "document.getElementsByTagName('html')[0].outerHTML"
+
+    var log: [String: AnyObject] {
+      get {
+        return [:] // NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
+      }
+      set {
+        NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
+      }
+    }
+
+    webView.evaluateJavaScript(querySelector) { result, error in
+      if let html = result as? String {
+        // store log
+        log[url] = html
+      }
+    }
+  }
+  
+  
+}
 
 
