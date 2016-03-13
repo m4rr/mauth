@@ -47,7 +47,6 @@
 		0368FC0A1C7A221700B8EC01 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEB1C7A221700B8EC01 /* Operation.swift */; };
 		0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */; };
 		0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */; };
-		03A202161C955B2900A4A8EB /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 03A202151C955B2900A4A8EB /* .travis.yml */; };
 		03BCFF441BC95EEF000AD1D2 /* CarSocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */; };
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
@@ -117,7 +116,6 @@
 		0368FBEB1C7A221700B8EC01 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
-		03A202151C955B2900A4A8EB /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarSocialNetwork.swift; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,7 +312,6 @@
 		03DF11061C958149007108DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				03A202151C955B2900A4A8EB /* .travis.yml */,
 				03581C901BAED21900D5D95F /* Info.plist */,
 			);
 			path = Resources;
@@ -456,7 +453,6 @@
 				03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */,
 				03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */,
 				03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */,
-				03A202161C955B2900A4A8EB /* .travis.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
