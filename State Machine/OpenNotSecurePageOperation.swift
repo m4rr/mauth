@@ -231,7 +231,7 @@ extension OpenPageOperation {
         return [:] // NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
       }
       set {
-        NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
+        // NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
       }
     }
 

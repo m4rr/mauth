@@ -10,7 +10,7 @@ import UIKit
 
 class LoggerTableViewController: UITableViewController {
 
-  private var log = Array(NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:])
+  private var log: [(String, AnyObject)] = [] // Array(NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:])
 
   @IBAction func close(sender: AnyObject) {
     dismissViewControllerAnimated(true, completion: nil)
