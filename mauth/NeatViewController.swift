@@ -37,6 +37,8 @@ class NeatViewController: UIViewController {
     setupWebView()
     startOperating()
     subscribeNotifications()
+
+    let _ = LogManager(webView: webView)
   }
 
   deinit {
@@ -129,6 +131,16 @@ class NeatViewController: UIViewController {
     updateLog("⤴\u{fe0e}", "retry") // ⎋
 
     startOperating()
+  }
+
+  override func canBecomeFirstResponder() -> Bool {
+    return true
+  }
+
+  override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+    if motion == .MotionShake {
+      NSNotificationCenter.defaultCenter().postNotificationName(logSourceCodeNotification, object: nil)
+    }
   }
 
 }

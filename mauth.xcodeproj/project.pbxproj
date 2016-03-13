@@ -10,6 +10,7 @@
 		030B85F31C941A260071F48C /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B85F21C941A260071F48C /* mauthTests.swift */; };
 		0317D9581BBBE01500E6DE46 /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9571BBBE01500E6DE46 /* LogTableViewController.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
+		031DA7281C95A9410092FFBA /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DA7271C95A9410092FFBA /* LogManager.swift */; };
 		032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */; };
 		033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F30091C1A47D900EEDFB5 /* NeatViewController.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
@@ -79,6 +80,7 @@
 		030B85F41C941A260071F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0317D9571BBBE01500E6DE46 /* LogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
+		031DA7271C95A9410092FFBA /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
 		033F30091C1A47D900EEDFB5 /* NeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeatViewController.swift; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +122,7 @@
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
 		0393CD2B1C943310007BD0B7 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Snapfile; path = ../Snapfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		03A202151C955B2900A4A8EB /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarSocialNetwork.swift; sourceTree = "<group>"; };
+		03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarSocialNetwork.swift; path = "To do — Social Network/CarSocialNetwork.swift"; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C1CAA11C942EC3006C2549 /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		033F30081C1A46FA00EEDFB5 /* Logs */ = {
 			isa = PBXGroup;
 			children = (
+				031DA7271C95A9410092FFBA /* LogManager.swift */,
 				0317D9571BBBE01500E6DE46 /* LogTableViewController.swift */,
 				0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */,
 			);
@@ -185,14 +188,6 @@
 			);
 			name = "State Machine";
 			path = "State Machine Operations";
-			sourceTree = "<group>";
-		};
-		0345B0111C16030E00FA4C8A /* To do — Social Network */ = {
-			isa = PBXGroup;
-			children = (
-				03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */,
-			);
-			path = "To do — Social Network";
 			sourceTree = "<group>";
 		};
 		03581C781BAED21800D5D95F = {
@@ -223,14 +218,14 @@
 		03581C831BAED21900D5D95F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				033F30081C1A46FA00EEDFB5 /* Logs */,
-				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
-				0345B0111C16030E00FA4C8A /* To do — Social Network */,
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
 				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
 				03581C881BAED21900D5D95F /* Main.storyboard */,
 				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
+				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
+				033F30081C1A46FA00EEDFB5 /* Logs */,
+				03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */,
 			);
 			name = Sources;
 			path = mauth;
@@ -585,6 +580,7 @@
 				0368FBF11C7A221700B8EC01 /* MutuallyExclusive.swift in Sources */,
 				0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */,
 				0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */,
+				031DA7281C95A9410092FFBA /* LogManager.swift in Sources */,
 				0368FBFE1C7A221700B8EC01 /* NSLock+Operations.swift in Sources */,
 				0368FBF91C7A221700B8EC01 /* RemoteNotificationCondition.swift in Sources */,
 				0368FC061C7A221700B8EC01 /* BlockOperation.swift in Sources */,

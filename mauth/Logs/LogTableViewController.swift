@@ -10,7 +10,7 @@ import UIKit
 
 class LogTableViewController: UITableViewController {
 
-  private var log: [(String, AnyObject)] = [] // Array(NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:])
+  private var logged = LogManager.shared.log
 
   @IBAction func close(sender: AnyObject) {
     dismissViewControllerAnimated(true, completion: nil)
@@ -19,7 +19,7 @@ class LogTableViewController: UITableViewController {
   // MARK: - Table view data source
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return log.underestimateCount()
+    return logged.count
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -31,7 +31,7 @@ class LogTableViewController: UITableViewController {
   }
 
   func data(indexPath: NSIndexPath) -> (String, AnyObject) {
-    return log[indexPath.row]
+    return logged[indexPath.row]
   }
 
   override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

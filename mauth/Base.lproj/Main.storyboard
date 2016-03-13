@@ -91,6 +91,7 @@
                         <outlet property="navBar" destination="ciN-YV-gat" id="nqn-4d-4kT"/>
                         <outlet property="progressBar" destination="UiB-xy-Vvt" id="rLb-Bm-THT"/>
                         <outlet property="quickOpenView" destination="ByS-iO-ebd" id="z8s-eV-zLo"/>
+                        <segue destination="CWJ-v0-QKR" kind="presentation" id="QdN-r9-med"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZ8-BR-GKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -190,54 +191,7 @@
             </objects>
             <point key="canvasLocation" x="621" y="968"/>
         </scene>
-        <!--Logs-->
-        <scene sceneID="Mpb-ej-kzX">
-            <objects>
-                <tableViewController id="3A1-Oa-g9s" customClass="LogTableViewController" customModule="mauth" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="otu-nu-f2f">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="2Zx-oi-tgm" style="IBUITableViewCellStyleDefault" id="WCN-9M-vgX">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCN-9M-vgX" id="o34-9S-jRG">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Zx-oi-tgm">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="wpE-wW-Xcy" kind="show" id="Qto-kM-1du"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="3A1-Oa-g9s" id="AQf-7l-B4q"/>
-                            <outlet property="delegate" destination="3A1-Oa-g9s" id="b7P-5G-KOW"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Logs" id="ljU-cj-F1m">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="A0X-SA-9wS">
-                            <connections>
-                                <action selector="close:" destination="3A1-Oa-g9s" id="fBC-eK-3xf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="utT-xv-f1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2025" y="968"/>
-        </scene>
-        <!--Log Viewer Controller-->
+        <!--Source Code-->
         <scene sceneID="lI8-Rh-sg6">
             <objects>
                 <viewController id="wpE-wW-Xcy" customClass="LogViewerController" customModule="mauth" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,13 +217,16 @@
                             <constraint firstItem="Kez-Cd-fHh" firstAttribute="leading" secondItem="qeO-6i-B8h" secondAttribute="leading" id="xLB-Mz-iRx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Source Code" id="1D6-64-HZt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BLf-cd-C2Y"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="textView" destination="Kez-Cd-fHh" id="sLy-av-deE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOF-KA-QEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2719" y="968"/>
+            <point key="canvasLocation" x="2053" y="968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fud-lN-KJb">
@@ -282,7 +239,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="3A1-Oa-g9s" kind="relationship" relationship="rootViewController" id="3rT-GS-EKB"/>
+                        <segue destination="wpE-wW-Xcy" kind="relationship" relationship="rootViewController" id="4xk-LV-QbT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eE8-Zf-XTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
