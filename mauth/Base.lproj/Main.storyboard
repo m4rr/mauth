@@ -91,7 +91,7 @@
                         <outlet property="navBar" destination="ciN-YV-gat" id="nqn-4d-4kT"/>
                         <outlet property="progressBar" destination="UiB-xy-Vvt" id="rLb-Bm-THT"/>
                         <outlet property="quickOpenView" destination="ByS-iO-ebd" id="z8s-eV-zLo"/>
-                        <segue destination="CWJ-v0-QKR" kind="presentation" id="QdN-r9-med"/>
+                        <segue destination="CWJ-v0-QKR" kind="presentation" identifier="show-source-code" id="QdN-r9-med"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZ8-BR-GKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -203,9 +203,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kez-Cd-fHh">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kez-Cd-fHh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -218,13 +218,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Source Code" id="1D6-64-HZt">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BLf-cd-C2Y"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BLf-cd-C2Y">
+                            <connections>
+                                <segue destination="iIN-Z5-vsA" kind="unwind" unwindAction="unwindToNeat:" id="5Zc-TY-PaT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="40c-ZK-aNh">
+                            <connections>
+                                <action selector="shareByEmail:" destination="wpE-wW-Xcy" id="9TB-kd-Jik"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="textView" destination="Kez-Cd-fHh" id="sLy-av-deE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOF-KA-QEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iIN-Z5-vsA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2053" y="968"/>
         </scene>

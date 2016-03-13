@@ -222,28 +222,6 @@ extension OpenPageOperation {
     }
   }
 
-  @IBAction func logSourceCode(sender: AnyObject) {
-    let url = webView.URL?.absoluteString ?? ""
-    let querySelector = "document.getElementsByTagName('html')[0].outerHTML"
-
-    var log: [String: AnyObject] {
-      get {
-        return [:] // NSUserDefaults.standardUserDefaults().dictionaryForKey("log") ?? [:]
-      }
-      set {
-        // NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "log")
-      }
-    }
-
-    webView.evaluateJavaScript(querySelector) { result, error in
-      if let html = result as? String {
-        // store log
-        log[url] = html
-      }
-    }
-  }
-  
-  
 }
 
 

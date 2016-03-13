@@ -139,8 +139,12 @@ class NeatViewController: UIViewController {
 
   override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
     if motion == .MotionShake {
-      NSNotificationCenter.defaultCenter().postNotificationName(logSourceCodeNotification, object: nil)
+      performSegueWithIdentifier("show-source-code", sender: nil)
     }
+  }
+
+  @IBAction func unwindToNeat(segue: UIStoryboardSegue) {
+
   }
 
 }
