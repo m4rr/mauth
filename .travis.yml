@@ -13,6 +13,7 @@ xcode_scheme: mauth
 install:
  - brew remove --force xctool
  - brew install xctool --HEAD
+ - pod install
 
 script:
  - xctool test -workspace mauth.xcworkspace -scheme mauth -sdk iphonesimulator9.2
