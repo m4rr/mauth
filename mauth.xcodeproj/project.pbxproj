@@ -77,6 +77,7 @@
 		030B85F01C941A260071F48C /* mauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030B85F21C941A260071F48C /* mauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthTests.swift; sourceTree = "<group>"; };
 		030B85F41C941A260071F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		030D30991C97521600A2D669 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
 		031DA7271C95A9410092FFBA /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
@@ -84,7 +85,6 @@
 		033512CD1C970281009E0A49 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		033512CE1C970281009E0A49 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		033F30091C1A47D900EEDFB5 /* NeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeatViewController.swift; sourceTree = "<group>"; };
-		034E058B1C974F9300963D26 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03581C8B1BAED21900D5D95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -635,7 +635,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				03DB7FF21C974D48006561F0 /* Base */,
-				034E058B1C974F9300963D26 /* ru */,
+				030D30991C97521600A2D669 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
