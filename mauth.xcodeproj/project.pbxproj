@@ -211,9 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				03581C831BAED21900D5D95F /* Sources */,
+				030D309A1C97528100A2D669 /* Vendor */,
 				030D309B1C9752BB00A2D669 /* Resources */,
 				03DF11061C958149007108DA /* Supporting Files */,
-				030D309A1C97528100A2D669 /* Vendor */,
 				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
 				BA08C717C88E26D79B51FEAC /* Pods */,
 				03581C821BAED21900D5D95F /* Products */,
