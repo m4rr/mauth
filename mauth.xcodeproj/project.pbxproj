@@ -10,13 +10,10 @@
 		030B85F31C941A260071F48C /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B85F21C941A260071F48C /* mauthTests.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		031DA7281C95A9410092FFBA /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DA7271C95A9410092FFBA /* LogManager.swift */; };
-		032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */; };
 		033512CF1C970281009E0A49 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 033512CE1C970281009E0A49 /* Reachability.m */; };
 		033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F30091C1A47D900EEDFB5 /* NeatViewController.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
-		03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C881BAED21900D5D95F /* Main.storyboard */; };
 		03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8B1BAED21900D5D95F /* Assets.xcassets */; };
-		03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */; };
 		0368FBED1C7A221700B8EC01 /* CalendarCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */; };
 		0368FBEE1C7A221700B8EC01 /* CloudCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */; };
 		0368FBF01C7A221700B8EC01 /* LocationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */; };
@@ -53,6 +50,8 @@
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
 		03C1CAAE1C942F70006C2549 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */; };
+		03DB7FEE1C974CB3006561F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */; };
+		03DB7FF11C974D48006561F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DB7FF31C974D48006561F0 /* Main.storyboard */; };
 		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,9 +85,7 @@
 		033F30091C1A47D900EEDFB5 /* NeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeatViewController.swift; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03581C891BAED21900D5D95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03581C8B1BAED21900D5D95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		03581C8E1BAED21900D5D95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCondition.swift; sourceTree = "<group>"; };
 		0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCondition.swift; sourceTree = "<group>"; };
 		0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCondition.swift; sourceTree = "<group>"; };
@@ -120,8 +117,6 @@
 		0368FBEB1C7A221700B8EC01 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
-		039D0B4C1C97450E00542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		039D0B501C9745B200542267 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		039D0B521C9745B700542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		039D0B531C9747E000542267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Neat+CarNetwork.swift"; sourceTree = "<group>"; };
@@ -130,6 +125,10 @@
 		03C1CAA11C942EC3006C2549 /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
 		03C1CAA31C942EC3006C2549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		03DB7FEC1C974BBF006561F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03DB7FF21C974D48006561F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03DB7FF61C974D9A006561F0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.release.xcconfig"; sourceTree = "<group>"; };
 		D15C100F23E060F4D8BC33FE /* Pods-mauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +146,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032126FD1C19EFCC000D1DA0 /* GameplayKit.framework in Frameworks */,
 				407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,8 +220,8 @@
 				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
-				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
-				03581C881BAED21900D5D95F /* Main.storyboard */,
+				03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */,
+				03DB7FF31C974D48006561F0 /* Main.storyboard */,
 				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
 				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
 				033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */,
@@ -464,10 +462,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */,
 				039D0B4F1C9745B200542267 /* Localizable.strings in Resources */,
+				03DB7FEE1C974CB3006561F0 /* LaunchScreen.storyboard in Resources */,
 				03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */,
-				03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */,
+				03DB7FF11C974D48006561F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,30 +619,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		03581C881BAED21900D5D95F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03581C891BAED21900D5D95F /* Base */,
-				039D0B4C1C97450E00542267 /* ru */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-		03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03581C8E1BAED21900D5D95F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
 		039D0B511C9745B200542267 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				039D0B501C9745B200542267 /* en */,
 				039D0B521C9745B700542267 /* ru */,
+				03DB7FEC1C974BBF006561F0 /* Base */,
 			);
 			name = Localizable.strings;
 			path = Sources;
@@ -656,6 +635,15 @@
 				039D0B531C9747E000542267 /* Base */,
 			);
 			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		03DB7FF31C974D48006561F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03DB7FF21C974D48006561F0 /* Base */,
+				03DB7FF61C974D9A006561F0 /* ru */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -2,7 +2,7 @@
 /* Class = "UINavigationItem"; title = "Source Code"; ObjectID = "1D6-64-HZt"; */
 "1D6-64-HZt.title" = "Исходник";
 
-/* Class = "UITextView"; text = "\nТапните на рекламу, когда загрузится."; ObjectID = "FpO-Eh-0dc"; */
+/* Class = "UITextView"; text = "\nTap on ad, when loaded."; ObjectID = "FpO-Eh-0dc"; */
 "FpO-Eh-0dc.text" = "\nТапните на рекламу, когда загрузится.";
 
 /* Class = "UILabel"; text = "Quick Open"; ObjectID = "gwU-kc-xOS"; */
