@@ -80,8 +80,7 @@
 		030D30991C97521600A2D669 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
 		031DA7271C95A9410092FFBA /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
-		032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
-		033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mauth-Bridging-Header.h"; sourceTree = "<group>"; };
+		033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "mauth-Bridging-Header.h"; path = "../Sources/mauth-Bridging-Header.h"; sourceTree = "<group>"; };
 		033512CD1C970281009E0A49 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		033512CE1C970281009E0A49 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		033F30091C1A47D900EEDFB5 /* NeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeatViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +169,27 @@
 			path = mauthTests;
 			sourceTree = "<group>";
 		};
+		030D309A1C97528100A2D669 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				033512CD1C970281009E0A49 /* Reachability.h */,
+				033512CE1C970281009E0A49 /* Reachability.m */,
+			);
+			name = Vendor;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		030D309B1C9752BB00A2D669 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
+				03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */,
+				03DB7FF31C974D48006561F0 /* Main.storyboard */,
+			);
+			name = Resources;
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		033F30081C1A46FA00EEDFB5 /* Logs */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				03581C831BAED21900D5D95F /* Sources */,
+				030D309B1C9752BB00A2D669 /* Resources */,
+				030D309A1C97528100A2D669 /* Vendor */,
 				03DF11061C958149007108DA /* Supporting Files */,
 				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
 				BA08C717C88E26D79B51FEAC /* Pods */,
@@ -220,14 +242,8 @@
 				033F30081C1A46FA00EEDFB5 /* Logs */,
 				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
-				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
-				03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */,
-				03DB7FF31C974D48006561F0 /* Main.storyboard */,
 				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
 				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
-				033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */,
-				033512CD1C970281009E0A49 /* Reachability.h */,
-				033512CE1C970281009E0A49 /* Reachability.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -323,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				03EBFF6F1C974ECC003167FD /* Info.plist */,
+				033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */,
 				039D0B511C9745B200542267 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -341,7 +358,6 @@
 		CB02B59CE29826B1D3C48AC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				032126FC1C19EFCC000D1DA0 /* GameplayKit.framework */,
 				38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */,
 			);
 			name = Frameworks;
