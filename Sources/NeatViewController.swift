@@ -29,6 +29,7 @@ class NeatViewController: UIViewController {
   @IBOutlet var quickOpenView: UIView!
 
   let operationQueue = OperationQueue()
+  lazy var reachability = Reachability.reachabilityForInternetConnection()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -122,13 +123,16 @@ class NeatViewController: UIViewController {
       // Fallback on earlier versions
     }
 
+    checkWiFi()
+  }
+
+  func startOperatingWithWiFi() {
     let operation = OpenPageOperation(webView: webView, delegate: self)
     operationQueue.addOperation(operation)
-
   }
 
   @IBAction func retryButtonTap(sender: AnyObject) {
-    updateLog("⤴\u{fe0e}", "retry") // ⎋
+    updateLog("⤴\u{fe0e}", "Retry\n") // ⎋
 
     startOperating()
   }
