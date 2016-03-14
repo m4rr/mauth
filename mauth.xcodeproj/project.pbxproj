@@ -52,6 +52,7 @@
 		03C1CAAE1C942F70006C2549 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */; };
 		03DB7FEE1C974CB3006561F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */; };
 		03DB7FF11C974D48006561F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DB7FF31C974D48006561F0 /* Main.storyboard */; };
+		03EBFF701C974ECC003167FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03EBFF6F1C974ECC003167FD /* Info.plist */; };
 		407C093EB7676DE6F430A7CA /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		033512CD1C970281009E0A49 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		033512CE1C970281009E0A49 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		033F30091C1A47D900EEDFB5 /* NeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeatViewController.swift; sourceTree = "<group>"; };
+		034E058B1C974F9300963D26 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03581C8B1BAED21900D5D95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,7 +120,6 @@
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
 		039D0B521C9745B700542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		039D0B531C9747E000542267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Neat+CarNetwork.swift"; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +129,7 @@
 		03DB7FEC1C974BBF006561F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03DB7FF21C974D48006561F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		03DB7FF61C974D9A006561F0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		03EBFF6F1C974ECC003167FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38BB3E91C75684C1EF13B58A /* Pods_mauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3F97580535A1685EA261D0 /* Pods-mauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.release.xcconfig"; sourceTree = "<group>"; };
 		D15C100F23E060F4D8BC33FE /* Pods-mauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.debug.xcconfig"; sourceTree = "<group>"; };
@@ -321,7 +322,7 @@
 		03DF11061C958149007108DA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				039D0B541C9747E000542267 /* Info.plist */,
+				03EBFF6F1C974ECC003167FD /* Info.plist */,
 				039D0B511C9745B200542267 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -465,6 +466,7 @@
 				039D0B4F1C9745B200542267 /* Localizable.strings in Resources */,
 				03DB7FEE1C974CB3006561F0 /* LaunchScreen.storyboard in Resources */,
 				03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */,
+				03EBFF701C974ECC003167FD /* Info.plist in Resources */,
 				03DB7FF11C974D48006561F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,19 +631,11 @@
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		039D0B541C9747E000542267 /* Info.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				039D0B531C9747E000542267 /* Base */,
-			);
-			name = Info.plist;
-			sourceTree = "<group>";
-		};
 		03DB7FF31C974D48006561F0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				03DB7FF21C974D48006561F0 /* Base */,
-				03DB7FF61C974D9A006561F0 /* ru */,
+				034E058B1C974F9300963D26 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
