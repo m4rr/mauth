@@ -237,11 +237,11 @@
 		03581C831BAED21900D5D95F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				03581C841BAED21900D5D95F /* AppDelegate.swift */,
+				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
+				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
 				033F30081C1A46FA00EEDFB5 /* Logs */,
 				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
-				03581C841BAED21900D5D95F /* AppDelegate.swift */,
-				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
-				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";

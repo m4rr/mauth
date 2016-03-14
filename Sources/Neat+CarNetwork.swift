@@ -6,8 +6,6 @@
 //  Copyright © 2015 emfo. All rights reserved.
 //
 
-import Foundation
-
 extension NeatViewController {
 
   /// ∿ ⌔ 〄

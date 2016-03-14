@@ -6,8 +6,6 @@
 //  Copyright © 2015 m4rr. All rights reserved.
 //
 
-import Foundation
-
 /**
 
  ### States:
