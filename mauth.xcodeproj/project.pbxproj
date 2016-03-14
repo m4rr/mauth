@@ -172,6 +172,7 @@
 		030D309A1C97528100A2D669 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				0368FBC81C7A221700B8EC01 /* Operations */,
 				033512CD1C970281009E0A49 /* Reachability.h */,
 				033512CE1C970281009E0A49 /* Reachability.m */,
 			);
@@ -200,7 +201,6 @@
 		033F300B1C1ADDDA00EEDFB5 /* State Machine */ = {
 			isa = PBXGroup;
 			children = (
-				0368FBC81C7A221700B8EC01 /* Operations */,
 				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
 				0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */,
 			);
@@ -210,13 +210,13 @@
 		03581C781BAED21800D5D95F = {
 			isa = PBXGroup;
 			children = (
+				03581C831BAED21900D5D95F /* Sources */,
+				030D309B1C9752BB00A2D669 /* Resources */,
+				03DF11061C958149007108DA /* Supporting Files */,
+				030D309A1C97528100A2D669 /* Vendor */,
 				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
 				BA08C717C88E26D79B51FEAC /* Pods */,
 				03581C821BAED21900D5D95F /* Products */,
-				030D309B1C9752BB00A2D669 /* Resources */,
-				03581C831BAED21900D5D95F /* Sources */,
-				03DF11061C958149007108DA /* Supporting Files */,
-				030D309A1C97528100A2D669 /* Vendor */,
 				030B85F11C941A260071F48C /* mauthTests */,
 				03C1CAA01C942EC3006C2549 /* mauthUITests */,
 			);
