@@ -48,7 +48,7 @@
 		0368FC0A1C7A221700B8EC01 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEB1C7A221700B8EC01 /* Operation.swift */; };
 		0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */; };
 		0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */; };
-		039D0B4F1C9745B200542267 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 039D0B511C9745B200542267 /* InfoPlist.strings */; };
+		039D0B4F1C9745B200542267 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 039D0B511C9745B200542267 /* Localizable.strings */; };
 		03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */; };
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
@@ -121,8 +121,8 @@
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
 		039D0B4C1C97450E00542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		039D0B501C9745B200542267 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		039D0B521C9745B700542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		039D0B501C9745B200542267 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		039D0B521C9745B700542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		039D0B531C9747E000542267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Neat+CarNetwork.swift"; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				039D0B541C9747E000542267 /* Info.plist */,
-				039D0B511C9745B200542267 /* InfoPlist.strings */,
+				039D0B511C9745B200542267 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			path = Resources;
@@ -465,7 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */,
-				039D0B4F1C9745B200542267 /* InfoPlist.strings in Resources */,
+				039D0B4F1C9745B200542267 /* Localizable.strings in Resources */,
 				03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */,
 				03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */,
 			);
@@ -640,13 +640,13 @@
 			path = .;
 			sourceTree = "<group>";
 		};
-		039D0B511C9745B200542267 /* InfoPlist.strings */ = {
+		039D0B511C9745B200542267 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				039D0B501C9745B200542267 /* en */,
 				039D0B521C9745B700542267 /* ru */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
