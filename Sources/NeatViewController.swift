@@ -132,7 +132,7 @@ class NeatViewController: UIViewController {
   }
 
   @IBAction func retryButtonTap(sender: AnyObject) {
-    updateLog("⤴\u{fe0e}", "Retry\n") // ⎋
+    updateLog("⤴\u{fe0e}", NSLocalizedString("Retry", comment: "Retry (log)")) // ⎋
 
     startOperating()
   }

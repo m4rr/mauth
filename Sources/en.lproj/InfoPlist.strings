@@ -1,0 +1,12 @@
+/* 
+  Strings.strings
+  mauth
+
+  Created by Marat S. on 14/03/16.
+  Copyright © 2016 m4rr. All rights reserved.
+*/
+
+"Wi-Fi connected" = "Wi-Fi connected";
+"Wi-Fi not connected" = "Wi-Fi not connected, waiting...";
+
+"Retry" = "Retry\n";

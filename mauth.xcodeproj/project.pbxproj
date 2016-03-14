@@ -48,6 +48,7 @@
 		0368FC0A1C7A221700B8EC01 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEB1C7A221700B8EC01 /* Operation.swift */; };
 		0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */; };
 		0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */; };
+		039D0B4F1C9745B200542267 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 039D0B511C9745B200542267 /* InfoPlist.strings */; };
 		03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */; };
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
@@ -88,7 +89,6 @@
 		03581C891BAED21900D5D95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03581C8B1BAED21900D5D95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03581C8E1BAED21900D5D95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		03581C901BAED21900D5D95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCondition.swift; sourceTree = "<group>"; };
 		0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCondition.swift; sourceTree = "<group>"; };
 		0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCondition.swift; sourceTree = "<group>"; };
@@ -120,6 +120,10 @@
 		0368FBEB1C7A221700B8EC01 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
+		039D0B4C1C97450E00542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		039D0B501C9745B200542267 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		039D0B521C9745B700542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		039D0B531C9747E000542267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Neat+CarNetwork.swift"; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				03581C831BAED21900D5D95F /* Sources */,
-				03DF11061C958149007108DA /* Resources */,
+				03DF11061C958149007108DA /* Supporting Files */,
 				CB02B59CE29826B1D3C48AC4 /* Frameworks */,
 				BA08C717C88E26D79B51FEAC /* Pods */,
 				03581C821BAED21900D5D95F /* Products */,
@@ -316,11 +320,13 @@
 			path = mauthUITests;
 			sourceTree = "<group>";
 		};
-		03DF11061C958149007108DA /* Resources */ = {
+		03DF11061C958149007108DA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03581C901BAED21900D5D95F /* Info.plist */,
+				039D0B541C9747E000542267 /* Info.plist */,
+				039D0B511C9745B200542267 /* InfoPlist.strings */,
 			);
+			name = "Supporting Files";
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -432,6 +438,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 03581C781BAED21800D5D95F;
 			productRefGroup = 03581C821BAED21900D5D95F /* Products */;
@@ -458,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03581C8F1BAED21900D5D95F /* LaunchScreen.storyboard in Resources */,
+				039D0B4F1C9745B200542267 /* InfoPlist.strings in Resources */,
 				03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */,
 				03581C8A1BAED21900D5D95F /* Main.storyboard in Resources */,
 			);
@@ -617,6 +625,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				03581C891BAED21900D5D95F /* Base */,
+				039D0B4C1C97450E00542267 /* ru */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -629,6 +638,24 @@
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
+			sourceTree = "<group>";
+		};
+		039D0B511C9745B200542267 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				039D0B501C9745B200542267 /* en */,
+				039D0B521C9745B700542267 /* ru */,
+			);
+			name = InfoPlist.strings;
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		039D0B541C9747E000542267 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				039D0B531C9747E000542267 /* Base */,
+			);
+			name = Info.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

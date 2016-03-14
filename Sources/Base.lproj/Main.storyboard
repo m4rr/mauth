@@ -68,7 +68,7 @@
                                 <rect key="frame" x="8" y="392" width="584" height="200"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.35026939655172412" colorSpace="calibratedRGB"/>
                                 <string key="text">
-Тапните на рекламу, когда загрузится.</string>
+Tap on ad, when loaded.</string>
                                 <color key="textColor" white="0.39654991610738255" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
