@@ -48,7 +48,7 @@
 		0368FC0A1C7A221700B8EC01 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEB1C7A221700B8EC01 /* Operation.swift */; };
 		0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */; };
 		0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */; };
-		03BCFF441BC95EEF000AD1D2 /* CarSocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */; };
+		03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */; };
 		03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
 		03C1CAAE1C942F70006C2549 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */; };
@@ -120,7 +120,7 @@
 		0368FBEB1C7A221700B8EC01 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
-		03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarSocialNetwork.swift; sourceTree = "<group>"; };
+		03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Neat+CarNetwork.swift"; sourceTree = "<group>"; };
 		03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectorStates.swift; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C1CAA11C942EC3006C2549 /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
@@ -218,13 +218,13 @@
 				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				03581C8B1BAED21900D5D95F /* Assets.xcassets */,
-				03BCFF431BC95EEF000AD1D2 /* CarSocialNetwork.swift */,
 				03581C8D1BAED21900D5D95F /* LaunchScreen.storyboard */,
 				03581C881BAED21900D5D95F /* Main.storyboard */,
 				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
+				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
+				033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */,
 				033512CD1C970281009E0A49 /* Reachability.h */,
 				033512CE1C970281009E0A49 /* Reachability.m */,
-				033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -570,7 +570,7 @@
 				0368FC091C7A221700B8EC01 /* LocationOperation.swift in Sources */,
 				0368FBFD1C7A221700B8EC01 /* Dictionary+Operations.swift in Sources */,
 				0368FBF51C7A221700B8EC01 /* OperationErrors.swift in Sources */,
-				03BCFF441BC95EEF000AD1D2 /* CarSocialNetwork.swift in Sources */,
+				03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */,
 				0368FBF11C7A221700B8EC01 /* MutuallyExclusive.swift in Sources */,
 				0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */,
 				0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */,
