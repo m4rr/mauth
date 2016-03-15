@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0306E90E1C9798560032DFEE /* WaitWiFiOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306E90D1C9798560032DFEE /* WaitWiFiOperation.swift */; };
+		0306E9101C97A0E20032DFEE /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306E90F1C97A0E20032DFEE /* Dispatch.swift */; };
 		030B85F31C941A260071F48C /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B85F21C941A260071F48C /* mauthTests.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		031DA7281C95A9410092FFBA /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DA7271C95A9410092FFBA /* LogManager.swift */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		0306E90D1C9798560032DFEE /* WaitWiFiOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitWiFiOperation.swift; sourceTree = "<group>"; };
+		0306E90F1C97A0E20032DFEE /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		030B85F01C941A260071F48C /* mauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030B85F21C941A260071F48C /* mauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthTests.swift; sourceTree = "<group>"; };
 		030B85F41C941A260071F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
 				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
+				0306E90F1C97A0E20032DFEE /* Dispatch.swift */,
 				033F30081C1A46FA00EEDFB5 /* Logs */,
 				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
 			);
@@ -588,6 +591,7 @@
 				0368FC051C7A221700B8EC01 /* OperationQueue.swift in Sources */,
 				03C1539F1C19EA120038ACC5 /* ConnectorStates.swift in Sources */,
 				0368FC011C7A221700B8EC01 /* BlockObserver.swift in Sources */,
+				0306E9101C97A0E20032DFEE /* Dispatch.swift in Sources */,
 				0368FBF81C7A221700B8EC01 /* ReachabilityCondition.swift in Sources */,
 				0368FBF61C7A221700B8EC01 /* PassbookCondition.swift in Sources */,
 				0368FBFA1C7A221700B8EC01 /* SilentCondition.swift in Sources */,
