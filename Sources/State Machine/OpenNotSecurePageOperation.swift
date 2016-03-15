@@ -82,34 +82,43 @@ class OpenPageOperation: Operation {
     }
 
     switch isSecureBaseUrl(url) {
-    case (secure: false, base: false): // wait for user action
-      if url.host?.containsString("wi-fi") == false {
-        connectorTryHttp()
-      } else {
-        cancel()
-      }
-
-    case (secure: false, base: true): // try secure
+    case (secure: false, base: true): // state of maxima's man-in-the-middle
       checkWillRefresh { (willRefresh) -> Void in
         if willRefresh {
+          // meta-equiv case
+          // wait for <meta http-equiv=refresh> redirect
           ()
         } else {
+          // http passed successful case
+          // medium well
           self.connectorTryHttps()
         }
       }
+      
+    case (secure: false, base: false): // state of branded page
+      if url.host?.containsString("wi-fi") == false {
+        // user clicked on ad, and so a branded page is loaded. go try http.
+        connectorTryHttp()
+      } else {
+        // assume this is the first fake page. (or any other fake pages.)
+        dispatch_after_delay_on_main_queue(1) {
+          self.simulateJS()
+        }
+        // wait for user action
+        //cancel()
+      }
 
-      () // wait for <meta http-equiv=refresh> redirect
-
-    case (secure: true, base: false): // done
-      connectorTryHttps()
-
-    case (secure: true, base: true): // done
+    case (secure: true, base: true): // well done
       delegate?.connectorDidGetSecurePageMatchHost()
 
       finish()
 
-//    default:
-//      ()
+    //case (secure: true, base: false): // ???
+    //  connectorTryHttps()
+
+    default:
+      // why not?
+      connectorTryHttp()
     }
   }
 
