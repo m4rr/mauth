@@ -240,6 +240,11 @@ extension NeatViewController {
       openURL("instagram://")
     case "openSafari":
       openURL("https://m4rr.ru")
+    case "rateOnAppStore":
+      let appId = "1041801794"
+      let str = "itms-apps://itunes.apple.com/app/id" + appId
+      openURL(str)
+//      openURL("https://itunes.apple.com/app/moskva.-metro.-avtorizacia/id1041801794?mt=8")
     default:
       ()
     }
