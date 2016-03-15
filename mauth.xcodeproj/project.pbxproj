@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0306E90E1C9798560032DFEE /* WaitWiFiOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306E90D1C9798560032DFEE /* WaitWiFiOperation.swift */; };
 		030B85F31C941A260071F48C /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B85F21C941A260071F48C /* mauthTests.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		031DA7281C95A9410092FFBA /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DA7271C95A9410092FFBA /* LogManager.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0306E90D1C9798560032DFEE /* WaitWiFiOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitWiFiOperation.swift; sourceTree = "<group>"; };
 		030B85F01C941A260071F48C /* mauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030B85F21C941A260071F48C /* mauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthTests.swift; sourceTree = "<group>"; };
 		030B85F41C941A260071F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				03C1539E1C19EA120038ACC5 /* ConnectorStates.swift */,
 				0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */,
+				0306E90D1C9798560032DFEE /* WaitWiFiOperation.swift */,
 			);
 			path = "State Machine";
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				0368FBFB1C7A221700B8EC01 /* UserNotificationCondition.swift in Sources */,
 				0368FBEE1C7A221700B8EC01 /* CloudCondition.swift in Sources */,
 				03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */,
+				0306E90E1C9798560032DFEE /* WaitWiFiOperation.swift in Sources */,
 				0368FBFC1C7A221700B8EC01 /* CKContainer+Operations.swift in Sources */,
 				0368FC001C7A221700B8EC01 /* UIUserNotifications+Operations.swift in Sources */,
 				0368FBF41C7A221700B8EC01 /* OperationCondition.swift in Sources */,
