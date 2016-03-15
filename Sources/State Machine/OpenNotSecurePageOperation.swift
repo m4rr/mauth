@@ -205,18 +205,19 @@ extension OpenPageOperation: WKNavigationDelegate {
 
 extension OpenPageOperation {
 
-  @IBAction func simulateJS(sender: UIButton?) {
+  func simulateJS() {
     let aClick = [
-      //"document.querySelector(\"a[href^='//']\").click();",
-      "document.querySelector('a.disableAd').click();",
-      "document.querySelector('#disableAd > a').click();",
-      "document.querySelector('a.b-header__button is-on-left-side').click();",
+      "document.querySelector('iframe#branding').contentDocument.body.querySelector('#root #content a').click();",
+      "document.querySelector('iframe#branding').contentDocument.body.querySelector('#banner-metro').click();",
     ]
 
     aClick.forEach { query in
       webView.evaluateJavaScript(query) { result, error in
         if let error = error where error.code == WKErrorCode.JavaScriptExceptionOccurred.rawValue {
           // clicking by defunct selectors guaranteed produce errors
+          self.delegate?.updateLog("js click err", "\(error.code)")
+        } else {
+          self.delegate?.updateLog("js click", "res")
         }
       }
     }
