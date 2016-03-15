@@ -52,7 +52,7 @@ class NeatViewController: UIViewController {
     webView.autoPinEdge(.Top, toEdge: .Bottom, ofView: navBar)
     webView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: view)
 
-    quickOpenView.autoAlignAxis(.Horizontal, toSameAxisOfView: logTextView, withMultiplier: 0.95)
+    quickOpenView.autoAlignAxis(.Horizontal, toSameAxisOfView: logTextView)
     quickOpenView.autoAlignAxis(.Vertical, toSameAxisOfView: logTextView)
 
     super.updateViewConstraints()
