@@ -70,7 +70,6 @@ class OpenPageOperation: Operation {
   }
 
   func openDependingPage() {
-
     if webView.loading {
        webView.stopLoading()
     }
@@ -101,7 +100,7 @@ class OpenPageOperation: Operation {
         connectorTryHttp()
       } else {
         // assume this is the first fake page. (or any other fake pages.)
-        dispatch_after_delay_on_main_queue(1) {
+        dispatch_after_delay_on_main_queue(4) {
           self.simulateJS()
         }
         // wait for user action
