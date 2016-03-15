@@ -100,7 +100,7 @@ class OpenPageOperation: Operation {
         connectorTryHttp()
       } else {
         // assume this is the first fake page. (or any other fake pages.)
-        dispatch_after_delay_on_main_queue(4) {
+        dispatch_after_delay_on_main_queue(4.5) {
           self.simulateJS()
         }
         // wait for user action
