@@ -28,7 +28,15 @@ protocol ConnectorDelegate: class {
   
 }
 
-class OpenPageOperation: Operation {
+//class OpenSecurePageOperation: OpenPageOperation {
+//
+//}
+
+//class OpenNotSecurePageOperation: OpenPageOperation {
+//
+//}
+
+final class OpenPageOperation: Operation {
 
   private weak var webView: WKWebView!
   private weak var delegate: ConnectorDelegate?
@@ -137,21 +145,6 @@ class OpenPageOperation: Operation {
 
 }
 
-class OpenSecurePageOperation: OpenPageOperation {
-
-}
-
-class OpenNotSecurePageOperation: OpenPageOperation {
-
-}
-
-
-
-
-
-
-
-
 // MARK: WKNavigationDelegate
 
 extension OpenPageOperation: WKNavigationDelegate {
@@ -195,20 +188,6 @@ extension OpenPageOperation: WKNavigationDelegate {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // MARK: JavaScript
 
 extension OpenPageOperation {
@@ -232,5 +211,4 @@ extension OpenPageOperation {
   }
 
 }
-
 
