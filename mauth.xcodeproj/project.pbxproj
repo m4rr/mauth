@@ -16,7 +16,6 @@
 		033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F30091C1A47D900EEDFB5 /* NeatViewController.swift */; };
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
 		03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8B1BAED21900D5D95F /* Assets.xcassets */; };
-		0368FBED1C7A221700B8EC01 /* CalendarCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */; };
 		0368FBEE1C7A221700B8EC01 /* CloudCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */; };
 		0368FBF01C7A221700B8EC01 /* LocationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */; };
 		0368FBF11C7A221700B8EC01 /* MutuallyExclusive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBCE1C7A221700B8EC01 /* MutuallyExclusive.swift */; };
@@ -24,7 +23,6 @@
 		0368FBF31C7A221700B8EC01 /* NoCancelledDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBD01C7A221700B8EC01 /* NoCancelledDependencies.swift */; };
 		0368FBF41C7A221700B8EC01 /* OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBD11C7A221700B8EC01 /* OperationCondition.swift */; };
 		0368FBF51C7A221700B8EC01 /* OperationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBD21C7A221700B8EC01 /* OperationErrors.swift */; };
-		0368FBF61C7A221700B8EC01 /* PassbookCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBD31C7A221700B8EC01 /* PassbookCondition.swift */; };
 		0368FBF71C7A221700B8EC01 /* PhotosCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBD41C7A221700B8EC01 /* PhotosCondition.swift */; };
 		0368FBF81C7A221700B8EC01 /* ReachabilityCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBD51C7A221700B8EC01 /* ReachabilityCondition.swift */; };
 		0368FBF91C7A221700B8EC01 /* RemoteNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBD61C7A221700B8EC01 /* RemoteNotificationCondition.swift */; };
@@ -90,7 +88,6 @@
 		03581C811BAED21900D5D95F /* mauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03581C841BAED21900D5D95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03581C8B1BAED21900D5D95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCondition.swift; sourceTree = "<group>"; };
 		0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCondition.swift; sourceTree = "<group>"; };
 		0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCondition.swift; sourceTree = "<group>"; };
 		0368FBCE1C7A221700B8EC01 /* MutuallyExclusive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutuallyExclusive.swift; sourceTree = "<group>"; };
@@ -98,7 +95,6 @@
 		0368FBD01C7A221700B8EC01 /* NoCancelledDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCancelledDependencies.swift; sourceTree = "<group>"; };
 		0368FBD11C7A221700B8EC01 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
 		0368FBD21C7A221700B8EC01 /* OperationErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationErrors.swift; sourceTree = "<group>"; };
-		0368FBD31C7A221700B8EC01 /* PassbookCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassbookCondition.swift; sourceTree = "<group>"; };
 		0368FBD41C7A221700B8EC01 /* PhotosCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCondition.swift; sourceTree = "<group>"; };
 		0368FBD51C7A221700B8EC01 /* ReachabilityCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityCondition.swift; sourceTree = "<group>"; };
 		0368FBD61C7A221700B8EC01 /* RemoteNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationCondition.swift; sourceTree = "<group>"; };
@@ -264,7 +260,6 @@
 		0368FBC91C7A221700B8EC01 /* Conditions */ = {
 			isa = PBXGroup;
 			children = (
-				0368FBCA1C7A221700B8EC01 /* CalendarCondition.swift */,
 				0368FBCB1C7A221700B8EC01 /* CloudCondition.swift */,
 				0368FBCD1C7A221700B8EC01 /* LocationCondition.swift */,
 				0368FBCE1C7A221700B8EC01 /* MutuallyExclusive.swift */,
@@ -272,7 +267,6 @@
 				0368FBD01C7A221700B8EC01 /* NoCancelledDependencies.swift */,
 				0368FBD11C7A221700B8EC01 /* OperationCondition.swift */,
 				0368FBD21C7A221700B8EC01 /* OperationErrors.swift */,
-				0368FBD31C7A221700B8EC01 /* PassbookCondition.swift */,
 				0368FBD41C7A221700B8EC01 /* PhotosCondition.swift */,
 				0368FBD51C7A221700B8EC01 /* ReachabilityCondition.swift */,
 				0368FBD61C7A221700B8EC01 /* RemoteNotificationCondition.swift */,
@@ -582,14 +576,12 @@
 				033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */,
 				0368FBF71C7A221700B8EC01 /* PhotosCondition.swift in Sources */,
 				033512CF1C970281009E0A49 /* Reachability.m in Sources */,
-				0368FBED1C7A221700B8EC01 /* CalendarCondition.swift in Sources */,
 				0368FBF31C7A221700B8EC01 /* NoCancelledDependencies.swift in Sources */,
 				0368FC021C7A221700B8EC01 /* OperationObserver.swift in Sources */,
 				0368FC051C7A221700B8EC01 /* OperationQueue.swift in Sources */,
 				0368FC011C7A221700B8EC01 /* BlockObserver.swift in Sources */,
 				0306E9101C97A0E20032DFEE /* Dispatch.swift in Sources */,
 				0368FBF81C7A221700B8EC01 /* ReachabilityCondition.swift in Sources */,
-				0368FBF61C7A221700B8EC01 /* PassbookCondition.swift in Sources */,
 				0368FBFA1C7A221700B8EC01 /* SilentCondition.swift in Sources */,
 				0368FC091C7A221700B8EC01 /* LocationOperation.swift in Sources */,
 				0368FBFD1C7A221700B8EC01 /* Dictionary+Operations.swift in Sources */,
