@@ -9,8 +9,8 @@
 import Foundation
 import WebKit
 
-private let baseUrl🔓 = NSURL(string: "http://www.artlebedev.ru/news/1995/")! // unsecure but trusted website
-private let baseUrl🔐 = NSURL(string: "https://www.artlebedev.ru/news/1995/")! // secure copy
+private let baseUrl🔓 = NSURL(string: "http://wtfismyip.com/text")! // unsecure but trusted website
+private let baseUrl🔐 = NSURL(string: "https://wtfismyip.com/text")! // secure copy
 private var request🔓 = NSURLRequest(URL: baseUrl🔓, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 10)
 private var request🔐 = NSURLRequest(URL: baseUrl🔐, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 10)
 
