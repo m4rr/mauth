@@ -45,6 +45,7 @@
 		0368FC0A1C7A221700B8EC01 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEB1C7A221700B8EC01 /* Operation.swift */; };
 		0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */; };
 		0368FC0D1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */; };
+		038938671CA026450043B98D /* mosmetroauth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038938661CA026450043B98D /* mosmetroauth.swift */; };
 		039D0B4F1C9745B200542267 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 039D0B511C9745B200542267 /* Localizable.strings */; };
 		03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
@@ -117,6 +118,7 @@
 		0368FBEB1C7A221700B8EC01 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		0368FBEC1C7A221700B8EC01 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		0368FC0C1C7A24E700B8EC01 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
+		038938661CA026450043B98D /* mosmetroauth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mosmetroauth.swift; sourceTree = "<group>"; };
 		039D0B521C9745B700542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Neat+CarNetwork.swift"; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +241,7 @@
 				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
 				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
 				0306E90F1C97A0E20032DFEE /* Dispatch.swift */,
+				038938661CA026450043B98D /* mosmetroauth.swift */,
 				033F30081C1A46FA00EEDFB5 /* Logs */,
 				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
 			);
@@ -594,6 +597,7 @@
 				0368FBFE1C7A221700B8EC01 /* NSLock+Operations.swift in Sources */,
 				0368FBF91C7A221700B8EC01 /* RemoteNotificationCondition.swift in Sources */,
 				0368FC061C7A221700B8EC01 /* BlockOperation.swift in Sources */,
+				038938671CA026450043B98D /* mosmetroauth.swift in Sources */,
 				0368FC081C7A221700B8EC01 /* GroupOperation.swift in Sources */,
 				0368FBFB1C7A221700B8EC01 /* UserNotificationCondition.swift in Sources */,
 				0368FBEE1C7A221700B8EC01 /* CloudCondition.swift in Sources */,
