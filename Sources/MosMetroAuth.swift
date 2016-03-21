@@ -60,7 +60,7 @@ class MosMetroAuth {
       result = err == nil
 
       dispatch_semaphore_signal(semaphore)
-    }
+    }.resume()
 
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
 
@@ -132,7 +132,7 @@ class MosMetroAuth {
   }
 
   init() {
-    go()
+//    go()
   }
 
   func formInputParse(body: String) -> [String: String] {
