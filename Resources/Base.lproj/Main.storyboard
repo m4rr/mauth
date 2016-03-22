@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ky7-jk-2ZT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ky7-jk-2ZT">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -117,7 +117,7 @@ Tap on ad, when loaded.</string>
                             </constraints>
                             <state key="normal" image="social_twitter"/>
                             <connections>
-                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="ubr-04-Ch9"/>
+                                <action selector="openTwitter:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="RYj-OJ-CH2"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJZ-MR-J40" userLabel="facebook Button">
@@ -129,7 +129,7 @@ Tap on ad, when loaded.</string>
                             </constraints>
                             <state key="normal" image="social_fb"/>
                             <connections>
-                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="tgJ-nX-c8g"/>
+                                <action selector="openFacebook:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="C0r-s3-8W1"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-r3-JZK" userLabel="vk Button">
@@ -141,7 +141,7 @@ Tap on ad, when loaded.</string>
                             </constraints>
                             <state key="normal" image="social_vk"/>
                             <connections>
-                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="b5y-hZ-s6p"/>
+                                <action selector="openVk:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="3rF-y8-pI4"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKy-Ra-DbP" userLabel="instagram Button">
@@ -153,7 +153,7 @@ Tap on ad, when loaded.</string>
                             </constraints>
                             <state key="normal" image="social_instagram"/>
                             <connections>
-                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="WOd-dZ-H4d"/>
+                                <action selector="openInstagram:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="jRu-VG-XmY"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-q2-S7J" userLabel="safari Button">
@@ -165,7 +165,7 @@ Tap on ad, when loaded.</string>
                             </constraints>
                             <state key="normal" image="social_safari"/>
                             <connections>
-                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="bM8-8K-fOP"/>
+                                <action selector="openSafari:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="l6r-yB-lP7"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30D-Tg-WE7">
@@ -173,7 +173,7 @@ Tap on ad, when loaded.</string>
                             <accessibility key="accessibilityConfiguration" identifier="rateOnAppStore"/>
                             <state key="normal" title="Rate on App Store ★★★★★"/>
                             <connections>
-                                <action selector="openApp:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="KHU-zZ-0gI"/>
+                                <action selector="rateOnAppStore:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="nfK-Ar-DxV"/>
                             </connections>
                         </button>
                     </subviews>
