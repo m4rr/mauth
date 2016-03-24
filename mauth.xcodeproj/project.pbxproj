@@ -10,7 +10,6 @@
 		0306E90E1C9798560032DFEE /* WaitWiFiOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306E90D1C9798560032DFEE /* WaitWiFiOperation.swift */; };
 		0306E9101C97A0E20032DFEE /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306E90F1C97A0E20032DFEE /* Dispatch.swift */; };
 		030B85F31C941A260071F48C /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B85F21C941A260071F48C /* mauthTests.swift */; };
-		030FAED71CA07E8400F9D101 /* NSObject+MosMetroAuthOCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 030FAED61CA07E8400F9D101 /* NSObject+MosMetroAuthOCpp.mm */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		031DA7281C95A9410092FFBA /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DA7271C95A9410092FFBA /* LogManager.swift */; };
 		033512CF1C970281009E0A49 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 033512CE1C970281009E0A49 /* Reachability.m */; };
@@ -82,8 +81,6 @@
 		030B85F21C941A260071F48C /* mauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthTests.swift; sourceTree = "<group>"; };
 		030B85F41C941A260071F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		030D30991C97521600A2D669 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
-		030FAED51CA07E8400F9D101 /* NSObject+MosMetroAuthOCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MosMetroAuthOCpp.h"; sourceTree = "<group>"; };
-		030FAED61CA07E8400F9D101 /* NSObject+MosMetroAuthOCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+MosMetroAuthOCpp.mm"; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
 		031DA7271C95A9410092FFBA /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mauth-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -246,8 +243,6 @@
 				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
 				0306E90F1C97A0E20032DFEE /* Dispatch.swift */,
 				038938661CA026450043B98D /* MosMetroAuth.swift */,
-				030FAED51CA07E8400F9D101 /* NSObject+MosMetroAuthOCpp.h */,
-				030FAED61CA07E8400F9D101 /* NSObject+MosMetroAuthOCpp.mm */,
 				033F30081C1A46FA00EEDFB5 /* Logs */,
 				033F300B1C1ADDDA00EEDFB5 /* State Machine */,
 			);
@@ -596,7 +591,6 @@
 				0368FC091C7A221700B8EC01 /* LocationOperation.swift in Sources */,
 				0368FBFD1C7A221700B8EC01 /* Dictionary+Operations.swift in Sources */,
 				0368FBF51C7A221700B8EC01 /* OperationErrors.swift in Sources */,
-				030FAED71CA07E8400F9D101 /* NSObject+MosMetroAuthOCpp.mm in Sources */,
 				03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */,
 				0368FBF11C7A221700B8EC01 /* MutuallyExclusive.swift in Sources */,
 				0368FC0B1C7A221700B8EC01 /* URLSessionTaskOperation.swift in Sources */,
