@@ -14,7 +14,7 @@ import Kanna
 
 class MosMetroAuth {
 
-  func syncRequest(
+  private func syncRequest(
     method: Alamofire.Method,
     _ address: String,
     parameters: [String: AnyObject]? = nil,
@@ -45,7 +45,7 @@ class MosMetroAuth {
       return (text, response)
   }
 
-  func tryConnect(address: String) -> Bool {
+  private func tryConnect(address: String) -> Bool {
     var result = false
 
     guard let url = NSURL(string: address) else {
@@ -67,7 +67,7 @@ class MosMetroAuth {
     return result
   }
 
-  func connect() {
+  private func connect() {
     var headersSet: [String: String] = [:]
 
     let pageVmetro = syncRequest(.GET, "http://vmet.ro")
@@ -135,7 +135,7 @@ class MosMetroAuth {
 //    go()
   }
 
-  func formInputParse(body: String) -> [String: String] {
+  private func formInputParse(body: String) -> [String: String] {
     var data: [String: String] = [:]
 
     if let doc = Kanna.HTML(html: body, encoding: NSUTF8StringEncoding) {
@@ -147,7 +147,7 @@ class MosMetroAuth {
     return data
   }
 
-  func matchesForRegexInText(regex: String!, text: String!) -> [String] {
+  private func matchesForRegexInText(regex: String!, text: String!) -> [String] {
     do {
       let regex = try NSRegularExpression(pattern: regex, options: [])
       let nsString = text as NSString
