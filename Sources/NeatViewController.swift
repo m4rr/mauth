@@ -249,27 +249,32 @@ extension NeatViewController {
     }
   }
 
-  @IBAction func openApp(sender: UIButton) {
-    switch sender.accessibilityIdentifier {
-    case "openTwitter":
-      openURL("twitter://")
-    case "openFacebook":
-      openURL("fb://")
-    case "openVk":
-      openURL("vk://")
-    case "openInstagram":
-      openURL("instagram://")
-    case "openSafari":
-      openURL("https://m4rr.ru")
-    case "rateOnAppStore":
-      let appId = "1041801794"
-//      let str = "itms-apps://itunes.apple.com/app/id" + appId
-      let str = "https://itunes.apple.com/app/viewContentsUserReviews?id=\(appId)"
-      openURL(str)
-//      openURL("https://itunes.apple.com/app/moskva.-metro.-avtorizacia/id1041801794?mt=8")
-    default:
-      ()
-    }
+  @IBAction func openTwitter(sender: UIButton) {
+    openURL("twitter://")
+  }
+
+  @IBAction func openFacebook(sender: UIButton) {
+    openURL("fb://")
+  }
+
+  @IBAction func openVk(sender: UIButton) {
+    openURL("vk://")
+  }
+
+  @IBAction func openInstagram(sender: UIButton) {
+    openURL("instagram://")
+  }
+
+  @IBAction func openSafari(sender: UIButton) {
+    openURL("https://www.apple.com")
+  }
+
+  @IBAction func rateOnAppStore(sender: UIButton) {
+    let appId = "1041801794"
+    //let appLink = "itms-apps://itunes.apple.com/app/id" + appId
+    //let appLink = "https://itunes.apple.com/app/moskva.-metro.-avtorizacia/id1041801794?mt=8"
+    let appLink = "https://itunes.apple.com/app/viewContentsUserReviews?id=\(appId)"
+    openURL(appLink)
   }
 
 }
