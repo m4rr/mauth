@@ -36,7 +36,7 @@ class NeatViewController: UIViewController {
 
     setupQuickOpenView()
     setupWebView()
-    startOperating()
+    startOperating(self)
     subscribeNotifications()
 
     let _ = LogManager(webView: webView)
@@ -63,7 +63,7 @@ class NeatViewController: UIViewController {
   }
 
   private func subscribeNotifications() {
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "startOperating", name: didBecomeActiveNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(startOperating(_:)), name: didBecomeActiveNotification, object: nil)
   }
 
   private func unsubscribeNotifications() {
@@ -106,8 +106,16 @@ class NeatViewController: UIViewController {
     }
   }
 
+  private lazy var auther: MosMetroAuth = MosMetroAuth(logger: self.updateLog)
+
+  private func tryItAuto() -> Void {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { () -> Void in
+      self.auther.go()
+    }
+  }
+
   /// This also used via selector.
-  func startOperating(force: Bool = false) {
+  func startOperating(force force: Bool = false) {
     hideQuickOpen()
 
     if #available(iOS 9.0, *) {
@@ -119,15 +127,32 @@ class NeatViewController: UIViewController {
     checkWiFi(force)
   }
 
-  func startOperatingWithWiFi() {
+  internal func startOperating(sender: NSObject) {
+    switch sender {
+    case let x where x == self: // viewDidLoad
+      tryItAuto()
+
+    case is NSNotification: // app did become active
+      //startOperating(force: true)
+      ()
+
+    case is UIButton: // retry button tap
+      startOperating(force: true)
+
+    default: // wtf
+      ()
+    }
+  }
+
+  internal func startOperatingWithWiFi() {
     let operation = OpenPageOperation(webView: webView, delegate: self)
     operationQueue.addOperation(operation)
   }
 
-  @IBAction func retryButtonTap(sender: AnyObject) {
+  @IBAction func retryButtonTap(sender: UIButton) {
     updateLog("⤴\u{fe0e}", NSLocalizedString("Retry", comment: "Retry (log)")) // ⎋
 
-    startOperating(true)
+    startOperating(sender)
   }
 
   // Shake-shake-shake.
