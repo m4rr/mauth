@@ -10,42 +10,78 @@ import Foundation
 import Alamofire
 import Kanna
 
+typealias LoggerType = (prefix: String, text: String) -> Void
+
+private let logSym = "〄"
+
 //github.com/m4rr/mosmetro-auth/blob/master/metro.py
 
 class MosMetroAuth {
 
-  private func syncRequest(
-    method: Alamofire.Method,
-    _ address: String,
-    parameters: [String: AnyObject]? = nil,
-    headers: [String: String]? = nil,
-    cookies:  [NSHTTPCookie]? = nil
-    ) -> (text: String?, response: NSHTTPURLResponse?) {
+  private var logger: LoggerType
 
-      let semaphore = dispatch_semaphore_create(0)
+  init(logger: LoggerType) {
+    self.logger = logger
+  }
 
-      var response: NSHTTPURLResponse?
-      var text: String?
+  func go() -> NSTimeInterval {
+    let startTime = NSDate()
 
-      if let cookies = cookies, url = NSURL(string: address) {
-        Alamofire.Manager.sharedInstance.session.configuration.HTTPCookieStorage?.setCookies(cookies, forURL: url, mainDocumentURL: nil)
+    if tryConnect("http://1.1.1.1/login.html") {
+      for counter in 0..<3 {
+        if tryConnect("https://wtfismyip.com/text") {
+          if counter == 0 {
+            updateLog("Already connected")
+          } else {
+            updateLog("Connected")
+          }
+
+          break
+        }
+
+        connect()
       }
+    } else {
+      updateLog("Wrong network")
+    }
 
-      Alamofire
-        .request(method, address, parameters: parameters, headers: headers)
-        .responseString { rp in
-          response = rp.response
-          text = rp.result.value
+    return startTime.timeIntervalSinceNow
+  }
 
-          dispatch_semaphore_signal(semaphore)
-      }
+  private func updateLog(text: String) {
+    logger(prefix: logSym, text: text)
+  }
 
-      dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-      
-      return (text, response)
+  private func syncRequest(method: Alamofire.Method, _ address: String, parameters: [String: AnyObject]? = nil, headers: [String: String]? = nil, cookies:  [NSHTTPCookie]? = nil) -> (text: String?, response: NSHTTPURLResponse?) {
+
+    updateLog(address)
+
+    let semaphore = dispatch_semaphore_create(0)
+
+    var response: NSHTTPURLResponse?
+    var text: String?
+
+    if let cookies = cookies, url = NSURL(string: address) {
+      Alamofire.Manager.sharedInstance.session.configuration.HTTPCookieStorage?.setCookies(cookies, forURL: url, mainDocumentURL: nil)
+    }
+
+    Alamofire
+      .request(method, address, parameters: parameters, headers: headers)
+      .responseString { rp in
+        response = rp.response
+        text = rp.result.value
+
+        dispatch_semaphore_signal(semaphore)
+    }
+
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+
+    return (text, response)
   }
 
   private func tryConnect(address: String) -> Bool {
+    updateLog("tryConnect \(address)")
+
     var result = false
 
     guard let url = NSURL(string: address) else {
@@ -107,33 +143,7 @@ class MosMetroAuth {
       cookies: NSHTTPCookie.cookiesWithResponseHeaderFields(headers3, forURL: pagePostAuthURL))
   }
 
-  func go() -> NSTimeInterval {
-    let startTime = NSDate()
-
-    if tryConnect("http://1.1.1.1/login.html") {
-      for counter in 0..<3 {
-        if tryConnect("https://wtfismyip.com/text") {
-          if counter == 0 {
-            print("Already connected")
-          } else {
-            print("Connected")
-          }
-
-          break
-        }
-
-        connect()
-      }
-    } else {
-      print("Wrong network")
-    }
-
-    return startTime.timeIntervalSinceNow
-  }
-
-  init() {
-//    go()
-  }
+  // MARK: - Meta Helpers
 
   private func formInputParse(body: String) -> [String: String] {
     var data: [String: String] = [:]
@@ -155,10 +165,9 @@ class MosMetroAuth {
         options: [], range: NSMakeRange(0, nsString.length))
       return results.map { nsString.substringWithRange($0.range)}
     } catch let error as NSError {
-      print("invalid regex: \(error.localizedDescription)")
+      updateLog("invalid regex: \(error.localizedDescription)")
       return []
     }
   }
-
 
 }

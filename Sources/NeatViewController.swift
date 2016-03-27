@@ -36,7 +36,7 @@ class NeatViewController: UIViewController {
 
     setupQuickOpenView()
     setupWebView()
-    startOperating()
+    startOperating(self)
     subscribeNotifications()
 
     let _ = LogManager(webView: webView)
@@ -59,7 +59,7 @@ class NeatViewController: UIViewController {
   }
 
   private func subscribeNotifications() {
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "startOperating", name: didBecomeActiveNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NeatViewController.startOperating(_:)), name: didBecomeActiveNotification, object: nil)
   }
 
   private func unsubscribeNotifications() {
@@ -113,28 +113,47 @@ class NeatViewController: UIViewController {
     }
   }
 
+  private lazy var auther: MosMetroAuth = MosMetroAuth(logger: self.updateLog)
+
+  private func tryItAuto() -> Void {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { () -> Void in
+      self.auther.go()
+    }
+  }
+
   /// This also used via selector.
-  func startOperating() {
+  internal func startOperating(sender: NSObject) {
     hideQuickOpen()
+
+    switch sender {
+    case is UIButton: // retry button tap
+      ()
+    case let x where x == self: // viewDidLoad
+      return tryItAuto()
+    case is NSNotification: // app did become active
+      ()
+    default: // wtf
+      ()
+    }
 
     if #available(iOS 9.0, *) {
       webView.loadHTMLString("", baseURL: nil)
     } else {
-      // Fallback on earlier versions
+
     }
 
     checkWiFi()
   }
 
-  func startOperatingWithWiFi() {
+  internal func startOperatingWithWiFi() {
     let operation = OpenPageOperation(webView: webView, delegate: self)
     operationQueue.addOperation(operation)
   }
 
-  @IBAction func retryButtonTap(sender: AnyObject) {
+  @IBAction func retryButtonTap(sender: UIButton) {
     updateLog("⤴\u{fe0e}", NSLocalizedString("Retry", comment: "Retry (log)")) // ⎋
 
-    startOperating()
+    startOperating(sender)
   }
 
   // Shake-shake-shake.
@@ -160,9 +179,11 @@ class NeatViewController: UIViewController {
 
 extension NeatViewController: ConnectorDelegate {
 
-  func updateLog(prefix: String, _ text: String) {
-    let t = prefix + " " + text + "\n"
-    logTextView.text = t + (logTextView.text ?? "")
+  func updateLog(prefix: String, _ text: String) -> Void {
+    dispatch_async_on_main_queue {
+      let t = prefix + " " + text + "\n"
+      self.logTextView.text = t + (self.logTextView.text ?? "")
+    }
   }
 
   func connectorDidStartLoad(url: String) {
