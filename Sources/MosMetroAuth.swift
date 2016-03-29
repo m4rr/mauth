@@ -14,6 +14,10 @@ typealias LoggerType = (prefix: String, text: String) -> Void
 
 private let logSym = "〄"
 
+enum CookieError: ErrorType {
+  case WrongParameters
+}
+
 //github.com/m4rr/mosmetro-auth/blob/master/metro.py
 
 class MosMetroAuth {
@@ -22,6 +26,10 @@ class MosMetroAuth {
 
   init(logger: LoggerType) {
     self.logger = logger
+  }
+
+  private func updateLog(text: String) {
+    logger(prefix: logSym, text: text)
   }
 
   func go() -> NSTimeInterval {
@@ -46,10 +54,6 @@ class MosMetroAuth {
     }
 
     return startTime.timeIntervalSinceNow
-  }
-
-  private func updateLog(text: String) {
-    logger(prefix: logSym, text: text)
   }
 
   private func syncRequest(method: Alamofire.Method, _ address: String, parameters: [String: AnyObject]? = nil, headers: [String: String]? = nil, cookies:  [NSHTTPCookie]? = nil) -> (text: String?, response: NSHTTPURLResponse?) {
@@ -104,43 +108,40 @@ class MosMetroAuth {
   }
 
   private func connect() {
-    var headersSet: [String: String] = [:]
-
     let pageVmetro = syncRequest(.GET, "http://vmet.ro")
     guard let
       pageVmetroURL = pageVmetro.response?.URL,
       text = pageVmetro.text,
-      urlAuthStr = matchesForRegexInText("https:[^\"]*", text: text).first,
-      headers1 = pageVmetro.response?.allHeaderFields as? [String : String]
+      urlAuthStr = matchesForRegexInText("https:[^\"]*", text: text).first
       else { return }
-    headersSet["referer"] = pageVmetroURL.absoluteString
 
     let pageAuth = syncRequest(.GET, urlAuthStr,
-      headers: headersSet,
-      cookies: NSHTTPCookie.cookiesWithResponseHeaderFields(headers1, forURL: pageVmetroURL))
+                               headers: ["referer": pageVmetroURL.absoluteString],
+                               cookies: pageVmetro.response?.cookies
+    )
     guard let
       pageAuthURL = pageAuth.response?.URL,
       pageAuthText = pageAuth.text,
-      pageAuthBody = matchesForRegexInText("<body>.*?</body>", text: pageAuthText).first,
-      headers2 = pageAuth.response?.allHeaderFields as? [String : String]
+      pageAuthBody = matchesForRegexInText("<body>.*?</body>", text: pageAuthText).first
       else { return }
-    headersSet["referer"] = pageAuthURL.absoluteString
+
 
     let pagePostAuth = syncRequest(.POST, urlAuthStr,
-      parameters: formInputParse(pageAuthBody),
-      headers: headersSet,
-      cookies: NSHTTPCookie.cookiesWithResponseHeaderFields(headers2, forURL: pageAuthURL))
+                                   parameters: formInputParse(pageAuthBody),
+                                   headers: ["referer": pageAuthURL.absoluteString],
+                                   cookies: pageAuth.response?.cookies
+    )
     guard let
       pagePostAuthURL = pagePostAuth.response?.URL,
-      pagePostAuthBody = matchesForRegexInText("<body>.*?</body>", text: pagePostAuth.text).first,
-      headers3 = pagePostAuth.response?.allHeaderFields as? [String : String]
+      pagePostAuthBody = matchesForRegexInText("<body>.*?</body>", text: pagePostAuth.text).first
       else { return }
-    headersSet["referer"] = pagePostAuthURL.absoluteString
 
-    let pageRouter = syncRequest(.POST, "http://1.1.1.1/login.html",
-      parameters: formInputParse(pagePostAuthBody),
-      headers: headersSet,
-      cookies: NSHTTPCookie.cookiesWithResponseHeaderFields(headers3, forURL: pagePostAuthURL))
+    // pageRouter
+    let _ = syncRequest(.POST, "http://1.1.1.1/login.html",
+                        parameters: formInputParse(pagePostAuthBody),
+                        headers: ["referer": pagePostAuthURL.absoluteString],
+                        cookies: pagePostAuth.response?.cookies
+    )
   }
 
   // MARK: - Meta Helpers
@@ -168,6 +169,16 @@ class MosMetroAuth {
       updateLog("invalid regex: \(error.localizedDescription)")
       return []
     }
+  }
+
+}
+
+extension NSHTTPURLResponse {
+
+  var cookies: [NSHTTPCookie]? {
+    guard let hs = allHeaderFields as? [String : String], url = URL else { return nil }
+    
+    return NSHTTPCookie.cookiesWithResponseHeaderFields(hs, forURL: url)
   }
 
 }
