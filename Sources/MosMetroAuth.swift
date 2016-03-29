@@ -12,7 +12,7 @@ import Kanna
 
 typealias LoggerType = (prefix: String, text: String) -> Void
 
-private let logSym = "〄"
+private let logSymbol = "〄"
 
 enum CookieError: ErrorType {
   case WrongParameters
@@ -29,7 +29,7 @@ class MosMetroAuth {
   }
 
   private func updateLog(text: String) {
-    logger(prefix: logSym, text: text)
+    logger(prefix: logSymbol, text: text)
   }
 
   func go() -> NSTimeInterval {
@@ -62,8 +62,7 @@ class MosMetroAuth {
 
     let semaphore = dispatch_semaphore_create(0)
 
-    var response: NSHTTPURLResponse?
-    var text: String?
+    var response: NSHTTPURLResponse?, text: String?
 
     if let cookies = cookies, url = NSURL(string: address) {
       Alamofire.Manager.sharedInstance.session.configuration.HTTPCookieStorage?.setCookies(cookies, forURL: url, mainDocumentURL: nil)
@@ -92,11 +91,11 @@ class MosMetroAuth {
       return result
     }
 
-    let rq = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5)
+    let request = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5)
 
     let semaphore = dispatch_semaphore_create(0)
 
-    NSURLSession.sharedSession().dataTaskWithRequest(rq) { _, _, err in
+    NSURLSession.sharedSession().dataTaskWithRequest(request) { _, _, err in
       result = err == nil
 
       dispatch_semaphore_signal(semaphore)
@@ -111,36 +110,39 @@ class MosMetroAuth {
     let pageVmetro = syncRequest(.GET, "http://vmet.ro")
     guard let
       pageVmetroURL = pageVmetro.response?.URL,
-      text = pageVmetro.text,
-      urlAuthStr = matchesForRegexInText("https:[^\"]*", text: text).first
-      else { return }
+      urlAuthStr = matchesForRegexInText("https:[^\"]*", text: pageVmetro.text).first
+      else {
+        return
+    }
 
     let pageAuth = syncRequest(.GET, urlAuthStr,
                                headers: ["referer": pageVmetroURL.absoluteString],
-                               cookies: pageVmetro.response?.cookies
-    )
+                               cookies: pageVmetro.response?.cookies)
     guard let
-      pageAuthURL = pageAuth.response?.URL,
+      rageAuthResponse = pageAuth.response,
+      pageAuthURL = rageAuthResponse.URL,
       pageAuthText = pageAuth.text,
       pageAuthBody = matchesForRegexInText("<body>.*?</body>", text: pageAuthText).first
-      else { return }
-
+      else {
+        return
+    }
 
     let pagePostAuth = syncRequest(.POST, urlAuthStr,
                                    parameters: formInputParse(pageAuthBody),
                                    headers: ["referer": pageAuthURL.absoluteString],
-                                   cookies: pageAuth.response?.cookies
-    )
+                                   cookies: pageAuth.response?.cookies)
     guard let
       pagePostAuthURL = pagePostAuth.response?.URL,
       pagePostAuthBody = matchesForRegexInText("<body>.*?</body>", text: pagePostAuth.text).first
-      else { return }
+      else {
+        return
+    }
 
     // pageRouter
-    let _ = syncRequest(.POST, "http://1.1.1.1/login.html",
-                        parameters: formInputParse(pagePostAuthBody),
-                        headers: ["referer": pagePostAuthURL.absoluteString],
-                        cookies: pagePostAuth.response?.cookies
+    syncRequest(.POST, "http://1.1.1.1/login.html",
+                parameters: formInputParse(pagePostAuthBody),
+                headers: ["referer": pagePostAuthURL.absoluteString],
+                cookies: pagePostAuth.response?.cookies
     )
   }
 
@@ -158,13 +160,20 @@ class MosMetroAuth {
     return data
   }
 
-  private func matchesForRegexInText(regex: String!, text: String!) -> [String] {
+  private func matchesForRegexInText(regex: String!, text: String?) -> [String] {
+    guard let text = text else {
+      return []
+    }
+
     do {
       let regex = try NSRegularExpression(pattern: regex, options: [])
-      let nsString = text as NSString
-      let results = regex.matchesInString(text,
-        options: [], range: NSMakeRange(0, nsString.length))
-      return results.map { nsString.substringWithRange($0.range)}
+
+      let range = NSRange(0...text.characters.count)
+      let results = regex.matchesInString(text, options: [], range: range)
+
+      return results.map {
+        NSString(string: text).substringWithRange($0.range)
+      }
     } catch let error as NSError {
       updateLog("invalid regex: \(error.localizedDescription)")
       return []
