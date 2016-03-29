@@ -177,7 +177,7 @@ extension NSHTTPURLResponse {
 
   var cookies: [NSHTTPCookie]? {
     guard let hs = allHeaderFields as? [String : String], url = URL else { return nil }
-    
+
     return NSHTTPCookie.cookiesWithResponseHeaderFields(hs, forURL: url)
   }
 
