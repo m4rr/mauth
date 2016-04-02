@@ -20,7 +20,7 @@ import PKHUD
  */
 
 class NeatViewController: UIViewController {
-  
+
   private lazy var webView = WKWebView()
   @IBOutlet weak var navBar: UIView!
   @IBOutlet weak var addressLabel: UILabel!
@@ -160,9 +160,15 @@ class NeatViewController: UIViewController {
 
 extension NeatViewController: ConnectorDelegate {
 
-  func updateLog(prefix: String, _ text: String) {
-    let t = prefix + " " + text + "\n"
-    logTextView.text = t + (logTextView.text ?? "")
+  func updateLog(prefix: String, _ text: String) -> Void {
+    #if !DEBUG
+      return;
+    #endif
+
+    dispatch_async_on_main_queue {
+      let t = prefix + " " + text + "\n"
+      self.logTextView.text = t + (self.logTextView.text ?? "")
+    }
   }
 
   func connectorDidStartLoad(url: String) {
