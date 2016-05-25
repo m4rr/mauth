@@ -40,6 +40,10 @@ class NeatViewController: UIViewController {
     subscribeNotifications()
 
     let _ = LogManager(webView: webView)
+
+    #if !DEBUG
+      logTextView.userInteractionEnabled = false
+    #endif
   }
 
   deinit {
