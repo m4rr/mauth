@@ -84,21 +84,10 @@ class NeatViewController: UIViewController {
       config.mediaPlaybackAllowsAirPlay = false
     }
 
-    //let cutAudioUserScript = WKUserScript(source: "var x = document.getElementsByClassName('audio'); var i; for (i = 0; i < x.length; i++) { x[i].outerHTML = ''; }", injectionTime: .AtDocumentEnd, forMainFrameOnly: false)
-    //config.userContentController.addUserScript(userScript)
-
     webView = WKWebView(frame: view.bounds, configuration: config)
-
-    if #available(iOS 9.0, *) {
-        //webView.customUserAgent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E; FerrariGT)" // vertu user-agent :)
-    } else {
-        // Fallback on earlier versions
-    }
-
     webView.alpha = 0.3
 
     view.insertSubview(webView, atIndex: 0)
-
     view.updateConstraintsIfNeeded()
   }
 
