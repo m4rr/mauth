@@ -20,7 +20,7 @@ extension NeatViewController {
     } else {
       updateLog("∿", NSLocalizedString("Wi-Fi not connected", comment: "Wi-Fi not connected (log)"))
 
-      NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkWiFi", name: kReachabilityChangedNotification, object: nil)
+      NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(checkWiFi), name: kReachabilityChangedNotification, object: nil)
       reachability.startNotifier()
     }
   }
