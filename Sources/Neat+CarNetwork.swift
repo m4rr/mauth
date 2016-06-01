@@ -9,8 +9,8 @@
 extension NeatViewController {
 
   /// ∿ ⌔ 〄
-  func checkWiFi() {
-    if hasWiFi() {
+  func checkWiFi(force: Bool = false) {
+    if hasWiFi() || force {
       updateLog("∿", NSLocalizedString("Wi-Fi connected", comment: "Wi-Fi connected (log)"))
 
       NSNotificationCenter.defaultCenter().removeObserver(self)

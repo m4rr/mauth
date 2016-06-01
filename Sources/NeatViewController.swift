@@ -107,7 +107,7 @@ class NeatViewController: UIViewController {
   }
 
   /// This also used via selector.
-  func startOperating() {
+  func startOperating(force: Bool = false) {
     hideQuickOpen()
 
     if #available(iOS 9.0, *) {
@@ -116,7 +116,7 @@ class NeatViewController: UIViewController {
       // Fallback on earlier versions
     }
 
-    checkWiFi()
+    checkWiFi(force)
   }
 
   func startOperatingWithWiFi() {
@@ -127,7 +127,7 @@ class NeatViewController: UIViewController {
   @IBAction func retryButtonTap(sender: AnyObject) {
     updateLog("⤴\u{fe0e}", NSLocalizedString("Retry", comment: "Retry (log)")) // ⎋
 
-    startOperating()
+    startOperating(true)
   }
 
   // Shake-shake-shake.
