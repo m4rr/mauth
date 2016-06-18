@@ -14,8 +14,8 @@ typealias LoggerType = ([String]) -> Void
 
 private let logSymbol = "〄"
 
-enum CookieError: ErrorType {
-  case WrongParameters
+enum AuthorizingError: ErrorType {
+  case regex, urlString, connectionFaled
 }
 
 //github.com/m4rr/mosmetro-auth/blob/master/metro.py
@@ -32,22 +32,43 @@ class MosMetroAuth {
     logger([logSymbol] + text)
   }
 
-  func go() -> NSTimeInterval {
+  private var headers: [String: String] = [:] {
+    didSet {
+      updateLog("headers", headers.debugDescription)
+    }
+  }
+
+  func start() -> NSTimeInterval {
     let startTime = NSDate()
 
+    // ping router
     if tryConnect("http://1.1.1.1/login.html") {
-      for counter in 0..<3 {
-        if tryConnect("https://wtfismyip.com/text") {
+      connetionLoop: for counter in 0...2 {
+        do {
+          // get redirection
+          let pageVmetro = try syncRequest(.GET, "http://vmet.ro")
+          headers["referer"] = pageVmetro.response?.URL?.absoluteString
+
+          // get redirection target
+          let urlAuth = try matchesForRegexInText("https?:[^\"]*", text: pageVmetro.text).first
+
+          updateLog("Connecting...")
+          try connect(urlAuth, cookies: pageVmetro.response?.cookies)
+
+        } catch AuthorizingError.regex {
+          updateLog("Regex failed")
+
+        } catch AuthorizingError.connectionFaled {
+          updateLog("Connection failed")
+
+        } catch {
           if counter == 0 {
             updateLog("Already connected")
           } else {
             updateLog("Connected")
           }
-
-          break
+          break connetionLoop
         }
-
-        connect()
       }
     } else {
       updateLog("Wrong network")
@@ -56,13 +77,18 @@ class MosMetroAuth {
     return startTime.timeIntervalSinceNow
   }
 
-  private func syncRequest(method: Alamofire.Method, _ address: String, parameters: [String: AnyObject]? = nil, headers: [String: String]? = nil, cookies:  [NSHTTPCookie]? = nil) -> (text: String?, response: NSHTTPURLResponse?) {
+  private func syncRequest(
+    method: Alamofire.Method,
+    _ address: String,
+      parameters: [String: AnyObject]? = nil,
+      headers: [String: String]? = nil,
+      cookies:  [NSHTTPCookie]? = nil) throws -> (text: String?, response: NSHTTPURLResponse?) {
 
     updateLog(address)
 
     let semaphore = dispatch_semaphore_create(0)
 
-    var response: NSHTTPURLResponse?, text: String?
+    var response: NSHTTPURLResponse?, text: String?, error: NSError?
 
     if let cookies = cookies, url = NSURL(string: address) {
       Alamofire.Manager.sharedInstance.session.configuration.HTTPCookieStorage?.setCookies(cookies, forURL: url, mainDocumentURL: nil)
@@ -74,10 +100,16 @@ class MosMetroAuth {
         response = rp.response
         text = rp.result.value
 
+        error = rp.result.error
+
         dispatch_semaphore_signal(semaphore)
     }
 
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+
+    if error != nil {
+      throw error!
+    }
 
     return (text, response)
   }
@@ -108,50 +140,31 @@ class MosMetroAuth {
     return result
   }
 
-  private func connect() {
-    let pageVmetro = syncRequest(.GET, "http://vmet.ro")
-    guard let
-      pageVmetroURL = pageVmetro.response?.URL,
-      urlAuthStr = matchesForRegexInText("https:[^\"]*", text: pageVmetro.text).first
-      else {
-        return
-    }
+  private func connect(url: String?, cookies: [NSHTTPCookie]?) throws {
+    guard let url = url else { throw AuthorizingError.urlString }
 
-    let pageAuth = syncRequest(.GET, urlAuthStr,
-                               headers: ["referer": pageVmetroURL.absoluteString],
-                               cookies: pageVmetro.response?.cookies)
-    guard let
-      rageAuthResponse = pageAuth.response,
-      pageAuthURL = rageAuthResponse.URL,
-      pageAuthText = pageAuth.text,
-      pageAuthBody = matchesForRegexInText("<body>.*?</body>", text: pageAuthText).first
-      else {
-        return
-    }
+    do {
+      // Запрашиваем страницу с кнопкой авторизации
+      let pageAuth = try syncRequest(.GET, url, headers: headers, cookies: cookies)
+      headers["referer"] = pageAuth.response?.URL?.absoluteString
 
-    let pagePostAuth = syncRequest(.POST, urlAuthStr,
-                                   parameters: formInputParse(pageAuthBody),
-                                   headers: ["referer": pageAuthURL.absoluteString],
-                                   cookies: pageAuth.response?.cookies)
-    guard let
-      pagePostAuthURL = pagePostAuth.response?.URL,
-      pagePostAuthBody = matchesForRegexInText("<body>.*?</body>", text: pagePostAuth.text).first
-      else {
-        return
-    }
+      // Парсим поля скрытой формы
+      let pageAuthBody = try matchesForRegexInText("<body>.*?</body>", text: pageAuth.text).first
+      let postData = formInputParse(pageAuthBody)
 
-    // pageRouter
-    syncRequest(.POST, "http://1.1.1.1/login.html",
-                parameters: formInputParse(pagePostAuthBody),
-                headers: ["referer": pagePostAuthURL.absoluteString],
-                cookies: pagePostAuth.response?.cookies
-    )
+      let _ = try syncRequest(.POST, url,
+                              parameters: postData,
+                              headers: headers,
+                              cookies: pageAuth.response?.cookies)
+    }
   }
 
   // MARK: - Meta Helpers
 
-  private func formInputParse(body: String) -> [String: String] {
+  private func formInputParse(body: String?) -> [String: String] {
     var data: [String: String] = [:]
+
+    guard let body = body else { return data }
 
     if let doc = Kanna.HTML(html: body, encoding: NSUTF8StringEncoding) {
       for input in doc.css("input") {
@@ -162,9 +175,9 @@ class MosMetroAuth {
     return data
   }
 
-  private func matchesForRegexInText(regex: String!, text: String?) -> [String] {
+  private func matchesForRegexInText(regex: String!, text: String?) throws -> [String] {
     guard let text = text else {
-      return []
+      throw AuthorizingError.regex
     }
 
     do {
@@ -178,7 +191,7 @@ class MosMetroAuth {
       }
     } catch let error as NSError {
       updateLog("invalid regex: \(error.localizedDescription)")
-      return []
+      throw AuthorizingError.regex
     }
   }
 
@@ -187,9 +200,9 @@ class MosMetroAuth {
 extension NSHTTPURLResponse {
 
   var cookies: [NSHTTPCookie]? {
-    guard let hs = allHeaderFields as? [String : String], url = URL else { return nil }
+    guard let headers = allHeaderFields as? [String : String], url = URL else { return nil }
 
-    return NSHTTPCookie.cookiesWithResponseHeaderFields(hs, forURL: url)
+    return NSHTTPCookie.cookiesWithResponseHeaderFields(headers, forURL: url)
   }
 
 }
