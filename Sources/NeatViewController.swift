@@ -115,7 +115,6 @@ class NeatViewController: UIViewController {
     }
   }
 
-  /// This also used via selector.
   func startOperating(force force: Bool = false) {
     if #available(iOS 9.0, *) {
       webView.loadHTMLString("", baseURL: nil)
@@ -126,6 +125,7 @@ class NeatViewController: UIViewController {
     checkWiFi(force)
   }
 
+  /// This also used via selector.
   internal func startOperating(sender: NSObject) {
     hideQuickOpen()
 
