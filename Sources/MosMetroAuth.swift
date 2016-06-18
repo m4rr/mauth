@@ -34,7 +34,7 @@ class MosMetroAuth {
 
   private var headers: [String: String] = [:] {
     didSet {
-      updateLog("headers", headers.debugDescription)
+      updateLog(#function, headers.debugDescription)
     }
   }
 
@@ -78,7 +78,7 @@ class MosMetroAuth {
   }
 
   private func syncRequest(
-    method: Alamofire.Method,
+      method: Alamofire.Method,
     _ address: String,
       parameters: [String: AnyObject]? = nil,
       headers: [String: String]? = nil,
@@ -115,7 +115,7 @@ class MosMetroAuth {
   }
 
   private func tryConnect(address: String) -> Bool {
-    updateLog("tryConnect \(address)")
+    updateLog(#function, address)
 
     var result = false
 
