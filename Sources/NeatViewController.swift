@@ -179,10 +179,12 @@ class NeatViewController: UIViewController {
 
 extension NeatViewController: ConnectorDelegate {
 
-  func updateLog(prefix: String, _ text: String) -> Void {
+  func updateLog(items: String...) -> Void {
+    let text = items.reduce(String()) {
+      $0 + $1 + " "
+    }
     dispatch_async_on_main_queue {
-      let t = prefix + " " + text + "\n"
-      self.logTextView.text = t + (self.logTextView.text ?? "")
+      self.logTextView.text = text + "\n" + (self.logTextView.text ?? "")
     }
   }
 
