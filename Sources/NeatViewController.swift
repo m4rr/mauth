@@ -59,7 +59,7 @@ class NeatViewController: UIViewController {
   }
 
   private func subscribeNotifications() {
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NeatViewController.startOperating(_:)), name: didBecomeActiveNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(startOperating), name: didBecomeActiveNotification, object: nil)
   }
 
   private func unsubscribeNotifications() {
@@ -116,8 +116,9 @@ class NeatViewController: UIViewController {
   private lazy var auther: MosMetroAuth = MosMetroAuth(logger: self.updateLog)
 
   private func tryItAuto() -> Void {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { () -> Void in
       self.auther.go()
+    let defaultQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+    dispatch_async(defaultQueue) {
     }
   }
 
