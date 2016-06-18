@@ -183,6 +183,10 @@ extension NeatViewController: ConnectorDelegate {
       return;
     #endif
 
+    updateLog(items)
+  }
+
+  func updateLog(items: [String]) -> Void {
     let text = items.reduce(String()) {
       $0 + $1 + " "
     }
