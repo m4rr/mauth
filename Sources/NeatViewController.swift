@@ -116,9 +116,9 @@ class NeatViewController: UIViewController {
   private lazy var auther: MosMetroAuth = MosMetroAuth(logger: self.updateLog)
 
   private func tryItAuto() -> Void {
-      self.auther.go()
     let defaultQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
     dispatch_async(defaultQueue) {
+      self.auther.start()
     }
   }
 
