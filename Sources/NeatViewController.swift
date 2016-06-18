@@ -117,8 +117,6 @@ class NeatViewController: UIViewController {
 
   /// This also used via selector.
   func startOperating(force force: Bool = false) {
-    hideQuickOpen()
-
     if #available(iOS 9.0, *) {
       webView.loadHTMLString("", baseURL: nil)
     } else {
@@ -129,6 +127,8 @@ class NeatViewController: UIViewController {
   }
 
   internal func startOperating(sender: NSObject) {
+    hideQuickOpen()
+
     switch sender {
     case let x where x == self: // viewDidLoad
       tryItAuto()
