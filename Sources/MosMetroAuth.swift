@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import Kanna
 
-typealias LoggerType = (String...) -> Void
+typealias LoggerType = ([String]) -> Void
 
 private let logSymbol = "〄"
 
@@ -28,8 +28,8 @@ class MosMetroAuth {
     self.logger = logger
   }
 
-  private func updateLog(text: String) {
-    logger(logSymbol, text)
+  private func updateLog(text: String...) {
+    logger([logSymbol] + text)
   }
 
   func go() -> NSTimeInterval {
@@ -98,7 +98,7 @@ class MosMetroAuth {
     NSURLSession.sharedSession().dataTaskWithRequest(request) { [unowned self] _, response, err in
       result = err == nil
 
-      self.updateLog("\(#function) response \(response)")
+      self.updateLog(#function, "response", response.debugDescription)
 
       dispatch_semaphore_signal(semaphore)
     }.resume()

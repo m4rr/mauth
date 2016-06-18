@@ -180,6 +180,10 @@ class NeatViewController: UIViewController {
 extension NeatViewController: ConnectorDelegate {
 
   func updateLog(items: String...) -> Void {
+    updateLog(items)
+  }
+
+  func updateLog(items: [String]) -> Void {
     let text = items.reduce(String()) {
       $0 + $1 + " "
     }
