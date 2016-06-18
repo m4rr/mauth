@@ -16,7 +16,7 @@ private var request🔐 = NSURLRequest(URL: baseUrl🔐, cachePolicy: .ReloadIgn
 
 protocol ConnectorDelegate: class {
 
-  func updateLog(prefix: String, _ text: String)
+  func updateLog(_: String...)
 
   func connectorDidStartLoad(url: String)
 
