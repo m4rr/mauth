@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0070B61AC3D21CF8AF136452 /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D43CF368BF3569F16BD925A /* Pods_mauth.framework */; };
 		0306E90E1C9798560032DFEE /* WaitWiFiOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306E90D1C9798560032DFEE /* WaitWiFiOperation.swift */; };
 		0306E9101C97A0E20032DFEE /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306E90F1C97A0E20032DFEE /* Dispatch.swift */; };
 		030B85F31C941A260071F48C /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B85F21C941A260071F48C /* mauthTests.swift */; };
@@ -131,11 +130,9 @@
 		03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03DB7FF21C974D48006561F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03EBFF6F1C974ECC003167FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 		3AD4EA876FB0A514E43D03EB /* Pods_mauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABE57FA5297D0E46C73F2CD /* Pods-mauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.debug.xcconfig"; sourceTree = "<group>"; };
 		9B09B5D96B9836AE4858D7B2 /* Pods-mauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-mauth/Pods-mauth.release.xcconfig"; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +220,6 @@
 				03C1CAA01C942EC3006C2549 /* mauthUITests */,
 				0DB0914033328F6CE01F936C /* Pods */,
 				577F11A5FE2DD1218BCEF0F4 /* Frameworks */,
-
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -441,6 +437,7 @@
 					};
 					03581C801BAED21900D5D95F = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = Y5P7AX9UM2;
 					};
 					03C1CA9E1C942EC3006C2549 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -555,7 +552,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mauth/Pods-mauth-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mauth/Pods-mauth-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -778,6 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
@@ -794,6 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.emfo.mauth;
