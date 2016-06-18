@@ -18,6 +18,10 @@ enum AuthorizingError: ErrorType {
   case regex, urlString, connectionFaled
 }
 
+struct SyncRqResponse {
+  let text: String?, response: NSHTTPURLResponse?
+}
+
 //github.com/m4rr/mosmetro-auth/blob/master/metro.py
 
 class MosMetroAuth {
@@ -46,7 +50,7 @@ class MosMetroAuth {
       connetionLoop: for counter in 0...2 {
         do {
           // get redirection
-          let pageVmetro = try syncRequest(.GET, "http://vmet.ro")
+          let pageVmetro: SyncRqResponse = try syncRequest(.GET, "http://vmet.ro")
           headers["referer"] = pageVmetro.response?.URL?.absoluteString
 
           // get redirection target
@@ -82,7 +86,7 @@ class MosMetroAuth {
     _ address: String,
       parameters: [String: AnyObject]? = nil,
       headers: [String: String]? = nil,
-      cookies:  [NSHTTPCookie]? = nil) throws -> (text: String?, response: NSHTTPURLResponse?) {
+      cookies:  [NSHTTPCookie]? = nil) throws -> SyncRqResponse {
 
     updateLog(address)
 
@@ -111,7 +115,7 @@ class MosMetroAuth {
       throw error!
     }
 
-    return (text, response)
+    return SyncRqResponse(text: text, response: response)
   }
 
   private func tryConnect(address: String) -> Bool {
@@ -145,7 +149,7 @@ class MosMetroAuth {
 
     do {
       // Запрашиваем страницу с кнопкой авторизации
-      let pageAuth = try syncRequest(.GET, url, headers: headers, cookies: cookies)
+      let pageAuth: SyncRqResponse = try syncRequest(.GET, url, headers: headers, cookies: cookies)
       headers["referer"] = pageAuth.response?.URL?.absoluteString
 
       // Парсим поля скрытой формы
