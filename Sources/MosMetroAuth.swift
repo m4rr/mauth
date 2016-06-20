@@ -10,22 +10,22 @@ import Foundation
 import Alamofire
 import Kanna
 
-typealias LoggerType = ([String]) -> Void
+public typealias LoggerType = ([String]) -> Void
 
 private let logSymbol = "〄"
 
-enum AuthorizingError: ErrorType {
+public enum AuthorizingError: ErrorType {
   case regex, urlString, connectionFaled
-}
-
-struct SyncRqResponse {
-  let text: String?, response: NSHTTPURLResponse?
 }
 
 //github.com/m4rr/mosmetro-auth/blob/master/metro.py
 
-class MosMetroAuth {
+public final class MosMetroAuth {
 
+  private struct SyncRqResponse {
+    let text: String?, response: NSHTTPURLResponse?
+  }
+  
   private var logger: LoggerType
 
   init(logger: LoggerType) {
@@ -46,7 +46,7 @@ class MosMetroAuth {
     let startTime = NSDate()
 
     // ping router
-    if tryConnect("http://1.1.1.1/login.html") {
+    if checkConnection(to: "http://1.1.1.1/login.html") {
       connetionLoop: for counter in 0...2 {
         do {
           // get redirection
@@ -54,10 +54,10 @@ class MosMetroAuth {
           headers["referer"] = pageVmetro.response?.URL?.absoluteString
 
           // get redirection target
-          let urlAuth = try matchesForRegexInText("https?:[^\"]*", text: pageVmetro.text).first
+          let urlAuth = try matches(regex: "https?:[^\"]*", in: pageVmetro.text).first
 
           updateLog("Connecting...")
-          try connect(urlAuth, cookies: pageVmetro.response?.cookies)
+          try obtainMetroConnection(urlAuth, cookies: pageVmetro.response?.cookies)
 
         } catch AuthorizingError.regex {
           updateLog("Regex failed")
@@ -118,7 +118,7 @@ class MosMetroAuth {
     return SyncRqResponse(text: text, response: response)
   }
 
-  private func tryConnect(address: String) -> Bool {
+  private func checkConnection(to address: String) -> Bool {
     updateLog(#function, address)
 
     var result = false
@@ -144,7 +144,7 @@ class MosMetroAuth {
     return result
   }
 
-  private func connect(url: String?, cookies: [NSHTTPCookie]?) throws {
+  private func obtainMetroConnection(url: String?, cookies: [NSHTTPCookie]?) throws {
     guard let url = url else { throw AuthorizingError.urlString }
 
     do {
@@ -153,8 +153,8 @@ class MosMetroAuth {
       headers["referer"] = pageAuth.response?.URL?.absoluteString
 
       // Парсим поля скрытой формы
-      let pageAuthBody = try matchesForRegexInText("<body>.*?</body>", text: pageAuth.text).first
-      let postData = formInputParse(pageAuthBody)
+      let pageAuthBody = try matches(regex: "<body>.*?</body>", in: pageAuth.text).first
+      let postData = parseFormInputs(pageSource: pageAuthBody)
 
       let _ = try syncRequest(.POST, url,
                               parameters: postData,
@@ -165,12 +165,13 @@ class MosMetroAuth {
 
   // MARK: - Meta Helpers
 
-  private func formInputParse(body: String?) -> [String: String] {
+  /// Parsing html `<input />` in `pageSource`.
+  private func parseFormInputs(pageSource pageSource: String?) -> [String: String] {
     var data: [String: String] = [:]
 
-    guard let body = body else { return data }
+    guard let pageSource = pageSource else { return data }
 
-    if let doc = Kanna.HTML(html: body, encoding: NSUTF8StringEncoding) {
+    if let doc = Kanna.HTML(html: pageSource, encoding: NSUTF8StringEncoding) {
       for input in doc.css("input") {
         data[input["name"]!] = input["value"]
       }
@@ -179,7 +180,7 @@ class MosMetroAuth {
     return data
   }
 
-  private func matchesForRegexInText(regex: String!, text: String?) throws -> [String] {
+  private func matches(regex regex: String!, in text: String?) throws -> [String] {
     guard let text = text else {
       throw AuthorizingError.regex
     }
@@ -201,7 +202,7 @@ class MosMetroAuth {
 
 }
 
-extension NSHTTPURLResponse {
+private extension NSHTTPURLResponse {
 
   var cookies: [NSHTTPCookie]? {
     guard let headers = allHeaderFields as? [String : String], url = URL else { return nil }
