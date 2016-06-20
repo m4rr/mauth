@@ -22,7 +22,7 @@ public enum AuthorizingError: ErrorType {
 
 public final class MosMetroAuth {
 
-  private struct SyncRqResponse {
+  private struct SyncResponse {
     let text: String?, response: NSHTTPURLResponse?
   }
   
@@ -50,7 +50,7 @@ public final class MosMetroAuth {
       connetionLoop: for counter in 0...2 {
         do {
           // get redirection
-          let pageVmetro: SyncRqResponse = try syncRequest(.GET, "http://vmet.ro")
+          let pageVmetro: SyncResponse = try syncRequest(.GET, "http://vmet.ro")
           headers["referer"] = pageVmetro.response?.URL?.absoluteString
 
           // get redirection target
@@ -79,43 +79,6 @@ public final class MosMetroAuth {
     }
 
     return startTime.timeIntervalSinceNow
-  }
-
-  private func syncRequest(
-      method: Alamofire.Method,
-    _ address: String,
-      parameters: [String: AnyObject]? = nil,
-      headers: [String: String]? = nil,
-      cookies:  [NSHTTPCookie]? = nil) throws -> SyncRqResponse {
-
-    updateLog(address)
-
-    let semaphore = dispatch_semaphore_create(0)
-
-    var response: NSHTTPURLResponse?, text: String?, error: NSError?
-
-    if let cookies = cookies, url = NSURL(string: address) {
-      Alamofire.Manager.sharedInstance.session.configuration.HTTPCookieStorage?.setCookies(cookies, forURL: url, mainDocumentURL: nil)
-    }
-
-    Alamofire
-      .request(method, address, parameters: parameters, headers: headers)
-      .responseString { rp in
-        response = rp.response
-        text = rp.result.value
-
-        error = rp.result.error
-
-        dispatch_semaphore_signal(semaphore)
-    }
-
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-
-    if error != nil {
-      throw error!
-    }
-
-    return SyncRqResponse(text: text, response: response)
   }
 
   private func checkConnection(to address: String) -> Bool {
@@ -149,7 +112,7 @@ public final class MosMetroAuth {
 
     do {
       // Запрашиваем страницу с кнопкой авторизации
-      let pageAuth: SyncRqResponse = try syncRequest(.GET, url, headers: headers, cookies: cookies)
+      let pageAuth: SyncResponse = try syncRequest(.GET, url, headers: headers, cookies: cookies)
       headers["referer"] = pageAuth.response?.URL?.absoluteString
 
       // Парсим поля скрытой формы
@@ -160,6 +123,88 @@ public final class MosMetroAuth {
                               parameters: postData,
                               headers: headers,
                               cookies: pageAuth.response?.cookies)
+    }
+  }
+
+  private enum Method: String {
+    case GET, POST
+  }
+
+  private func makeSyncRequest(method method: Method,
+                                      address: String,
+                                      parameters: [String: AnyObject]? = nil,
+                                      headers: [String: String]? = nil,
+                                      cookies:  [NSHTTPCookie]? = nil) throws -> SyncResponse {
+
+    guard let url = NSURL(string: address) else {
+      throw AuthorizingError.urlString
+    }
+
+    let rq = NSMutableURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+
+    rq.HTTPMethod = method.rawValue
+
+    headers?.forEach { key, value in
+      rq.setValue(value, forHTTPHeaderField: key)
+    }
+
+    rq.HTTPShouldHandleCookies = true
+    if let cookies = cookies {
+      NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(cookies, forURL: url, mainDocumentURL: nil)
+    }
+
+    rq.HTTPBody = parameters?.reduce(String()) { "\($0)=\($1)&" }
+      .dataUsingEncoding(NSUTF8StringEncoding)
+
+
+    let semaphore = dispatch_semaphore_create(0)
+    var result: Bool = false, response: NSHTTPURLResponse?, text: String?, error: NSError?
+
+    NSURLSession.sharedSession().dataTaskWithRequest(rq) { [unowned self] _, response, err in
+      result = err == nil
+
+      self.updateLog(#function, "response", response.debugDescription)
+
+      dispatch_semaphore_signal(semaphore)
+    }.resume()
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+
+    return SyncResponse()
+  }
+
+  private func syncRequest(
+    method: Alamofire.Method,
+  _ address: String,
+    parameters ps: [String: AnyObject]? = nil,
+    headers hs: [String: String]? = nil,
+    cookies:  [NSHTTPCookie]? = nil) throws -> SyncResponse {
+
+    updateLog(address)
+
+    if let cookies = cookies, url = NSURL(string: address) {
+      let storage = Alamofire.Manager.sharedInstance.session.configuration.HTTPCookieStorage
+      storage.setCookies(cookies, forURL: url, mainDocumentURL: nil)
+    }
+
+    let semaphore = dispatch_semaphore_create(0)
+    var response: NSHTTPURLResponse?, text: String?, error: NSError?
+
+    Alamofire
+      .request(method, address, parameters: ps, headers: hs)
+      .responseString { response in
+        response = response.response
+        text     = response.result.value
+        error    = response.result.error
+
+        dispatch_semaphore_signal(semaphore)
+    }
+
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+
+    if let error = error {
+      throw error
+    } else {
+      return SyncRqResponse(text: text, response: response)
     }
   }
 
@@ -205,7 +250,7 @@ public final class MosMetroAuth {
 private extension NSHTTPURLResponse {
 
   var cookies: [NSHTTPCookie]? {
-    guard let headers = allHeaderFields as? [String : String], url = URL else { return nil }
+    guard let headers = allHeaderFields as? [String: String], url = URL else { return nil }
 
     return NSHTTPCookie.cookiesWithResponseHeaderFields(headers, forURL: url)
   }
