@@ -55,7 +55,6 @@
 		03C1CAAE1C942F70006C2549 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAAD1C942F70006C2549 /* SnapshotHelper.swift */; };
 		03DB7FEE1C974CB3006561F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DB7FED1C974CB3006561F0 /* LaunchScreen.storyboard */; };
 		03DB7FF11C974D48006561F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DB7FF31C974D48006561F0 /* Main.storyboard */; };
-		03EBFF701C974ECC003167FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03EBFF6F1C974ECC003167FD /* Info.plist */; };
 		CA3F3081A1E2871212F7DD0A /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4EA876FB0A514E43D03EB /* Pods_mauth.framework */; };
 /* End PBXBuildFile section */
 
@@ -437,7 +436,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = m4rr;
 				TargetAttributes = {
 					030B85EF1C941A260071F48C = {
@@ -490,7 +489,6 @@
 				039D0B4F1C9745B200542267 /* Localizable.strings in Resources */,
 				03DB7FEE1C974CB3006561F0 /* LaunchScreen.storyboard in Resources */,
 				03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */,
-				03EBFF701C974ECC003167FD /* Info.plist in Resources */,
 				03DB7FF11C974D48006561F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
