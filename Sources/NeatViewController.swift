@@ -36,7 +36,6 @@ class NeatViewController: UIViewController {
 
     setupQuickOpenView()
     setupWebView()
-    startOperating(self)
     subscribeNotifications()
 
     let _ = LogManager(webView: webView)
@@ -44,6 +43,12 @@ class NeatViewController: UIViewController {
     #if !DEBUG
       logTextView.userInteractionEnabled = false
     #endif
+  }
+
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+
+    startOperating(self)
   }
 
   deinit {
@@ -63,6 +68,7 @@ class NeatViewController: UIViewController {
   }
 
   private func subscribeNotifications() {
+    // Parens in `startOperating(_:)` is for distinguishing.
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(startOperating(_:)), name: didBecomeActiveNotification, object: nil)
   }
 
@@ -104,13 +110,15 @@ class NeatViewController: UIViewController {
     quickOpenView.subviews.forEach {
       $0.layer.cornerRadius = 2
     }
+
+    hideQuickOpen()
   }
 
   private lazy var auther: MosMetroAuth = MosMetroAuth(logger: self.updateLog)
 
   private func tryItAuto() -> Void {
-    let defaultQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-    dispatch_async(defaultQueue) {
+    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+    dispatch_async(queue) {
       self.auther.start()
     }
   }
