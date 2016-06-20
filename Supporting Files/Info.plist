@@ -29,6 +29,20 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>58</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>5c1e7c54eb7ad5878374956ea5e0bbb734cf503a</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>twitter</string>

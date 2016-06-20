@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import Fabric
+import Crashlytics
 
 let didBecomeActiveNotification = "applicationDidBecomeActiveNotification"
 
@@ -21,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   private lazy var resignActiveAt: NSDate = NSDate()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    Fabric.with([Crashlytics.self])
+
     tryDisableAudioSession()
 
     return true
