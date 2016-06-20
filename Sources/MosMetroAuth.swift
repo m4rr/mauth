@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import Kanna
 
+public typealias Method = Alamofire.Method
 public typealias LoggerType = ([String]) -> Void
 
 private let logSymbol = "〄"
@@ -91,13 +92,12 @@ public final class MosMetroAuth {
     }
 
     let request = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5)
-
     let semaphore = dispatch_semaphore_create(0)
 
     NSURLSession.sharedSession().dataTaskWithRequest(request) { [unowned self] _, response, err in
       result = err == nil
 
-      self.updateLog(#function, "response", response.debugDescription)
+      self.updateLog(#function, "response", response?.debugDescription ?? "<nil>")
 
       dispatch_semaphore_signal(semaphore)
     }.resume()
@@ -126,54 +126,8 @@ public final class MosMetroAuth {
     }
   }
 
-  private enum Method: String {
-    case GET, POST
-  }
-
-  private func makeSyncRequest(method method: Method,
-                                      address: String,
-                                      parameters: [String: AnyObject]? = nil,
-                                      headers: [String: String]? = nil,
-                                      cookies:  [NSHTTPCookie]? = nil) throws -> SyncResponse {
-
-    guard let url = NSURL(string: address) else {
-      throw AuthorizingError.urlString
-    }
-
-    let rq = NSMutableURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
-
-    rq.HTTPMethod = method.rawValue
-
-    headers?.forEach { key, value in
-      rq.setValue(value, forHTTPHeaderField: key)
-    }
-
-    rq.HTTPShouldHandleCookies = true
-    if let cookies = cookies {
-      NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(cookies, forURL: url, mainDocumentURL: nil)
-    }
-
-    rq.HTTPBody = parameters?.reduce(String()) { "\($0)=\($1)&" }
-      .dataUsingEncoding(NSUTF8StringEncoding)
-
-
-    let semaphore = dispatch_semaphore_create(0)
-    var result: Bool = false, response: NSHTTPURLResponse?, text: String?, error: NSError?
-
-    NSURLSession.sharedSession().dataTaskWithRequest(rq) { [unowned self] _, response, err in
-      result = err == nil
-
-      self.updateLog(#function, "response", response.debugDescription)
-
-      dispatch_semaphore_signal(semaphore)
-    }.resume()
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-
-    return SyncResponse()
-  }
-
   private func syncRequest(
-    method: Alamofire.Method,
+    method: Method,
   _ address: String,
     parameters ps: [String: AnyObject]? = nil,
     headers hs: [String: String]? = nil,
@@ -183,7 +137,7 @@ public final class MosMetroAuth {
 
     if let cookies = cookies, url = NSURL(string: address) {
       let storage = Alamofire.Manager.sharedInstance.session.configuration.HTTPCookieStorage
-      storage.setCookies(cookies, forURL: url, mainDocumentURL: nil)
+      storage?.setCookies(cookies, forURL: url, mainDocumentURL: nil)
     }
 
     let semaphore = dispatch_semaphore_create(0)
@@ -191,10 +145,10 @@ public final class MosMetroAuth {
 
     Alamofire
       .request(method, address, parameters: ps, headers: hs)
-      .responseString { response in
-        response = response.response
-        text     = response.result.value
-        error    = response.result.error
+      .responseString { responseResponse in
+        response = responseResponse.response
+        text     = responseResponse.result.value
+        error    = responseResponse.result.error
 
         dispatch_semaphore_signal(semaphore)
     }
@@ -204,7 +158,7 @@ public final class MosMetroAuth {
     if let error = error {
       throw error
     } else {
-      return SyncRqResponse(text: text, response: response)
+      return SyncResponse(text: text, response: response)
     }
   }
 
