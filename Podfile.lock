@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (3.2.1)
-  - Kanna (1.0.5)
-  - PKHUD (2.2.3)
-  - PureLayout (3.0.1)
+  - Alamofire (3.4.1)
+  - Kanna (1.0.6)
+  - PKHUD (3.1.0)
+  - PureLayout (3.0.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -11,11 +11,11 @@ DEPENDENCIES:
   - PureLayout
 
 SPEC CHECKSUMS:
-  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
-  Kanna: 1df5cd995dc1f3a282e3dcf7521cfef2f069ac4d
-  PKHUD: 47339a6fdb917015ce79b1a0480e31ea6955c11d
-  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Kanna: 9f30945bbd293a609f698ea164687ccc0990ff60
+  PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
 PODFILE CHECKSUM: 9499e40404dba6fac5c29c7f1635dc573233ae3d
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1

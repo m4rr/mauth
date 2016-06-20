@@ -129,11 +129,11 @@ public final class MosMetroAuth {
   }
 
   private func syncRequest(
-    method: Method,
-  _ address: String,
-    parameters ps: [String: AnyObject]? = nil,
-    headers hs: [String: String]? = nil,
-    cookies:  [NSHTTPCookie]? = nil) throws -> SyncResponse {
+      method:      Method,
+    _ address:     String,
+      parameters: [String: AnyObject]? = nil,
+      headers:    [String: String]? = nil,
+      cookies:    [NSHTTPCookie]? = nil) throws -> SyncResponse {
 
     updateLog(address)
 
@@ -146,7 +146,7 @@ public final class MosMetroAuth {
     var response: NSHTTPURLResponse?, text: String?, error: NSError?
 
     Alamofire
-      .request(method, address, parameters: ps, headers: hs)
+      .request(method, address, parameters: parameters, headers: headers)
       .responseString { responseResponse in
         response = responseResponse.response
         text     = responseResponse.result.value
@@ -172,7 +172,7 @@ public final class MosMetroAuth {
 
     guard let pageSource = pageSource else { return data }
 
-    if let doc = Kanna.HTML(html: pageSource, encoding: NSUTF8StringEncoding) {
+    if let doc: HTMLDocument = Kanna.HTML(html: pageSource, encoding: NSUTF8StringEncoding) {
       for input in doc.css("input") {
         data[input["name"]!] = input["value"]
       }
