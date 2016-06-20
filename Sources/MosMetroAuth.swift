@@ -171,23 +171,25 @@ public final class MosMetroAuth {
     var data: [String: String] = [:]
 
     guard let pageSource = pageSource else { return data }
+    guard let doc = Kanna.HTML(html: pageSource, encoding: NSUTF8StringEncoding) else { return data }
 
-    if let doc: HTMLDocument = Kanna.HTML(html: pageSource, encoding: NSUTF8StringEncoding) {
-      for input in doc.css("input") {
-        data[input["name"]!] = input["value"]
+    let xmlNodeSet: XMLNodeSet = doc.css("input")
+    for input in xmlNodeSet {
+      if let name = input["name"], value = input["value"] {
+        data[name] = value
       }
     }
 
     return data
   }
 
-  private func matches(regex regex: String!, in text: String?) throws -> [String] {
+  private func matches(regex regex: String, in text: String?) throws -> [String] {
     guard let text = text else {
       throw AuthorizingError.regex
     }
 
     do {
-      let regex = try NSRegularExpression(pattern: regex, options: [])
+      let regex = try NSRegularExpression(pattern: regex, options: .DotMatchesLineSeparators)
 
       let range = NSRange(0...text.characters.count)
       let results = regex.matchesInString(text, options: [], range: range)
