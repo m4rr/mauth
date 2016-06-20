@@ -15,7 +15,11 @@ public typealias LoggerType = ([String]) -> Void
 
 private let logSymbol = "〄"
 
-public enum AuthorizingError: ErrorType {
+private struct SyncResponse {
+  let text: String?, response: NSHTTPURLResponse?
+}
+
+private enum AuthorizingError: ErrorType {
   case regex, urlString, connectionFaled
 }
 
@@ -23,10 +27,6 @@ public enum AuthorizingError: ErrorType {
 
 public final class MosMetroAuth {
 
-  private struct SyncResponse {
-    let text: String?, response: NSHTTPURLResponse?
-  }
-  
   private var logger: LoggerType
 
   init(logger: LoggerType) {
@@ -43,6 +43,8 @@ public final class MosMetroAuth {
     }
   }
 
+  /// Obtaining a connection.
+  /// - returns: `NSTimeInterval` time spent.
   func start() -> NSTimeInterval {
     let startTime = NSDate()
 
