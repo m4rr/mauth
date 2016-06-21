@@ -191,8 +191,7 @@ public final class MosMetroAuth {
     do {
       let regex = try NSRegularExpression(pattern: regex, options: .DotMatchesLineSeparators)
 
-      let range = NSRange(0...text.characters.count)
-      let results = regex.matchesInString(text, options: [], range: range)
+      let results = regex.matchesInString(text, options: [], range: NSMakeRange(0, text.characters.count))
 
       return results.map {
         NSString(string: text).substringWithRange($0.range)
