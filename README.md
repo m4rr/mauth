@@ -6,6 +6,8 @@ Try to automatically authorization in metro wi-fi. Finally, approved!
 
 # Contributions
 
+[![Build Status](https://travis-ci.org/m4rr/mauth.svg?branch=master)](https://travis-ci.org/m4rr/mauth)
+
 Pull requests are welcome!
 
 # Press about us
