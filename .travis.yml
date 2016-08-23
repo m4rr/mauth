@@ -1,19 +1,11 @@
 language: objective-c
 
-branches:
- only:
- - master
-
-osx_image: xcode7.2
-
-xcode_sdk: iphonesimulator9.2
-xcode_workspace: mauth.xcworkspace
-xcode_scheme: mauth
+osx_image: xcode7.3
 
 install:
- - brew remove --force xctool
- - brew install xctool --HEAD
- - pod install
+ - bundle install
+ - bundle exec pod repo update --silent
+ - bundle exec pod install
 
 script:
- - xctool test -workspace mauth.xcworkspace -scheme mauth -sdk iphonesimulator9.2
+ - xcodebuild -workspace 'mauth.xcworkspace' -scheme 'mauth' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
