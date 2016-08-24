@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/m4rr/mauth.svg?branch=master)](https://travis-ci.org/m4rr/mauth)
+
 # Moscow Metro Auth
 
 Try to automatically authorization in metro wi-fi. Finally, approved!
@@ -5,8 +7,6 @@ Try to automatically authorization in metro wi-fi. Finally, approved!
 <a href="https://itunes.apple.com/app/moscow-metro-wi-fi-authorization/id1041801794?l=en&amp;mt=8"><img src="./Resources/Download_on_the_App_Store@2x.png" width="150" alt="Download on the App Store" align="center"></a>
 
 # Contributions
-
-[![Build Status](https://travis-ci.org/m4rr/mauth.svg?branch=master)](https://travis-ci.org/m4rr/mauth)
 
 Pull requests are welcome!
 
