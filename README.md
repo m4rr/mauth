@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/m4rr/mauth.svg?branch=master)](https://travis-ci.org/m4rr/mauth)
+[![Issue Count](https://codeclimate.com/github/m4rr/mauth/badges/issue_count.svg)](https://codeclimate.com/github/m4rr/mauth)
 
 # Moscow Metro Auth
 
