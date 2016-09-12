@@ -37,7 +37,6 @@ Pull requests are welcome!
 * https://www.iguides.ru/main/apps/ios/v_app_store_poyavitsya_prilozhenie_dlya_avtomaticheskoy_avtorizatsii_v_seti_wi_fi_moskovskogo_metro/
 * http://digest.mbltdev.ru/digests/37
 
-# Licence
+# Lisence
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
-
+MIT
