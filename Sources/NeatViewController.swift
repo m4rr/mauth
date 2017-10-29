@@ -124,7 +124,7 @@ class NeatViewController: UIViewController {
     operationQueue.addOperation(operation)
   }
 
-  @IBAction func retryButtonTap(sender: AnyObject) {
+  @IBAction func retryButtonTap(sender: Any) {
     updateLog("⤴\u{fe0e}", NSLocalizedString("Retry", comment: "Retry (log)")) // ⎋
 
     startOperating(force: true)

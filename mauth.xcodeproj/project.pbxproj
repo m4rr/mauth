@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0070B61AC3D21CF8AF136452 /* Pods_mauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D43CF368BF3569F16BD925A /* Pods_mauth.framework */; };
-		0306E9101C97A0E20032DFEE /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306E90F1C97A0E20032DFEE /* Dispatch.swift */; };
 		030B85F31C941A260071F48C /* mauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B85F21C941A260071F48C /* mauthTests.swift */; };
 		0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */; };
 		031DA7281C95A9410092FFBA /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DA7271C95A9410092FFBA /* LogManager.swift */; };
@@ -45,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0306E90F1C97A0E20032DFEE /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		030B85F01C941A260071F48C /* mauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030B85F21C941A260071F48C /* mauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthTests.swift; sourceTree = "<group>"; };
 		030B85F41C941A260071F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				03581C841BAED21900D5D95F /* AppDelegate.swift */,
 				033F30091C1A47D900EEDFB5 /* NeatViewController.swift */,
 				03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */,
-				0306E90F1C97A0E20032DFEE /* Dispatch.swift */,
 				03A164851FA5EFA500359D43 /* State Machine */,
 				033F30081C1A46FA00EEDFB5 /* Logs */,
 			);
@@ -447,7 +444,6 @@
 				033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */,
 				038D28061FA5F06500C96366 /* WaitWiFiOperation.swift in Sources */,
 				033512CF1C970281009E0A49 /* Reachability.m in Sources */,
-				0306E9101C97A0E20032DFEE /* Dispatch.swift in Sources */,
 				03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */,
 				031DA7281C95A9410092FFBA /* LogManager.swift in Sources */,
 				038D28051FA5F06300C96366 /* OpenNotSecurePageOperation.swift in Sources */,

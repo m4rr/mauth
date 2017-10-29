@@ -1,10 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ky7-jk-2ZT">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ky7-jk-2ZT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Neat View Controller-->
         <scene sceneID="IB5-MZ-GjP">
@@ -15,21 +24,21 @@
                         <viewControllerLayoutGuide type="bottom" id="syk-Bl-cmg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mpO-zo-UKl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciN-YV-gat">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-43-Now" userLabel="addressLabel">
-                                        <rect key="frame" x="8" y="28" width="585" height="28"/>
-                                        <color key="backgroundColor" white="1" alpha="0.74981142241379306" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="8" y="28" width="360" height="28"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.74981142241379306" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="addressLabel"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="eRx-ym-7iT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -38,19 +47,19 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UiB-xy-Vvt">
-                                        <rect key="frame" x="0.0" y="62" width="600" height="2"/>
+                                        <rect key="frame" x="0.0" y="62" width="375" height="2"/>
                                     </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-MO-jyi">
-                                        <rect key="frame" x="562" y="28" width="27" height="28"/>
-                                        <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="337" y="28" width="27" height="28"/>
+                                        <color key="backgroundColor" red="0.99000000953674316" green="0.99000000953674316" blue="0.99000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="5"/>
                                         <state key="normal" image="RefreshButton"/>
                                         <connections>
-                                            <action selector="retryButtonTap:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="Rm1-UD-M0v"/>
+                                            <action selector="retryButtonTapWithSender:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="KNB-zb-mpz"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="mgu-43-Now" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" constant="8" id="A2V-O0-o3H"/>
                                     <constraint firstItem="ae7-MO-jyi" firstAttribute="height" secondItem="mgu-43-Now" secondAttribute="height" id="Jpa-rQ-9Yp"/>
@@ -65,16 +74,16 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Eh-0dc">
-                                <rect key="frame" x="8" y="392" width="584" height="200"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.35026939655172412" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="8" y="436.5" width="359" height="222.5"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.35026939655172412" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">
 Тапните на рекламу, когда загрузится.</string>
-                                <color key="textColor" white="0.39654991610738255" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.39654991030693054" green="0.39654991030693054" blue="0.39654991030693054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="syk-Bl-cmg" firstAttribute="top" secondItem="FpO-Eh-0dc" secondAttribute="bottom" constant="8" id="4C6-nh-gNA"/>
                             <constraint firstItem="ciN-YV-gat" firstAttribute="leading" secondItem="mpO-zo-UKl" secondAttribute="leading" id="GPF-ii-ovZ"/>
@@ -105,7 +114,7 @@
                                 <constraint firstAttribute="height" constant="30" id="GGl-KS-eEV"/>
                             </constraints>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYY-Jk-BAz" userLabel="twitter Button">
@@ -168,7 +177,7 @@
                                 <action selector="openSafari:" destination="ky7-jk-2ZT" eventType="touchUpInside" id="cOl-bt-LKV"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v3-WE-H29">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v3-WE-H29">
                             <rect key="frame" x="15" y="94" width="217" height="30"/>
                             <accessibility key="accessibilityConfiguration" identifier="rateOnAppStore"/>
                             <state key="normal" title="Оценить в Апсторе ★★★★★"/>
@@ -177,7 +186,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="FJZ-MR-J40" firstAttribute="centerY" secondItem="lYY-Jk-BAz" secondAttribute="centerY" id="2hN-4k-IsX"/>
                         <constraint firstItem="lYY-Jk-BAz" firstAttribute="leading" secondItem="ByS-iO-ebd" secondAttribute="leading" constant="8" id="2oY-ug-AN2"/>
@@ -210,16 +219,16 @@
                         <viewControllerLayoutGuide type="bottom" id="gbV-FR-GCd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qeO-6i-B8h">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kez-Cd-fHh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Kez-Cd-fHh" secondAttribute="trailing" id="Bch-sk-Ahf"/>
                             <constraint firstItem="Kez-Cd-fHh" firstAttribute="top" secondItem="qeO-6i-B8h" secondAttribute="top" id="YsP-Ax-7Fj"/>
@@ -254,7 +263,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CWJ-v0-QKR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="851-fE-V34">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
