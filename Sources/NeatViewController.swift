@@ -81,8 +81,8 @@ class NeatViewController: UIViewController {
   }
 
   override func updateViewConstraints() {
-    webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    webView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+    webView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     webView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
     webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
@@ -117,6 +117,7 @@ class NeatViewController: UIViewController {
     webView = WKWebView(frame: view.bounds, configuration: config)
     webView.alpha = 0.3
     webView.navigationDelegate = self
+    webView.translatesAutoresizingMaskIntoConstraints = false
     
     if #available(iOS 9.0, *) {
       webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko) Version/10.0 Mobile/14D27 Safari/602.1"
@@ -137,6 +138,7 @@ class NeatViewController: UIViewController {
     quickOpenView.layer.shadowOffset = CGSize(width: 0, height: 2)
     quickOpenView.layer.shadowOpacity = 1
     quickOpenView.layer.shadowRadius = 5
+    quickOpenView.translatesAutoresizingMaskIntoConstraints = false
 
     quickOpenView.subviews.forEach {
       $0.layer.cornerRadius = 2

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kek" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-43-Now" userLabel="addressLabel">
-                                        <rect key="frame" x="8" y="28" width="359" height="28"/>
+                                        <rect key="frame" x="8" y="28" width="323" height="28"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.74981142241379306" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="addressLabel"/>
                                         <constraints>
@@ -49,8 +50,11 @@
                                         <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-MO-jyi">
-                                        <rect key="frame" x="336" y="28" width="27" height="28"/>
+                                        <rect key="frame" x="339" y="28" width="28" height="28"/>
                                         <color key="backgroundColor" red="0.99000000953674316" green="0.99000000953674316" blue="0.99000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ae7-MO-jyi" secondAttribute="height" multiplier="1:1" id="snm-FE-wUq"/>
+                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="5"/>
                                         <state key="normal" image="RefreshButton"/>
                                         <connections>
@@ -62,16 +66,15 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="mgu-43-Now" secondAttribute="bottom" constant="8" id="9oA-7n-PNF"/>
                                     <constraint firstItem="mgu-43-Now" firstAttribute="leading" secondItem="iWM-Yi-DES" secondAttribute="leading" constant="8" id="A2V-O0-o3H"/>
-                                    <constraint firstItem="iWM-Yi-DES" firstAttribute="trailing" secondItem="mgu-43-Now" secondAttribute="trailing" constant="8" id="BA7-dc-uAS"/>
                                     <constraint firstAttribute="bottom" secondItem="mgu-43-Now" secondAttribute="bottom" constant="8" id="Iws-da-U04"/>
                                     <constraint firstItem="ae7-MO-jyi" firstAttribute="height" secondItem="mgu-43-Now" secondAttribute="height" id="Jpa-rQ-9Yp"/>
                                     <constraint firstAttribute="bottom" secondItem="UiB-xy-Vvt" secondAttribute="bottom" id="UTy-Bt-CWX"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="X0L-2v-PzD"/>
-                                    <constraint firstItem="ae7-MO-jyi" firstAttribute="trailing" secondItem="mgu-43-Now" secondAttribute="trailing" constant="-4" id="Yja-m5-KQ3"/>
+                                    <constraint firstItem="ae7-MO-jyi" firstAttribute="leading" secondItem="mgu-43-Now" secondAttribute="trailing" constant="8" id="WpQ-mo-M0O"/>
                                     <constraint firstAttribute="trailing" secondItem="UiB-xy-Vvt" secondAttribute="trailing" id="fPM-4X-Zqc"/>
                                     <constraint firstItem="ae7-MO-jyi" firstAttribute="centerY" secondItem="mgu-43-Now" secondAttribute="centerY" id="rNY-kj-r7J"/>
                                     <constraint firstItem="UiB-xy-Vvt" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" id="s1h-i4-UfV"/>
                                     <constraint firstItem="mgu-43-Now" firstAttribute="top" secondItem="iWM-Yi-DES" secondAttribute="top" constant="8" id="wcj-Jp-fHk"/>
+                                    <constraint firstItem="iWM-Yi-DES" firstAttribute="trailing" secondItem="ae7-MO-jyi" secondAttribute="trailing" constant="8" id="ylH-fc-y1b"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="iWM-Yi-DES"/>
                             </view>
@@ -212,7 +215,7 @@ Tap on ad, when loaded.</string>
                     <viewLayoutGuide key="safeArea" id="PvD-EK-nIl"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="621" y="968"/>
+            <point key="canvasLocation" x="620" y="967.4662668665668"/>
         </scene>
         <!--Source Code-->
         <scene sceneID="lI8-Rh-sg6">
