@@ -8,7 +8,7 @@
 
 import UIKit
 import WebKit
-import PureLayout
+//import PureLayout
 import PKHUD
 
 /**
@@ -51,13 +51,13 @@ class NeatViewController: UIViewController {
   }
 
   override func updateViewConstraints() {
-    webView.autoPinEdge(.left, to: .left, of: view)
-    webView.autoPinEdge(.right, to: .right, of: view)
-    webView.autoPinEdge(.top, to: .bottom, of: navBar)
-    webView.autoPinEdge(.bottom, to: .bottom, of: view)
+    webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    webView.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
+    webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
-    quickOpenView.autoAlignAxis(.horizontal, toSameAxisOf: logTextView)
-    quickOpenView.autoAlignAxis(.vertical, toSameAxisOf: logTextView)
+    quickOpenView.centerXAnchor.constraint(equalTo: logTextView.centerXAnchor).isActive = true
+    quickOpenView.centerYAnchor.constraint(equalTo: logTextView.centerYAnchor).isActive = true
 
     super.updateViewConstraints()
   }
