@@ -29,7 +29,7 @@ class LogViewerController: UIViewController {
     sendComposer.setToRecipients(["remarr@gmail.com"])
     sendComposer.setSubject("mauth log " + host)
     sendComposer.setMessageBody(textView.text, isHTML: false)
-    presentViewController(sendComposer, animated: true, completion: nil)
+    present(sendComposer, animated: true, completion: nil)
   }
 
 }
@@ -37,7 +37,7 @@ class LogViewerController: UIViewController {
 extension LogViewerController: MFMailComposeViewControllerDelegate {
 
   func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-    controller.dismissViewControllerAnimated(true, completion: nil)
+    controller.dismiss(animated: true, completion: nil)
   }
 
 }

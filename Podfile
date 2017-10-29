@@ -3,5 +3,5 @@ use_frameworks!
 
 target 'mauth' do
   pod 'PureLayout'
-  pod 'PKHUD'
+  pod 'PKHUD', '~> 4.0'
 end

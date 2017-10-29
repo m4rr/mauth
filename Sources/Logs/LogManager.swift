@@ -21,8 +21,8 @@ class LogManager {
     LogManager.shared = self
   }
 
-  func logSourceCode(completion: (host: String, text: String) -> Void) {
-    guard let webView = webView, url = webView.URL, host = url.host else {
+  func logSourceCode(completion: @escaping (_ host: String, _ text: String) -> Void) {
+    guard let webView = webView, let url = webView.url, let host = url.host else {
       return
     }
 
@@ -32,7 +32,7 @@ class LogManager {
       if let html = result as? String {
         let sourceCode = url.absoluteString + "\n\n" + html
 
-        completion(host: host, text: sourceCode)
+        completion(host, sourceCode)
       }
     }
   }

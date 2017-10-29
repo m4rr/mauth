@@ -29,7 +29,7 @@ class NeatViewController: UIViewController {
   @IBOutlet var quickOpenView: UIView!
 
   let operationQueue = OperationQueue()
-  lazy var reachability = Reachability.reachabilityForInternetConnection()
+  lazy var reachability = Reachability.forInternetConnection()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,23 +51,23 @@ class NeatViewController: UIViewController {
   }
 
   override func updateViewConstraints() {
-    webView.autoPinEdge(.Left, toEdge: .Left, ofView: view)
-    webView.autoPinEdge(.Right, toEdge: .Right, ofView: view)
-    webView.autoPinEdge(.Top, toEdge: .Bottom, ofView: navBar)
-    webView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: view)
+    webView.autoPinEdge(.left, to: .left, of: view)
+    webView.autoPinEdge(.right, to: .right, of: view)
+    webView.autoPinEdge(.top, to: .bottom, of: navBar)
+    webView.autoPinEdge(.bottom, to: .bottom, of: view)
 
-    quickOpenView.autoAlignAxis(.Horizontal, toSameAxisOfView: logTextView)
-    quickOpenView.autoAlignAxis(.Vertical, toSameAxisOfView: logTextView)
+    quickOpenView.autoAlignAxis(.horizontal, toSameAxisOf: logTextView)
+    quickOpenView.autoAlignAxis(.vertical, toSameAxisOf: logTextView)
 
     super.updateViewConstraints()
   }
 
   private func subscribeNotifications() {
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "startOperating", name: didBecomeActiveNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: Selector("startOperating"), name: NSNotification.Name(rawValue: didBecomeActiveNotification), object: nil)
   }
 
   private func unsubscribeNotifications() {
-    NSNotificationCenter.defaultCenter().removeObserver(self)
+    NotificationCenter.default.removeObserver(self)
   }
 
   private func setupWebView() {
@@ -87,7 +87,7 @@ class NeatViewController: UIViewController {
     webView = WKWebView(frame: view.bounds, configuration: config)
     webView.alpha = 0.3
 
-    view.insertSubview(webView, atIndex: 0)
+    view.insertSubview(webView, at: 0)
     view.updateConstraintsIfNeeded()
   }
 
@@ -96,7 +96,7 @@ class NeatViewController: UIViewController {
     //quickOpenView.layer.borderColor = UIColor(white: 0.8, alpha: 1).CGColor
     quickOpenView.layer.borderWidth = 0
     quickOpenView.layer.cornerRadius = 2
-    quickOpenView.layer.shadowColor = UIColor(white: 0.5, alpha: 1).CGColor
+    quickOpenView.layer.shadowColor = UIColor(white: 0.5, alpha: 1).cgColor
     quickOpenView.layer.shadowOffset = CGSize(width: 0, height: 2)
     quickOpenView.layer.shadowOpacity = 1
     quickOpenView.layer.shadowRadius = 5
@@ -116,7 +116,7 @@ class NeatViewController: UIViewController {
       // Fallback on earlier versions
     }
 
-    checkWiFi(force)
+    checkWiFi(force: force)
   }
 
   func startOperatingWithWiFi() {
@@ -127,18 +127,20 @@ class NeatViewController: UIViewController {
   @IBAction func retryButtonTap(sender: AnyObject) {
     updateLog("⤴\u{fe0e}", NSLocalizedString("Retry", comment: "Retry (log)")) // ⎋
 
-    startOperating(true)
+    startOperating(force: true)
   }
 
+
+
   // Shake-shake-shake.
-  override func canBecomeFirstResponder() -> Bool {
+  override var canBecomeFirstResponder: Bool {
     return true
   }
 
   // Shake gesture to view source code.
-  override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-    if motion == .MotionShake {
-      performSegueWithIdentifier("show-source-code", sender: nil)
+  override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    if motion == .motionShake {
+      performSegue(withIdentifier: "show-source-code", sender: nil)
     }
   }
 
@@ -153,12 +155,12 @@ class NeatViewController: UIViewController {
 
 extension NeatViewController: ConnectorDelegate {
 
-  func updateLog(prefix: String, _ text: String) -> Void {
+  func updateLog(_ prefix: String, _ text: String) -> Void {
     #if !DEBUG
       return;
     #endif
 
-    dispatch_async_on_main_queue {
+    DispatchQueue.main.async {
       let t = prefix + " " + text + "\n"
       self.logTextView.text = t + (self.logTextView.text ?? "")
     }
@@ -179,7 +181,7 @@ extension NeatViewController: ConnectorDelegate {
   func connectorProgress(old old: Float, new: Float) {
     progressBar.setProgress(new, animated: old < new)
 
-    UIView.animateWithDuration(0.5) {
+    UIView.animate(withDuration: 0.5) {
       self.progressBar.alpha = new < 1 ? 1 : 0
     }
   }
@@ -198,14 +200,14 @@ extension NeatViewController: ConnectorDelegate {
   }
 
   private func hideQuickOpen() {
-    quickOpenView.hidden = true
+    quickOpenView.isHidden = true
   }
 
   private func showQuickOpen() {
     quickOpenView.alpha = 0
-    quickOpenView.hidden = false
+    quickOpenView.isHidden = false
 
-    UIView.animateWithDuration(0.25, delay: 0, options: .CurveEaseIn,
+    UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn,
       animations: {
         self.quickOpenView.alpha = 1
       }, completion: nil)
@@ -218,33 +220,33 @@ extension NeatViewController: ConnectorDelegate {
 extension NeatViewController {
 
   private func openURL(urlString: String) {
-    guard let url = NSURL(string: urlString) else {
+    guard let url = URL(string: urlString) else {
       return
     }
 
-    if UIApplication.sharedApplication().canOpenURL(url) {
-       UIApplication.sharedApplication().openURL(url)
+    if UIApplication.shared.canOpenURL(url) {
+      UIApplication.shared.openURL(url)
     }
   }
 
   @IBAction func openTwitter(sender: UIButton) {
-    openURL("twitter://")
+    openURL(urlString: "twitter://")
   }
 
   @IBAction func openFacebook(sender: UIButton) {
-    openURL("fb://")
+    openURL(urlString: "fb://")
   }
 
   @IBAction func openVk(sender: UIButton) {
-    openURL("vk://")
+    openURL(urlString: "vk://")
   }
 
   @IBAction func openInstagram(sender: UIButton) {
-    openURL("instagram://")
+    openURL(urlString: "instagram://")
   }
 
   @IBAction func openSafari(sender: UIButton) {
-    openURL("https://www.apple.com")
+    openURL(urlString: "https://www.apple.com")
   }
 
   @IBAction func rateOnAppStore(sender: UIButton) {
@@ -252,7 +254,7 @@ extension NeatViewController {
     //let appLink = "itms-apps://itunes.apple.com/app/id" + appId
     //let appLink = "https://itunes.apple.com/app/moskva.-metro.-avtorizacia/id1041801794?mt=8"
     let appLink = "https://itunes.apple.com/app/viewContentsUserReviews?id=\(appId)"
-    openURL(appLink)
+    openURL(urlString: appLink)
   }
 
 }

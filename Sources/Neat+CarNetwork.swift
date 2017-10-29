@@ -9,24 +9,24 @@
 extension NeatViewController {
 
   /// ∿ ⌔ 〄
-  func checkWiFi(force: Bool = false) {
+  @objc func checkWiFi(force: Bool = false) {
     if hasWiFi() || force {
       updateLog("∿", NSLocalizedString("Wi-Fi connected", comment: "Wi-Fi connected (log)"))
 
-      NSNotificationCenter.defaultCenter().removeObserver(self)
-      reachability.stopNotifier()
+      NotificationCenter.default.removeObserver(self)
+      reachability?.stopNotifier()
 
       startOperatingWithWiFi()
     } else {
       updateLog("∿", NSLocalizedString("Wi-Fi not connected", comment: "Wi-Fi not connected (log)"))
 
-      NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(checkWiFi), name: kReachabilityChangedNotification, object: nil)
-      reachability.startNotifier()
+      NotificationCenter.default.addObserver(self, selector: #selector(checkWiFi), name: NSNotification.Name.reachabilityChanged, object: nil)
+      reachability?.startNotifier()
     }
   }
 
   private func hasWiFi() -> Bool {
-    return reachability.currentReachabilityStatus() == .ReachableViaWiFi
+    return reachability!.currentReachabilityStatus() == .ReachableViaWiFi
   }
 
 }
