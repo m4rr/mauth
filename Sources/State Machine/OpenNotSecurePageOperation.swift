@@ -8,21 +8,22 @@
 
 import Foundation
 import WebKit
+import PSOperations
 
-private let baseUrl🔓 = NSURL(string: "http://wtfismyip.com/text")! // unsecure but trusted website
-private let baseUrl🔐 = NSURL(string: "https://wtfismyip.com/text")! // secure copy
-private var request🔓 = NSURLRequest(URL: baseUrl🔓, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 10)
-private var request🔐 = NSURLRequest(URL: baseUrl🔐, cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 10)
+private let baseUrl🔓 = URL(string: "http://wtfismyip.com/text")! // unsecure but trusted website
+private let baseUrl🔐 = URL(string: "https://wtfismyip.com/text")! // secure copy
+private var request🔓 = URLRequest(url: baseUrl🔓, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
+private var request🔐 = URLRequest(url: baseUrl🔐, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
 
 protocol ConnectorDelegate: class {
 
-  func updateLog(prefix: String, _ text: String)
+  func updateLog(_ prefix: String, _ text: String)
 
   func connectorDidStartLoad(url: String)
 
   func connectorDidEndLoad(title: String, url: String)
 
-  func connectorProgress(old old: Float, new: Float)
+  func connectorProgress(old: Float, new: Float)
 
   func connectorDidGetSecurePageMatchHost()
   
@@ -36,7 +37,7 @@ protocol ConnectorDelegate: class {
 //
 //}
 
-final class OpenPageOperation: Operation {
+final class OpenPageOperation: PSOperations.Operation {
 
   private weak var webView: WKWebView!
   private weak var delegate: ConnectorDelegate?
@@ -52,7 +53,7 @@ final class OpenPageOperation: Operation {
     addCondition(MutuallyExclusive<OpenPageOperation>())
   }
 
-  private func isSecureBaseUrl(url: NSURL) -> (secure: Bool, base: Bool) {
+  private func isSecureBaseUrl(url: URL) -> (secure: Bool, base: Bool) {
     let secure = webView.hasOnlySecureContent // url.scheme == baseUrl🔐.scheme
     let base = url.host == (secure ? baseUrl🔐 : baseUrl🔓).host
 
@@ -60,35 +61,35 @@ final class OpenPageOperation: Operation {
   }
 
   func connectorTryHttp() {
-    webView.loadRequest(request🔓)
+    webView.load(request🔓)
   }
 
   func connectorTryHttps() {
-    webView.loadRequest(request🔐)
+    webView.load(request🔐)
   }
 
-  func checkWillRefresh(completion: (willRefresh: Bool) -> Void) {
+  func checkWillRefresh(completion: @escaping (_ willRefresh: Bool) -> Void) {
     webView.evaluateJavaScript("document.getElementsByTagName('html')[0].outerHTML") { result, error in
-      if let html = result as? String, _ = html.rangeOfString("http-equiv=\"refresh\"") {
-        return completion(willRefresh: true)
+      if let html = result as? String, html.contains("http-equiv=\"refresh\"") {
+        return completion(true)
       }
 
-      return completion(willRefresh: false)
+      return completion(false)
     }
   }
 
   func openDependingPage() {
-    if webView.loading {
+    if webView.isLoading {
        webView.stopLoading()
     }
 
-    guard let url = webView.URL where url.absoluteString != "about:blank" else {
+    guard let url = webView.url, url.absoluteString != "about:blank" else {
       connectorTryHttp()
 
       return;
     }
 
-    switch isSecureBaseUrl(url) {
+    switch isSecureBaseUrl(url: url) {
     case (secure: false, base: true): // state of maxima's man-in-the-middle
       checkWillRefresh { (willRefresh) -> Void in
         if willRefresh {
@@ -103,14 +104,14 @@ final class OpenPageOperation: Operation {
       }
       
     case (secure: false, base: false): // state of branded page
-      if url.host?.containsString("wi-fi") == false {
+      if url.host?.contains("wi-fi") == false {
         // user clicked on ad, and so a branded page is loaded. go try http.
         connectorTryHttp()
       } else {
         // assume this is the first fake page. (or any other fake pages.)
-        dispatch_after_delay_on_main_queue(4.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(4500), execute: {
           self.simulateJS()
-        }
+        })
         // wait for user action
         //cancel()
       }
@@ -130,8 +131,8 @@ final class OpenPageOperation: Operation {
   }
 
   override func execute() {
-    dispatch_async(dispatch_get_main_queue()) {
-      self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: [.Old, .New], context: nil)
+    DispatchQueue.main.async {
+      self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: [.old, .new], context: nil)
 
       self.webView.navigationDelegate = self
 
@@ -139,7 +140,7 @@ final class OpenPageOperation: Operation {
     }
   }
 
-  override func finished(errors: [NSError]) {
+  override func finished(_ errors: [NSError]) {
     webView.removeObserver(self, forKeyPath: "estimatedProgress")
   }
 
@@ -149,33 +150,33 @@ final class OpenPageOperation: Operation {
 
 extension OpenPageOperation: WKNavigationDelegate {
 
-  func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-    delegate?.connectorDidStartLoad(webView.URL?.absoluteString ?? "")
+  func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    delegate?.connectorDidStartLoad(url: webView.url?.absoluteString ?? "")
   }
 
-  func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-    delegate?.connectorDidEndLoad(webView.title ?? "title", url: webView.URL?.absoluteString ?? "url")
+  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    delegate?.connectorDidEndLoad(title: webView.title ?? "title", url: webView.url?.absoluteString ?? "url")
 
     openDependingPage()
   }
 
-  func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {
-    delegate?.updateLog("didFailNavigation", error.description)
+  func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    delegate?.updateLog("didFailNavigation", error.localizedDescription)
   }
 
-  func webView(webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-    delegate?.updateLog("didReceiveServerRedirect", webView.URL?.absoluteString ?? "")
+  func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+    delegate?.updateLog("didReceiveServerRedirect", webView.url?.absoluteString ?? "")
   }
 
-  override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-    guard let keyPath = keyPath, change = change else {
+  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    guard let keyPath = keyPath, let change = change else {
       return;
     }
 
     switch keyPath {
     case "estimatedProgress":
-      if let new = change["new"] as? Float, old = change["old"] as? Float {
-        dispatch_async(dispatch_get_main_queue()) {
+      if let new = change[.newKey] as? Float, let old = change[.oldKey] as? Float {
+        DispatchQueue.main.async {
           self.delegate?.connectorProgress(old: old, new: new)
           //self.progressBar.setProgress(new, animated: old < new)
         }
@@ -199,10 +200,13 @@ extension OpenPageOperation {
     ]
 
     aClick.forEach { query in
+      webView.evaluateJavaScript(query, completionHandler: { (k, e) in
+
+      })
       webView.evaluateJavaScript(query) { result, error in
-        if let error = error where error.code == WKErrorCode.JavaScriptExceptionOccurred.rawValue {
+        if let error = error { //  WKError.javaScriptExceptionOccurred {
           // clicking by defunct selectors guaranteed produce errors
-          self.delegate?.updateLog("js click err", "\(error.code)")
+          self.delegate?.updateLog("js click err", "\(error.localizedDescription)")
         } else {
           self.delegate?.updateLog("js click", "res")
         }
