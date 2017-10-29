@@ -8,7 +8,6 @@
 
 import Foundation
 import WebKit
-import PSOperations
 
  let baseUrl🔓 = URL(string: "http://192.162.1.1/")! // unsecure but trusted website
  let baseUrl🔐 = URL(string: "https://ya.ru/")! // secure copy

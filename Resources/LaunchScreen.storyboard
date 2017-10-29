@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p68-Oy-DMb" userLabel="nav View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3JQ-Kd-AQV" userLabel="addressLabel">
-                                        <rect key="frame" x="8" y="44" width="360" height="28"/>
+                                        <rect key="frame" x="8" y="52" width="360" height="28"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.74981142239999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="addressLabel"/>
                                         <constraints>
@@ -40,7 +40,7 @@
                                 <constraints>
                                     <constraint firstItem="3JQ-Kd-AQV" firstAttribute="leading" secondItem="p68-Oy-DMb" secondAttribute="leading" constant="8" id="A61-r3-njF"/>
                                     <constraint firstAttribute="bottom" secondItem="3JQ-Kd-AQV" secondAttribute="bottom" constant="8" id="DKv-zw-6jb"/>
-                                    <constraint firstItem="3JQ-Kd-AQV" firstAttribute="top" secondItem="9z5-Oh-96I" secondAttribute="top" id="KoB-xo-H8h"/>
+                                    <constraint firstItem="3JQ-Kd-AQV" firstAttribute="top" secondItem="9z5-Oh-96I" secondAttribute="top" constant="8" id="KoB-xo-H8h"/>
                                     <constraint firstItem="3JQ-Kd-AQV" firstAttribute="centerX" secondItem="p68-Oy-DMb" secondAttribute="centerX" id="yBn-lv-1mQ"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="9z5-Oh-96I"/>

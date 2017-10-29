@@ -174,6 +174,10 @@ class NeatViewController: UIViewController {
 
   // Shake gesture to view source code.
   override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    #if !DEBUG
+      return;
+    #endif
+
     if motion == .motionShake {
       performSegue(withIdentifier: "show-source-code", sender: nil)
     }
