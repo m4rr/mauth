@@ -63,7 +63,7 @@ class NeatViewController: UIViewController {
   }
 
   private func subscribeNotifications() {
-    NotificationCenter.default.addObserver(self, selector: Selector("startOperating"), name: NSNotification.Name(rawValue: didBecomeActiveNotification), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(startOperating), name: .UIApplicationDidBecomeActive, object: nil)
   }
 
   private func unsubscribeNotifications() {
@@ -113,7 +113,7 @@ class NeatViewController: UIViewController {
   }
 
   /// This also used via selector.
-  func startOperating(force: Bool = false) {
+  @objc func startOperating(force: Bool = false) {
     hideQuickOpen()
 
     if #available(iOS 9.0, *) {
