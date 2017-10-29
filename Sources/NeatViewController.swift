@@ -86,6 +86,12 @@ class NeatViewController: UIViewController {
 
     webView = WKWebView(frame: view.bounds, configuration: config)
     webView.alpha = 0.3
+    
+    if #available(iOS 9.0, *) {
+      webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko) Version/10.0 Mobile/14D27 Safari/602.1"
+    } else {
+      // Fallback on earlier versions
+    }
 
     view.insertSubview(webView, at: 0)
     view.updateConstraintsIfNeeded()

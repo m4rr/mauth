@@ -10,8 +10,8 @@ import Foundation
 import WebKit
 import PSOperations
 
-private let baseUrl🔓 = URL(string: "http://wtfismyip.com/text")! // unsecure but trusted website
-private let baseUrl🔐 = URL(string: "https://wtfismyip.com/text")! // secure copy
+private let baseUrl🔓 = URL(string: "http://192.168.1.1/")! // unsecure but trusted website
+private let baseUrl🔐 = URL(string: "https://ya.ru/")! // secure copy
 private var request🔓 = URLRequest(url: baseUrl🔓, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
 private var request🔐 = URLRequest(url: baseUrl🔐, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
 
