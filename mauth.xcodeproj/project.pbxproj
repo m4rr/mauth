@@ -16,7 +16,6 @@
 		03581C851BAED21900D5D95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03581C841BAED21900D5D95F /* AppDelegate.swift */; };
 		03581C8C1BAED21900D5D95F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03581C8B1BAED21900D5D95F /* Assets.xcassets */; };
 		038D28051FA5F06300C96366 /* OpenNotSecurePageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A164861FA5EFA500359D43 /* OpenNotSecurePageOperation.swift */; };
-		038D28061FA5F06500C96366 /* WaitWiFiOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A164871FA5EFA500359D43 /* WaitWiFiOperation.swift */; };
 		039D0B4F1C9745B200542267 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 039D0B511C9745B200542267 /* Localizable.strings */; };
 		03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */; };
 		03C1CAA21C942EC3006C2549 /* mauthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CAA11C942EC3006C2549 /* mauthUITests.swift */; };
@@ -46,7 +45,6 @@
 		030B85F01C941A260071F48C /* mauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030B85F21C941A260071F48C /* mauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthTests.swift; sourceTree = "<group>"; };
 		030B85F41C941A260071F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		030D30991C97521600A2D669 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0317D9591BBBE7C900E6DE46 /* LogViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerController.swift; sourceTree = "<group>"; };
 		031DA7271C95A9410092FFBA /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		033512CC1C970280009E0A49 /* mauth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mauth-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 		03581C8B1BAED21900D5D95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		039D0B521C9745B700542267 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		03A164861FA5EFA500359D43 /* OpenNotSecurePageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNotSecurePageOperation.swift; sourceTree = "<group>"; };
-		03A164871FA5EFA500359D43 /* WaitWiFiOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitWiFiOperation.swift; sourceTree = "<group>"; };
 		03BCFF431BC95EEF000AD1D2 /* Neat+CarNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Neat+CarNetwork.swift"; sourceTree = "<group>"; };
 		03C1CA9F1C942EC3006C2549 /* mauthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mauthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C1CAA11C942EC3006C2549 /* mauthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mauthUITests.swift; sourceTree = "<group>"; };
@@ -179,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				03A164861FA5EFA500359D43 /* OpenNotSecurePageOperation.swift */,
-				03A164871FA5EFA500359D43 /* WaitWiFiOperation.swift */,
 			);
 			path = "State Machine";
 			sourceTree = "<group>";
@@ -439,7 +435,6 @@
 			files = (
 				0317D95A1BBBE7C900E6DE46 /* LogViewerController.swift in Sources */,
 				033F300A1C1A47D900EEDFB5 /* NeatViewController.swift in Sources */,
-				038D28061FA5F06500C96366 /* WaitWiFiOperation.swift in Sources */,
 				033512CF1C970281009E0A49 /* Reachability.m in Sources */,
 				03BCFF441BC95EEF000AD1D2 /* Neat+CarNetwork.swift in Sources */,
 				031DA7281C95A9410092FFBA /* LogManager.swift in Sources */,
@@ -487,7 +482,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				03DB7FF21C974D48006561F0 /* Base */,
-				030D30991C97521600A2D669 /* ru */,
 			);
 			name = Main.storyboard;
 			path = .;

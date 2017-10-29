@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ky7-jk-2ZT">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,20 +21,20 @@
             <objects>
                 <viewController id="ky7-jk-2ZT" customClass="NeatViewController" customModule="mauth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mpO-zo-UKl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciN-YV-gat">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-43-Now" userLabel="addressLabel">
-                                        <rect key="frame" x="8" y="44" width="360" height="28"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kek" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-43-Now" userLabel="addressLabel">
+                                        <rect key="frame" x="8" y="28" width="359" height="28"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.74981142241379306" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="addressLabel"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="eRx-ym-7iT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -44,10 +44,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UiB-xy-Vvt">
-                                        <rect key="frame" x="0.0" y="78" width="375" height="2"/>
+                                        <rect key="frame" x="0.0" y="62" width="375" height="2"/>
+                                        <color key="progressTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-MO-jyi">
-                                        <rect key="frame" x="337" y="44" width="27" height="28"/>
+                                        <rect key="frame" x="336" y="28" width="27" height="28"/>
                                         <color key="backgroundColor" red="0.99000000953674316" green="0.99000000953674316" blue="0.99000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="5"/>
                                         <state key="normal" image="RefreshButton"/>
@@ -59,20 +61,22 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="mgu-43-Now" secondAttribute="bottom" constant="8" id="9oA-7n-PNF"/>
-                                    <constraint firstItem="mgu-43-Now" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" constant="8" id="A2V-O0-o3H"/>
+                                    <constraint firstItem="mgu-43-Now" firstAttribute="leading" secondItem="iWM-Yi-DES" secondAttribute="leading" constant="8" id="A2V-O0-o3H"/>
+                                    <constraint firstItem="iWM-Yi-DES" firstAttribute="trailing" secondItem="mgu-43-Now" secondAttribute="trailing" constant="8" id="BA7-dc-uAS"/>
+                                    <constraint firstAttribute="bottom" secondItem="mgu-43-Now" secondAttribute="bottom" constant="8" id="Iws-da-U04"/>
                                     <constraint firstItem="ae7-MO-jyi" firstAttribute="height" secondItem="mgu-43-Now" secondAttribute="height" id="Jpa-rQ-9Yp"/>
-                                    <constraint firstItem="mgu-43-Now" firstAttribute="centerX" secondItem="ciN-YV-gat" secondAttribute="centerX" id="QMl-rJ-Fdd"/>
                                     <constraint firstAttribute="bottom" secondItem="UiB-xy-Vvt" secondAttribute="bottom" id="UTy-Bt-CWX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="X0L-2v-PzD"/>
                                     <constraint firstItem="ae7-MO-jyi" firstAttribute="trailing" secondItem="mgu-43-Now" secondAttribute="trailing" constant="-4" id="Yja-m5-KQ3"/>
                                     <constraint firstAttribute="trailing" secondItem="UiB-xy-Vvt" secondAttribute="trailing" id="fPM-4X-Zqc"/>
                                     <constraint firstItem="ae7-MO-jyi" firstAttribute="centerY" secondItem="mgu-43-Now" secondAttribute="centerY" id="rNY-kj-r7J"/>
                                     <constraint firstItem="UiB-xy-Vvt" firstAttribute="leading" secondItem="ciN-YV-gat" secondAttribute="leading" id="s1h-i4-UfV"/>
-                                    <constraint firstItem="mgu-43-Now" firstAttribute="top" secondItem="iWM-Yi-DES" secondAttribute="top" id="wcj-Jp-fHk"/>
+                                    <constraint firstItem="mgu-43-Now" firstAttribute="top" secondItem="iWM-Yi-DES" secondAttribute="top" constant="8" id="wcj-Jp-fHk"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="iWM-Yi-DES"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Eh-0dc">
-                                <rect key="frame" x="8" y="499.33333333333326" width="359" height="270.66666666666674"/>
+                                <rect key="frame" x="8" y="436.5" width="359" height="222.5"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.35026939655172412" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">
 Tap on ad, when loaded.</string>
@@ -84,12 +88,12 @@ Tap on ad, when loaded.</string>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="223-VW-MpN" firstAttribute="bottom" secondItem="FpO-Eh-0dc" secondAttribute="bottom" constant="8" id="4C6-nh-gNA"/>
-                            <constraint firstItem="ciN-YV-gat" firstAttribute="leading" secondItem="223-VW-MpN" secondAttribute="leading" id="GPF-ii-ovZ"/>
+                            <constraint firstItem="ciN-YV-gat" firstAttribute="leading" secondItem="mpO-zo-UKl" secondAttribute="leading" id="GPF-ii-ovZ"/>
                             <constraint firstItem="FpO-Eh-0dc" firstAttribute="height" secondItem="mpO-zo-UKl" secondAttribute="height" multiplier="1:3" id="OfI-ks-pbl"/>
-                            <constraint firstItem="ciN-YV-gat" firstAttribute="top" secondItem="mpO-zo-UKl" secondAttribute="top" id="TJT-xR-3Tr"/>
+                            <constraint firstItem="ciN-YV-gat" firstAttribute="top" secondItem="mpO-zo-UKl" secondAttribute="top" id="Vb4-3z-IWI"/>
                             <constraint firstItem="223-VW-MpN" firstAttribute="trailing" secondItem="FpO-Eh-0dc" secondAttribute="trailing" constant="8" id="dSM-xc-Lb8"/>
                             <constraint firstItem="FpO-Eh-0dc" firstAttribute="leading" secondItem="223-VW-MpN" secondAttribute="leading" constant="8" id="wfs-DJ-Q0g"/>
-                            <constraint firstItem="223-VW-MpN" firstAttribute="trailing" secondItem="ciN-YV-gat" secondAttribute="trailing" id="x6e-V2-ADX"/>
+                            <constraint firstAttribute="trailing" secondItem="ciN-YV-gat" secondAttribute="trailing" id="x6e-V2-ADX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="223-VW-MpN"/>
                     </view>
@@ -215,11 +219,11 @@ Tap on ad, when loaded.</string>
             <objects>
                 <viewController id="wpE-wW-Xcy" customClass="LogViewerController" customModule="mauth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qeO-6i-B8h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kez-Cd-fHh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -260,7 +264,7 @@ Tap on ad, when loaded.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CWJ-v0-QKR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="851-fE-V34">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

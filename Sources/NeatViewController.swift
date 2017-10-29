@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-//import PureLayout
 import PKHUD
 
 /**
@@ -19,16 +18,47 @@ import PKHUD
 
  */
 
+enum UnitedStates {
+  case warmUp, connectToUnsecure, connectToHTTPS, done
+
+  mutating func next() {
+    switch self {
+    case .warmUp: self = .connectToUnsecure
+    case .connectToUnsecure: self = .connectToHTTPS
+    case .connectToHTTPS: self = .done
+    case .done: return self = .done
+    }
+  }
+}
+
 class NeatViewController: UIViewController {
 
-  private lazy var webView = WKWebView()
+  var delegate: ConnectorDelegate? {
+    return self
+  }
+
+  lazy var webView = WKWebView()
   @IBOutlet weak var navBar: UIView!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var progressBar: UIProgressView!
   @IBOutlet weak var logTextView: UITextView!
   @IBOutlet var quickOpenView: UIView!
 
-  let operationQueue = OperationQueue()
+  var state = UnitedStates.warmUp {
+    didSet {
+      switch (oldValue, state) {
+      case (_, .connectToUnsecure):
+        connectorTryHttp()
+      case (_, .connectToHTTPS):
+        connectorTryHttps()
+      case (_, .done):
+        showSuccessHUD()
+      default:
+        ()
+      }
+    }
+  }
+
   lazy var reachability = Reachability.forInternetConnection()
 
   override func viewDidLoad() {
@@ -53,7 +83,7 @@ class NeatViewController: UIViewController {
   override func updateViewConstraints() {
     webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    webView.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
+    webView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
     webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
     quickOpenView.centerXAnchor.constraint(equalTo: logTextView.centerXAnchor).isActive = true
@@ -63,7 +93,7 @@ class NeatViewController: UIViewController {
   }
 
   private func subscribeNotifications() {
-    NotificationCenter.default.addObserver(self, selector: #selector(startOperating), name: .UIApplicationDidBecomeActive, object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(startOperating), name: .UIApplicationDidBecomeActive, object: nil)
   }
 
   private func unsubscribeNotifications() {
@@ -86,6 +116,7 @@ class NeatViewController: UIViewController {
 
     webView = WKWebView(frame: view.bounds, configuration: config)
     webView.alpha = 0.3
+    webView.navigationDelegate = self
     
     if #available(iOS 9.0, *) {
       webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko) Version/10.0 Mobile/14D27 Safari/602.1"
@@ -113,7 +144,7 @@ class NeatViewController: UIViewController {
   }
 
   /// This also used via selector.
-  @objc func startOperating(force: Bool = false) {
+  @objc func startOperating() {
     hideQuickOpen()
 
     if #available(iOS 9.0, *) {
@@ -122,18 +153,14 @@ class NeatViewController: UIViewController {
       // Fallback on earlier versions
     }
 
-    checkWiFi(force: force)
+    state.next()
   }
 
-  func startOperatingWithWiFi() {
-    let operation = OpenPageOperation(webView: webView, delegate: self)
-    operationQueue.addOperation(operation)
-  }
 
   @IBAction func retryButtonTap(sender: Any) {
     updateLog("⤴\u{fe0e}", NSLocalizedString("Retry", comment: "Retry (log)")) // ⎋
 
-    startOperating(force: true)
+    startOperating()
   }
 
 
@@ -178,13 +205,15 @@ extension NeatViewController: ConnectorDelegate {
     updateLog("▶", url)
   }
 
-  func connectorDidEndLoad(title: String, url: String) {
-    addressLabel.text = url
 
-    updateLog("◼", url)
+
+  func connectorDidEndLoad(title: String, url: URL?) {
+    let urlStr = url?.absoluteString ?? "—"
+    addressLabel.text = urlStr
+    updateLog("◼", urlStr)
   }
 
-  func connectorProgress(old old: Float, new: Float) {
+  func connectorProgress(old: Float, new: Float) {
     progressBar.setProgress(new, animated: old < new)
 
     UIView.animate(withDuration: 0.5) {
