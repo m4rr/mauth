@@ -72,7 +72,7 @@ class NeatViewController: UIViewController {
     let _ = LogManager(webView: webView)
 
     #if !DEBUG
-      logTextView.userInteractionEnabled = false
+      logTextView.isUserInteractionEnabled = false
     #endif
   }
 
