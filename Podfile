@@ -4,6 +4,9 @@ inhibit_all_warnings!
 
 target 'mauth' do
   pod 'PKHUD', '~> 4.0'
+
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
 
 post_install do |installer|
